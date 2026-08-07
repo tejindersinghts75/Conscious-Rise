@@ -14,15 +14,6 @@ const rightServices = [
   ["secure", "Secure", "Reliable architecture and protection built into every layer."],
 ] as const;
 
-const capabilities = [
-  ["develop", "Web Development"],
-  ["applications", "Web Applications"],
-  ["integrate", "Integrations"],
-  ["automate", "Automation"],
-  ["innovate", "AI Solutions"],
-  ["optimize", "SEO & Performance"],
-] as const;
-
 export function Hero() {
   return (
     <section id="top" className="relative flex h-[100svh] flex-col overflow-hidden bg-[#090b16]">
@@ -39,7 +30,7 @@ export function Hero() {
       <div className="absolute inset-y-0 left-0 w-[27%] bg-gradient-to-r from-[#050711]/55 to-transparent backdrop-blur-[3px] [mask-image:linear-gradient(to_right,#000_0%,rgba(0,0,0,0.88)_58%,transparent_100%)]" />
       <div className="absolute inset-y-0 right-0 w-[27%] bg-gradient-to-l from-[#050711]/55 to-transparent backdrop-blur-[3px] [mask-image:linear-gradient(to_left,#000_0%,rgba(0,0,0,0.88)_58%,transparent_100%)]" />
 
-      <div className="container-x relative z-10 hidden flex-1 justify-between pt-32 pb-36 lg:flex">
+      <div className="container-x relative z-10 hidden flex-1 justify-between pt-32 pb-12 lg:flex">
         <div className="grid w-60 grid-rows-4 content-center gap-5">
           {leftServices.map(([icon, title, description]) => (
             <ServiceItem key={title} icon={icon} title={title} description={description} />
@@ -52,18 +43,6 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="container-x relative z-10 mt-auto pb-5 sm:pb-7">
-        <div className="grid grid-cols-3 overflow-hidden rounded-2xl border border-white/15 bg-[#080a14]/58 px-2 py-4 shadow-2xl backdrop-blur-xl sm:grid-cols-6 sm:px-4">
-          {capabilities.map(([icon, label]) => (
-            <div key={label} className="hero-capability flex min-h-16 flex-col items-center justify-center gap-2 border-white/15 px-2 text-center sm:border-r sm:last:border-r-0">
-              <ServiceIcon name={icon} className="h-6 w-6" />
-              <span className="font-mono text-[0.58rem] uppercase tracking-[0.12em] text-[rgba(255,255,255,0.88)] sm:text-[0.64rem]">
-                {label}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
     </section>
   );
 }
