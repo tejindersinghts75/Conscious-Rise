@@ -43,13 +43,6 @@ export function Contact() {
     <section id="contact" className="relative scroll-mt-24 py-24 sm:py-32">
       <div className="container-x">
         <div className="relative overflow-hidden rounded-3xl border border-neon-cyan/20 bg-[#ffffff] shadow-[0_18px_50px_-34px_rgba(119,12,38,0.32)] backdrop-blur-xl">
-          {/* decorative field */}
-          <div
-            aria-hidden
-            className="absolute inset-0 bg-[radial-gradient(circle_at_15%_0%,rgba(210,4,45,0.1),transparent_55%),radial-gradient(circle_at_85%_100%,rgba(168,16,46,0.1),transparent_55%)]"
-          />
-          <div aria-hidden className="absolute inset-0 grid-plane opacity-40" />
-
           <div className="relative grid gap-14 p-8 sm:p-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16 lg:p-16">
             {/* ── Pitch ─────────────────────────────────────── */}
             <div>
@@ -156,7 +149,7 @@ export function Contact() {
                             "rounded-full border px-3.5 py-2 text-[0.8125rem] transition-all duration-300",
                             service === s.id
                               ? "border-neon-cyan/50 bg-neon-cyan/12 text-neon-cyan"
-                              : "border-white/10 bg-white/[0.03] text-white/55 hover:border-white/25 hover:text-white",
+                              : "border-white/10 bg-[#ffffff] text-white/55 hover:border-white/25 hover:text-white",
                           )}
                         >
                           {s.title.replace(/ (Web Applications|Website Development|Design & Development|Websites & WooCommerce)$/, "")}
@@ -180,7 +173,7 @@ export function Contact() {
                             "rounded-full border px-3.5 py-2 font-mono text-[0.75rem] transition-all duration-300",
                             budget === b
                               ? "border-neon-violet/50 bg-neon-violet/12 text-neon-violet"
-                              : "border-white/10 bg-white/[0.03] text-white/55 hover:border-white/25 hover:text-white",
+                              : "border-white/10 bg-[#ffffff] text-white/55 hover:border-white/25 hover:text-white",
                           )}
                         >
                           {b}
@@ -202,7 +195,7 @@ export function Contact() {
                       rows={4}
                       required
                       placeholder="What are you building, and what does success look like?"
-                      className="w-full resize-none rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3.5 text-[0.9375rem] text-white placeholder:text-white/25 transition-colors duration-300 focus:border-neon-cyan/50 focus:bg-white/[0.05] focus:outline-none"
+                      className="w-full resize-none rounded-xl border border-white/10 bg-[#ffffff] px-4 py-3.5 text-[0.9375rem] text-white placeholder:text-white/25 transition-colors duration-300 focus:border-neon-cyan/50 focus:outline-none"
                     />
                   </div>
 
@@ -259,7 +252,7 @@ function Field({
         type={type}
         required={required}
         placeholder={placeholder}
-        className="w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3.5 text-[0.9375rem] text-white placeholder:text-white/25 transition-colors duration-300 focus:border-neon-cyan/50 focus:bg-white/[0.05] focus:outline-none"
+        className="w-full rounded-xl border border-white/10 bg-[#ffffff] px-4 py-3.5 text-[0.9375rem] text-white placeholder:text-white/25 transition-colors duration-300 focus:border-neon-cyan/50 focus:outline-none"
       />
     </div>
   );

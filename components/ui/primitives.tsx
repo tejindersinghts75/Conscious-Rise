@@ -85,7 +85,7 @@ export function Card({
   return (
     <div
       className={cx(
-        "card-hover group relative isolate overflow-hidden rounded-2xl glass ring-gradient spotlight",
+        "card-hover group relative isolate overflow-hidden rounded-2xl glass",
         "transition-[transform,border-color,box-shadow] duration-500 ease-out",
         "hover:-translate-y-1 hover:border-white/15 hover:shadow-[0_24px_70px_-30px_rgba(210,4,45,0.35)]",
         className,

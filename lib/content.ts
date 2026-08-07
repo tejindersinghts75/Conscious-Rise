@@ -8,11 +8,11 @@ export const site = {
 };
 
 export const nav = [
-  { label: "Services", href: "#services" },
-  { label: "Stack", href: "#stack" },
-  { label: "Process", href: "#process" },
-  { label: "Work", href: "#work" },
-  { label: "Contact", href: "#contact" },
+  { label: "Services", href: "/#services" },
+  { label: "Stack", href: "/#stack" },
+  { label: "Process", href: "/#process" },
+  { label: "Work", href: "/#work" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const stats = [

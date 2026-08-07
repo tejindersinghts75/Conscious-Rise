@@ -79,10 +79,6 @@ export function Services() {
           {/* CTA tile completes the 8-cell grid */}
           <Reveal delay={180}>
             <Card className="flex h-full flex-col justify-between overflow-hidden p-7">
-              <div
-                aria-hidden
-                className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(210,4,45,0.1),transparent_60%)]"
-              />
               <div className="relative z-10">
                 <span className="font-mono text-[0.6875rem] tracking-[0.2em] text-neon-violet/80">
                   08
@@ -96,7 +92,7 @@ export function Services() {
                 </p>
               </div>
               <a
-                href="#contact"
+                href="/contact"
                 className="relative z-10 mt-8 inline-flex items-center gap-2 text-[0.9375rem] font-semibold text-white transition-colors hover:text-neon-cyan"
               >
                 Tell me about it

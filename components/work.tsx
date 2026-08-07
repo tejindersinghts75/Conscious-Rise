@@ -4,13 +4,6 @@ import { Card, Reveal, SectionHeading } from "@/components/ui/primitives";
 // NOTE: These are placeholder case studies. Swap the entries in `lib/content.ts`
 // for real projects (and real numbers) before this site goes live.
 
-const accents: Record<string, string> = {
-  cyan: "from-neon-cyan/25",
-  violet: "from-neon-violet/25",
-  sky: "from-neon-sky/25",
-  fuchsia: "from-neon-fuchsia/25",
-};
-
 export function Work() {
   return (
     <section id="work" className="relative scroll-mt-24 py-24 sm:py-32">
@@ -31,10 +24,6 @@ export function Work() {
               <Card className="h-full p-0">
                 {/* preview plate */}
                 <div className="relative h-44 overflow-hidden border-b border-white/[0.06]">
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${accents[item.accent]} via-transparent to-transparent`}
-                  />
-                  <div className="absolute inset-0 dot-plane opacity-40" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <span className="font-display text-[4.5rem] font-bold leading-none tracking-tight text-white/[0.06] transition-transform duration-700 group-hover:scale-110">
                       {String(i + 1).padStart(2, "0")}
@@ -67,7 +56,7 @@ export function Work() {
           <p className="mt-10 text-center text-sm text-white/40">
             Want the full case studies, with metrics and references?{" "}
             <a
-              href="#contact"
+              href="/contact"
               className="font-medium text-white underline decoration-neon-cyan/40 underline-offset-4 transition-colors hover:text-neon-cyan"
             >
               Ask and I&apos;ll send them over.

@@ -54,7 +54,7 @@ export function Nav() {
                 />
               </a>
               <a
-                href="#contact"
+                href="/contact"
                 className="inline-flex h-11 items-center rounded-full bg-[#991b3b] px-4 text-[0.72rem] font-semibold text-[#ffffff] shadow-lg transition-all hover:scale-[1.03] hover:bg-[#bc244a] sm:h-12 sm:px-6 sm:text-[0.82rem]"
               >
                 Start a project
