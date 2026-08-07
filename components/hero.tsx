@@ -11,6 +11,7 @@ const rightServices = [
   ["integrate", "Integrate", "Connect your tools, systems and data seamlessly."],
   ["scale", "Scale", "Future-ready systems that grow with your business."],
   ["innovate", "Innovate", "AI-powered solutions that unlock new possibilities."],
+  ["secure", "Secure", "Reliable architecture and protection built into every layer."],
 ] as const;
 
 const capabilities = [
@@ -98,6 +99,7 @@ function ServiceIcon({ name, className = "" }: { name: string; className?: strin
     integrate: <><circle cx="12" cy="5" r="2" /><circle cx="5" cy="17" r="2" /><circle cx="19" cy="17" r="2" /><path d="M12 7v4m0 0-5.5 4M12 11l5.5 4" /></>,
     scale: <><path d="M5 18h13a4 4 0 0 0 .7-7.9A7 7 0 0 0 5.6 9 4.5 4.5 0 0 0 5 18Z" /><path d="M9 14h6" /></>,
     innovate: <><path d="M9 18h6M10 21h4" /><path d="M8.5 15.5A7 7 0 1 1 15.5 15.5c-1 .7-1.5 1.4-1.5 2.5h-4c0-1.1-.5-1.8-1.5-2.5Z" /></>,
+    secure: <><path d="M12 3 5 6v5c0 4.8 2.9 8.1 7 10 4.1-1.9 7-5.2 7-10V6l-7-3Z" /><path d="m9 12 2 2 4-4" /></>,
     applications: <><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z" /></>,
   };
 
