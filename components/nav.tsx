@@ -43,9 +43,15 @@ export function Nav() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Visit Upwork"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-[#ffffff] text-[0.8rem] font-black tracking-[-0.08em] text-[#14a800] shadow-lg transition-transform hover:scale-105 sm:h-12 sm:w-12"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-[#ffffff] shadow-lg transition-transform hover:scale-105 sm:h-12 sm:w-12"
               >
-                up
+                <Image
+                  src="/assets/upwork-logo.svg"
+                  alt="Upwork"
+                  width={25}
+                  height={25}
+                  className="h-6 w-6 object-contain"
+                />
               </a>
               <a
                 href="#contact"
@@ -94,24 +100,32 @@ export function Nav() {
           open ? "visible opacity-100" : "invisible opacity-0",
         )}
       >
-        <nav aria-label="Primary" className="container-x flex h-full flex-col justify-center py-28">
-          {nav.map((item, i) => (
-            <a
-              key={item.href}
-              href={item.href}
-              onClick={() => setOpen(false)}
-              style={{ transitionDelay: open ? `${i * 45}ms` : "0ms" }}
-              className={cx(
-                "group flex items-center justify-between border-b border-white/10 py-4 font-display text-[clamp(1.8rem,5vw,4rem)] font-semibold tracking-[-0.04em] text-[rgba(255,255,255,0.76)] transition-all duration-500 hover:pl-3 hover:text-[#ffffff]",
-                open ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0",
-              )}
-            >
-              {item.label}
-              <span className="font-mono text-xs font-normal tracking-normal text-[#ff8ca5]">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-            </a>
-          ))}
+        <nav aria-label="Primary" className="container-x flex h-full items-center py-28">
+          <div className="mx-auto w-full max-w-4xl rounded-3xl border border-white/10 bg-white/[0.025] px-6 py-6 shadow-[0_30px_100px_-45px_rgba(0,0,0,0.9)] sm:px-10 sm:py-8">
+            <p className="mb-3 font-mono text-[0.65rem] uppercase tracking-[0.24em] text-[#ff8ca5]">
+              Navigation
+            </p>
+            {nav.map((item, i) => (
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                style={{ transitionDelay: open ? `${i * 40}ms` : "0ms" }}
+                className={cx(
+                  "group flex items-center justify-between border-b border-white/10 py-3.5 font-display text-[clamp(1.55rem,3vw,2.75rem)] font-medium tracking-[-0.035em] text-[rgba(255,255,255,0.76)] transition-all duration-500 last:border-b-0 hover:pl-2 hover:text-[#ffffff] sm:py-4",
+                  open ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0",
+                )}
+              >
+                <span>{item.label}</span>
+                <span className="flex items-center gap-4 font-mono text-[0.65rem] font-normal tracking-normal text-[#ff8ca5]">
+                  {String(i + 1).padStart(2, "0")}
+                  <svg viewBox="0 0 16 16" fill="none" className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden>
+                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
+              </a>
+            ))}
+          </div>
         </nav>
       </div>
 
