@@ -42,7 +42,7 @@ export function Expectations() {
           <ul className="space-y-4">
             {expectations.map((item, i) => (
               <Reveal as="li" key={item.title} delay={i * 90}>
-                <div className="group relative overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.015] p-7 transition-all duration-500 hover:border-white/15 hover:bg-white/[0.03]">
+                <div className="group relative overflow-hidden rounded-2xl border border-neon-cyan/15 bg-[#ffffff] p-7 shadow-[0_18px_50px_-34px_rgba(119,12,38,0.32)] transition-all duration-500 hover:border-neon-cyan/30">
                   <span
                     aria-hidden
                     className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-neon-cyan to-neon-violet opacity-0 transition-opacity duration-500 group-hover:opacity-100"

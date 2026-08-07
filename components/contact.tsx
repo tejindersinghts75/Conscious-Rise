@@ -42,7 +42,7 @@ export function Contact() {
   return (
     <section id="contact" className="relative scroll-mt-24 py-24 sm:py-32">
       <div className="container-x">
-        <div className="relative overflow-hidden rounded-3xl border border-white/[0.08] bg-abyss/60 backdrop-blur-xl">
+        <div className="relative overflow-hidden rounded-3xl border border-neon-cyan/20 bg-[#ffffff] shadow-[0_18px_50px_-34px_rgba(119,12,38,0.32)] backdrop-blur-xl">
           {/* decorative field */}
           <div
             aria-hidden
