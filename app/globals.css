@@ -6,9 +6,9 @@
   --font-mono: var(--font-jetbrains), "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
   --color-white: #4a0d1d;
-  --color-void: #fffdfd;
-  --color-abyss: #fff5f7;
-  --color-ink: #fce8ed;
+  --color-void: #ffffff;
+  --color-abyss: #ffffff;
+  --color-ink: #ffffff;
 
   --color-neon-cyan: #d2042d;
   --color-neon-violet: #a8102e;
