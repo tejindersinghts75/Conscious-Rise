@@ -36,14 +36,16 @@ export function Hero() {
         className="object-cover object-center [image-rendering:auto]"
       />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(4,6,14,0.5),transparent_28%,transparent_72%,rgba(4,6,14,0.5)),linear-gradient(180deg,rgba(4,6,14,0.18),transparent_55%,rgba(4,6,14,0.66))]" />
+      <div className="absolute inset-y-0 left-0 w-[27%] bg-gradient-to-r from-[#050711]/55 to-transparent backdrop-blur-[3px] [mask-image:linear-gradient(to_right,#000_0%,rgba(0,0,0,0.88)_58%,transparent_100%)]" />
+      <div className="absolute inset-y-0 right-0 w-[27%] bg-gradient-to-l from-[#050711]/55 to-transparent backdrop-blur-[3px] [mask-image:linear-gradient(to_left,#000_0%,rgba(0,0,0,0.88)_58%,transparent_100%)]" />
 
       <div className="container-x relative z-10 hidden flex-1 justify-between pt-32 pb-36 lg:flex">
-        <div className="flex w-52 flex-col justify-center gap-8">
+        <div className="grid w-60 grid-rows-4 content-center gap-5">
           {leftServices.map(([icon, title, description]) => (
             <ServiceItem key={title} icon={icon} title={title} description={description} />
           ))}
         </div>
-        <div className="flex w-52 flex-col justify-center gap-12 text-right">
+        <div className="grid w-60 grid-rows-4 content-center gap-5 text-right">
           {rightServices.map(([icon, title, description]) => (
             <ServiceItem key={title} icon={icon} title={title} description={description} align="right" />
           ))}
@@ -78,7 +80,7 @@ function ServiceItem({
   align?: "left" | "right";
 }) {
   return (
-    <div className={align === "right" ? "ml-auto" : "mr-auto"}>
+    <div className={`flex min-h-[6.5rem] w-full flex-col justify-center ${align === "right" ? "items-end" : "items-start"}`}>
       <ServiceIcon name={icon} className={align === "right" ? "ml-auto" : "mr-auto"} />
       <h1 className="mt-2 font-mono text-xs font-semibold uppercase tracking-[0.16em] text-[#ffffff]">
         {title}
