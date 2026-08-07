@@ -20,7 +20,7 @@ const icons: Record<string, React.ReactNode> = {
 
 export function Stack() {
   return (
-    <section id="stack" className="relative scroll-mt-24 py-24 sm:py-32">
+    <section id="stack" className="relative scroll-mt-24 pt-24 sm:pt-28">
       {/* section band */}
       <div
         aria-hidden

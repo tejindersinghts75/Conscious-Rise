@@ -4,7 +4,7 @@ import { Reveal, SectionHeading } from "@/components/ui/primitives";
 /** Native <details> — zero JavaScript, keyboard accessible for free. */
 export function Faq() {
   return (
-    <section id="faq" className="relative scroll-mt-24 py-24 sm:py-32">
+    <section id="faq" className="relative scroll-mt-24 pt-24 sm:pt-28">
       <div className="container-x">
         <SectionHeading
           eyebrow="Questions"

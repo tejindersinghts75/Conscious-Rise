@@ -3,7 +3,7 @@ import { Card, Reveal, SectionHeading } from "@/components/ui/primitives";
 
 export function Services() {
   return (
-    <section id="services" className="relative scroll-mt-24 py-24 sm:py-32">
+    <section id="services" className="relative scroll-mt-24 pt-24 sm:pt-28">
       <div className="container-x">
         <SectionHeading
           eyebrow="What I can help you with"

@@ -6,7 +6,7 @@ import { Card } from "@/components/ui/primitives";
 
 export function Stats() {
   return (
-    <section className="relative py-24 sm:py-28">
+    <section className="relative pt-24 sm:pt-28">
       <div className="container-x">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat, i) => (

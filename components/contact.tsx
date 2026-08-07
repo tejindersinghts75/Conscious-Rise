@@ -40,7 +40,7 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="relative scroll-mt-24 py-24 sm:py-32">
+    <section id="contact" className="relative scroll-mt-24 pt-24 sm:pt-28">
       <div className="container-x">
         <div className="relative overflow-hidden rounded-3xl border border-neon-cyan/20 bg-[#ffffff] shadow-[0_18px_50px_-34px_rgba(119,12,38,0.32)] backdrop-blur-xl">
           <div className="relative grid gap-14 p-8 sm:p-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16 lg:p-16">

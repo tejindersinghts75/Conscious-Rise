@@ -3,7 +3,7 @@ import { Reveal, SectionHeading } from "@/components/ui/primitives";
 
 export function Process() {
   return (
-    <section id="process" className="relative scroll-mt-24 py-24 sm:py-32">
+    <section id="process" className="relative scroll-mt-24 pt-24 sm:pt-28">
       <div className="container-x">
         <SectionHeading
           eyebrow="How it works"

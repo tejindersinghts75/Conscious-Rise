@@ -3,7 +3,7 @@ import { Reveal, SectionHeading } from "@/components/ui/primitives";
 
 export function Expectations() {
   return (
-    <section className="relative py-24 sm:py-32">
+    <section className="relative pt-24 sm:pt-28">
       <div className="container-x">
         <div className="grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
           <div className="lg:sticky lg:top-28 lg:self-start">
