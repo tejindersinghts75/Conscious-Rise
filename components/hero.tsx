@@ -154,7 +154,7 @@ function TerminalPanel() {
   ];
 
   return (
-    <div className="card-hover relative rounded-2xl glass ring-gradient spotlight p-1.5 shadow-[0_40px_120px_-40px_rgba(34,211,238,0.35)]">
+    <div className="card-hover relative rounded-2xl glass ring-gradient spotlight p-1.5 shadow-[0_40px_120px_-40px_rgba(210,4,45,0.25)]">
       {/* title bar */}
       <div className="flex items-center gap-2 px-4 py-3">
         <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />

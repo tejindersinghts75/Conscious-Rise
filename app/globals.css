@@ -5,17 +5,18 @@
   --font-sans: var(--font-inter), Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-jetbrains), "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
-  --color-void: #04050a;
-  --color-abyss: #070912;
-  --color-ink: #0b0e1a;
+  --color-white: #4a0d1d;
+  --color-void: #fffdfd;
+  --color-abyss: #fff5f7;
+  --color-ink: #fce8ed;
 
-  --color-neon-cyan: #22d3ee;
-  --color-neon-violet: #a78bfa;
-  --color-neon-fuchsia: #e879f9;
-  --color-neon-sky: #38bdf8;
+  --color-neon-cyan: #d2042d;
+  --color-neon-violet: #a8102e;
+  --color-neon-fuchsia: #e3264f;
+  --color-neon-sky: #bf1538;
 
-  --color-haze: rgba(255, 255, 255, 0.66);
-  --color-hairline: rgba(255, 255, 255, 0.08);
+  --color-haze: rgba(74, 13, 29, 0.66);
+  --color-hairline: rgba(178, 25, 58, 0.12);
 
   --animate-marquee: marquee 42s linear infinite;
   --animate-drift: drift 22s ease-in-out infinite;
@@ -86,7 +87,7 @@
 
   body {
     background-color: var(--color-void);
-    color: #e8eaf2;
+    color: #4a0d1d;
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -94,8 +95,8 @@
   }
 
   ::selection {
-    background: rgba(34, 211, 238, 0.28);
-    color: #fff;
+    background: rgba(210, 4, 45, 0.2);
+    color: #4a0d1d;
   }
 
   :focus-visible {
@@ -112,12 +113,12 @@
     background: var(--color-void);
   }
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #1d2740, #131a2c);
+    background: linear-gradient(180deg, #d2042d, #a8102e);
     border-radius: 999px;
     border: 2px solid var(--color-void);
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #2b3a5f, #1b2439);
+    background: linear-gradient(180deg, #e3264f, #bf1538);
   }
 }
 
@@ -140,8 +141,8 @@
 @utility text-gradient {
   background: linear-gradient(
     92deg,
-    #ffffff 0%,
-    #cfe9ff 34%,
+    #4a0d1d 0%,
+    #8f1731 34%,
     var(--color-neon-cyan) 62%,
     var(--color-neon-violet) 100%
   );
@@ -152,8 +153,8 @@
 
 @utility text-glow {
   text-shadow:
-    0 0 28px rgba(34, 211, 238, 0.35),
-    0 0 60px rgba(167, 139, 250, 0.22);
+    0 0 28px rgba(210, 4, 45, 0.25),
+    0 0 60px rgba(168, 16, 46, 0.16);
 }
 
 @utility eyebrow {
@@ -161,28 +162,28 @@
   font-size: 0.6875rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(226, 232, 240, 0.5);
+  color: rgba(74, 13, 29, 0.5);
 }
 
 /* ── Surfaces ────────────────────────────────────────────────── */
 
 @utility glass {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.055) 0%, rgba(255, 255, 255, 0.015) 100%);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 245, 247, 0.78) 100%);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(178, 25, 58, 0.12);
 }
 
 @utility grid-plane {
   background-image:
-    linear-gradient(to right, rgba(148, 163, 184, 0.07) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+    linear-gradient(to right, rgba(178, 25, 58, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(178, 25, 58, 0.07) 1px, transparent 1px);
   background-size: 64px 64px;
 }
 
 @utility dot-plane {
-  background-image: radial-gradient(rgba(148, 163, 184, 0.16) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(178, 25, 58, 0.14) 1px, transparent 1px);
   background-size: 28px 28px;
 }
 
@@ -202,9 +203,9 @@
   padding: 1px;
   background: linear-gradient(
     140deg,
-    rgba(34, 211, 238, 0.55),
-    rgba(167, 139, 250, 0.32) 42%,
-    rgba(255, 255, 255, 0.04) 78%
+    rgba(210, 4, 45, 0.55),
+    rgba(168, 16, 46, 0.32) 42%,
+    rgba(178, 25, 58, 0.06) 78%
   );
   -webkit-mask:
     linear-gradient(#000 0 0) content-box,
@@ -227,7 +228,7 @@
   border-radius: inherit;
   background: radial-gradient(
     420px circle at var(--mx, 50%) var(--my, 50%),
-    rgba(34, 211, 238, 0.13),
+    rgba(210, 4, 45, 0.1),
     transparent 62%
   );
   opacity: 0;

@@ -26,7 +26,7 @@ export function Process() {
             <Reveal as="li" key={step.step} delay={i * 90}>
               <div className="group relative grid gap-5 rounded-2xl px-0 py-8 transition-colors duration-500 sm:grid-cols-[3.5rem_1fr] sm:gap-8 sm:px-4 sm:hover:bg-white/[0.02]">
                 <div className="relative">
-                  <span className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full border border-white/10 bg-abyss font-mono text-sm text-white/60 transition-all duration-500 group-hover:border-neon-cyan/50 group-hover:text-neon-cyan group-hover:shadow-[0_0_30px_-6px_rgba(34,211,238,0.55)]">
+                  <span className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full border border-white/10 bg-abyss font-mono text-sm text-white/60 transition-all duration-500 group-hover:border-neon-cyan/50 group-hover:text-neon-cyan group-hover:shadow-[0_0_30px_-6px_rgba(210,4,45,0.4)]">
                     {step.step}
                   </span>
                 </div>

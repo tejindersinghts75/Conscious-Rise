@@ -160,8 +160,8 @@ function Logo() {
       <svg viewBox="0 0 24 24" className="h-4.5 w-4.5" fill="none" aria-hidden>
         <defs>
           <linearGradient id="logo-grad" x1="0" y1="24" x2="24" y2="0">
-            <stop offset="0%" stopColor="#22d3ee" />
-            <stop offset="100%" stopColor="#a78bfa" />
+            <stop offset="0%" stopColor="#d2042d" />
+            <stop offset="100%" stopColor="#a8102e" />
           </linearGradient>
         </defs>
         <path

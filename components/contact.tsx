@@ -46,7 +46,7 @@ export function Contact() {
           {/* decorative field */}
           <div
             aria-hidden
-            className="absolute inset-0 bg-[radial-gradient(circle_at_15%_0%,rgba(34,211,238,0.14),transparent_55%),radial-gradient(circle_at_85%_100%,rgba(167,139,250,0.14),transparent_55%)]"
+            className="absolute inset-0 bg-[radial-gradient(circle_at_15%_0%,rgba(210,4,45,0.1),transparent_55%),radial-gradient(circle_at_85%_100%,rgba(168,16,46,0.1),transparent_55%)]"
           />
           <div aria-hidden className="absolute inset-0 grid-plane opacity-40" />
 
