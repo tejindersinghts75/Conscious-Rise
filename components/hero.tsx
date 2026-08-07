@@ -28,7 +28,10 @@ export function Hero() {
             </Reveal>
 
             <Reveal delay={100}>
-              <h1 className="mt-7 max-w-[78rem] font-display text-[clamp(3.4rem,8.4vw,8.5rem)] font-semibold leading-[0.88] tracking-[-0.06em] text-[#ffffff] drop-shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
+              <h1
+                className="mt-7 max-w-[78rem] font-display font-semibold tracking-[-0.06em] text-[#ffffff] drop-shadow-[0_4px_30px_rgba(0,0,0,0.5)]"
+                style={{ fontSize: "85px", lineHeight: "100%" }}
+              >
                 Websites that <span className="text-[#ff5b7f] text-glow">look great,</span>
                 <br />
                 load fast, and scale.
