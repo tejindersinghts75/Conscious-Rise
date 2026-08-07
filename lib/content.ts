@@ -18,7 +18,7 @@ export const nav = [
 export const stats = [
   { value: 5, suffix: "+", label: "Years of experience", detail: "Shipping production web since 2019" },
   { value: 38, suffix: "", label: "Projects delivered", detail: "Startups, agencies and businesses" },
-  { value: 2170, suffix: "+", label: "Hours worked", detail: "Tracked, billed and accounted for" },
+  { value: 2800, suffix: "+", label: "Hours worked", detail: "Tracked, billed and accounted for" },
   { value: 100, suffix: "%", label: "On-time delivery", detail: "Scoped honestly, shipped when promised" },
 ];
 
