@@ -1,19 +1,12 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { nav, site } from "@/lib/content";
 import { cx } from "@/components/ui/primitives";
 
 export function Nav() {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   // Lock body scroll while the mobile sheet is open.
   useEffect(() => {
@@ -30,47 +23,35 @@ export function Nav() {
   }, []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50">
-      <div
-        className={cx(
-          "transition-all duration-500 ease-out",
-          scrolled
-            ? "border-b border-white/15 bg-[#080a14]/90 shadow-[0_12px_40px_-24px_rgba(0,0,0,0.8)] backdrop-blur-2xl backdrop-saturate-150"
-            : "border-b border-white/10 bg-[#080a14]/65 shadow-[0_12px_40px_-28px_rgba(0,0,0,0.7)] backdrop-blur-xl backdrop-saturate-150",
-        )}
-      >
-        <div className="container-x">
-          <div className="flex h-[4.5rem] items-center justify-between gap-6">
-            <a href="#top" className="group flex items-center gap-3" aria-label={`${site.name} home`}>
-              <Logo />
-              <span className="font-display text-[0.95rem] font-semibold tracking-[-0.01em] text-[#ffffff]">
-                {site.name}
-              </span>
+    <header className="pointer-events-none fixed inset-x-0 top-0 z-50">
+      <div className="container-x relative z-20">
+        <div className="flex h-24 items-center justify-between gap-4">
+            <a href="#top" className="pointer-events-auto block" aria-label={`${site.name} home`}>
+              <Image
+                src="/assets/conscious-rise-logo.webp"
+                alt={`${site.name} logo`}
+                width={72}
+                height={72}
+                priority
+                className="h-16 w-16 object-contain drop-shadow-[0_6px_18px_rgba(0,0,0,0.55)] sm:h-[4.5rem] sm:w-[4.5rem]"
+              />
             </a>
 
-            <nav aria-label="Primary" className="hidden items-center gap-1 md:flex">
-              {nav.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="relative rounded-full px-4 py-2 text-[0.875rem] text-[rgba(255,255,255,0.76)] transition-colors duration-300 hover:text-[#ffffff]"
-                >
-                  <span className="relative z-10">{item.label}</span>
-                  <span className="absolute inset-0 scale-90 rounded-full bg-white/10 opacity-0 transition-all duration-300 hover:scale-100 hover:opacity-100" />
-                </a>
-              ))}
-            </nav>
-
-            <div className="flex items-center gap-3">
+            <div className="pointer-events-auto flex items-center gap-2 sm:gap-3">
+              <a
+                href="https://www.upwork.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Visit Upwork"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-[#ffffff] text-[0.8rem] font-black tracking-[-0.08em] text-[#14a800] shadow-lg transition-transform hover:scale-105 sm:h-12 sm:w-12"
+              >
+                up
+              </a>
               <a
                 href="#contact"
-                className="group relative hidden overflow-hidden rounded-full bg-[#ffffff] px-5 py-2.5 text-[0.8125rem] font-semibold text-[#4a0d1d] shadow-[0_8px_24px_-14px_rgba(255,255,255,0.65)] transition-transform duration-300 hover:scale-[1.03] sm:inline-flex"
+                className="inline-flex h-11 items-center rounded-full bg-[#991b3b] px-4 text-[0.72rem] font-semibold text-[#ffffff] shadow-lg transition-all hover:scale-[1.03] hover:bg-[#bc244a] sm:h-12 sm:px-6 sm:text-[0.82rem]"
               >
-                <span
-                  aria-hidden
-                  className="absolute inset-0 -translate-x-full bg-gradient-to-r from-neon-cyan to-neon-violet transition-transform duration-500 ease-out group-hover:translate-x-0"
-                />
-                <span className="relative z-10">Start a project</span>
+                Start a project
               </a>
 
               <button
@@ -79,51 +60,41 @@ export function Nav() {
                 aria-expanded={open}
                 aria-controls="mobile-menu"
                 aria-label={open ? "Close menu" : "Open menu"}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-white/10 text-[#ffffff] transition-colors hover:border-white/50 md:hidden"
+                className="flex h-11 w-11 items-center justify-center rounded-full bg-[#ffffff] text-[#11131c] shadow-lg transition-transform hover:scale-105 sm:h-12 sm:w-12"
               >
-                <span className="relative block h-3 w-4">
+                <span className="relative block h-4 w-5">
                   <span
                     className={cx(
-                      "absolute left-0 block h-px w-4 bg-current transition-all duration-300",
-                      open ? "top-1.5 rotate-45" : "top-0",
+                      "absolute left-0 block h-0.5 w-5 bg-current transition-all duration-300",
+                      open ? "top-[7px] rotate-45" : "top-0.5",
                     )}
                   />
                   <span
                     className={cx(
-                      "absolute left-0 top-1.5 block h-px w-4 bg-current transition-opacity duration-300",
+                      "absolute left-0 top-[7px] block h-0.5 w-5 bg-current transition-opacity duration-300",
                       open && "opacity-0",
                     )}
                   />
                   <span
                     className={cx(
-                      "absolute left-0 block h-px w-4 bg-current transition-all duration-300",
-                      open ? "top-1.5 -rotate-45" : "top-3",
+                      "absolute left-0 block h-0.5 w-5 bg-current transition-all duration-300",
+                      open ? "top-[7px] -rotate-45" : "top-[13px]",
                     )}
                   />
                 </span>
               </button>
             </div>
-          </div>
-        </div>
-
-        {/* scroll progress */}
-        <div className="relative h-px w-full overflow-hidden">
-          <div
-            id="scroll-progress"
-            className="h-full w-full origin-left scale-x-0 bg-gradient-to-r from-neon-cyan via-neon-violet to-neon-fuchsia"
-          />
         </div>
       </div>
 
-      {/* mobile sheet */}
       <div
         id="mobile-menu"
         className={cx(
-          "md:hidden overflow-hidden border-b border-white/15 bg-[#080a14]/95 backdrop-blur-2xl transition-[max-height,opacity] duration-500 ease-out",
-          open ? "max-h-[26rem] opacity-100" : "max-h-0 opacity-0",
+          "pointer-events-auto fixed inset-0 z-10 bg-[#070912]/94 backdrop-blur-2xl transition-all duration-500 ease-out",
+          open ? "visible opacity-100" : "invisible opacity-0",
         )}
       >
-        <nav aria-label="Mobile" className="container-x flex flex-col gap-1 py-5">
+        <nav aria-label="Primary" className="container-x flex h-full flex-col justify-center py-28">
           {nav.map((item, i) => (
             <a
               key={item.href}
@@ -131,48 +102,22 @@ export function Nav() {
               onClick={() => setOpen(false)}
               style={{ transitionDelay: open ? `${i * 45}ms` : "0ms" }}
               className={cx(
-                "flex items-center justify-between rounded-xl px-4 py-3.5 text-base text-[rgba(255,255,255,0.8)] transition-all duration-300 hover:bg-white/10 hover:text-[#ffffff]",
-                open ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0",
+                "group flex items-center justify-between border-b border-white/10 py-4 font-display text-[clamp(1.8rem,5vw,4rem)] font-semibold tracking-[-0.04em] text-[rgba(255,255,255,0.76)] transition-all duration-500 hover:pl-3 hover:text-[#ffffff]",
+                open ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0",
               )}
             >
               {item.label}
-              <span className="font-mono text-xs text-[rgba(255,255,255,0.4)]">
+              <span className="font-mono text-xs font-normal tracking-normal text-[#ff8ca5]">
                 {String(i + 1).padStart(2, "0")}
               </span>
             </a>
           ))}
-          <a
-            href="#contact"
-            onClick={() => setOpen(false)}
-            className="mt-2 rounded-xl bg-[#ffffff] px-4 py-3.5 text-center text-base font-semibold text-[#4a0d1d]"
-          >
-            Start a project
-          </a>
         </nav>
       </div>
-    </header>
-  );
-}
 
-function Logo() {
-  return (
-    <span className="relative flex h-9 w-9 items-center justify-center rounded-xl border border-white/25 bg-gradient-to-br from-white/15 to-transparent">
-      <svg viewBox="0 0 24 24" className="h-4.5 w-4.5" fill="none" aria-hidden>
-        <defs>
-          <linearGradient id="logo-grad" x1="0" y1="24" x2="24" y2="0">
-            <stop offset="0%" stopColor="#d2042d" />
-            <stop offset="100%" stopColor="#a8102e" />
-          </linearGradient>
-        </defs>
-        <path
-          d="M4 17.5 10.2 6.2a2 2 0 0 1 3.5 0L20 17.5"
-          stroke="url(#logo-grad)"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-        <path d="M8 17.5h8" stroke="url(#logo-grad)" strokeWidth="2" strokeLinecap="round" />
-      </svg>
-      <span className="absolute inset-0 rounded-xl bg-neon-cyan/20 blur-md" />
-    </span>
+      <div className="fixed inset-x-0 top-0 h-px overflow-hidden">
+        <div id="scroll-progress" className="h-full w-full origin-left scale-x-0 bg-gradient-to-r from-neon-cyan via-neon-violet to-neon-fuchsia" />
+      </div>
+    </header>
   );
 }

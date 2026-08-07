@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { nav, site, stackGroups } from "@/lib/content";
 
 export function Footer() {
@@ -8,9 +9,13 @@ export function Footer() {
       <div className="container-x">
         <div className="grid gap-12 lg:grid-cols-[1.6fr_1fr_1fr]">
           <div>
-            <p className="font-display text-2xl font-semibold tracking-[-0.02em] text-white">
-              {site.name}
-            </p>
+            <Image
+              src="/assets/conscious-rise-logo.webp"
+              alt={`${site.name} logo`}
+              width={88}
+              height={88}
+              className="h-20 w-20 object-contain"
+            />
             <p className="mt-4 max-w-sm text-[0.9375rem] leading-relaxed text-white/45">
               A great website should look great, load fast, and scale as your
               business grows. That&apos;s the whole job.
