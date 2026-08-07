@@ -35,15 +35,15 @@ export function Nav() {
         className={cx(
           "transition-all duration-500 ease-out",
           scrolled
-            ? "border-b border-white/[0.07] bg-void/85 backdrop-blur-xl backdrop-saturate-150"
-            : "border-b border-transparent bg-transparent",
+            ? "border-b border-white/15 bg-[#080a14]/90 shadow-[0_12px_40px_-24px_rgba(0,0,0,0.8)] backdrop-blur-2xl backdrop-saturate-150"
+            : "border-b border-white/10 bg-[#080a14]/65 shadow-[0_12px_40px_-28px_rgba(0,0,0,0.7)] backdrop-blur-xl backdrop-saturate-150",
         )}
       >
         <div className="container-x">
           <div className="flex h-[4.5rem] items-center justify-between gap-6">
             <a href="#top" className="group flex items-center gap-3" aria-label={`${site.name} home`}>
               <Logo />
-              <span className="font-display text-[0.95rem] font-semibold tracking-[-0.01em] text-white">
+              <span className="font-display text-[0.95rem] font-semibold tracking-[-0.01em] text-[#ffffff]">
                 {site.name}
               </span>
             </a>
@@ -53,10 +53,10 @@ export function Nav() {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="relative rounded-full px-4 py-2 text-[0.875rem] text-white/60 transition-colors duration-300 hover:text-white"
+                  className="relative rounded-full px-4 py-2 text-[0.875rem] text-[rgba(255,255,255,0.76)] transition-colors duration-300 hover:text-[#ffffff]"
                 >
                   <span className="relative z-10">{item.label}</span>
-                  <span className="absolute inset-0 scale-90 rounded-full bg-white/[0.06] opacity-0 transition-all duration-300 hover:scale-100 hover:opacity-100" />
+                  <span className="absolute inset-0 scale-90 rounded-full bg-white/10 opacity-0 transition-all duration-300 hover:scale-100 hover:opacity-100" />
                 </a>
               ))}
             </nav>
@@ -64,7 +64,7 @@ export function Nav() {
             <div className="flex items-center gap-3">
               <a
                 href="#contact"
-                className="group relative hidden overflow-hidden rounded-full bg-white px-5 py-2.5 text-[0.8125rem] font-semibold text-void transition-transform duration-300 hover:scale-[1.03] sm:inline-flex"
+                className="group relative hidden overflow-hidden rounded-full bg-[#ffffff] px-5 py-2.5 text-[0.8125rem] font-semibold text-[#4a0d1d] shadow-[0_8px_24px_-14px_rgba(255,255,255,0.65)] transition-transform duration-300 hover:scale-[1.03] sm:inline-flex"
               >
                 <span
                   aria-hidden
@@ -79,7 +79,7 @@ export function Nav() {
                 aria-expanded={open}
                 aria-controls="mobile-menu"
                 aria-label={open ? "Close menu" : "Open menu"}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-white transition-colors hover:border-white/25 md:hidden"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-white/10 text-[#ffffff] transition-colors hover:border-white/50 md:hidden"
               >
                 <span className="relative block h-3 w-4">
                   <span
@@ -119,7 +119,7 @@ export function Nav() {
       <div
         id="mobile-menu"
         className={cx(
-          "md:hidden overflow-hidden border-b border-white/[0.07] bg-void/95 backdrop-blur-xl transition-[max-height,opacity] duration-500 ease-out",
+          "md:hidden overflow-hidden border-b border-white/15 bg-[#080a14]/95 backdrop-blur-2xl transition-[max-height,opacity] duration-500 ease-out",
           open ? "max-h-[26rem] opacity-100" : "max-h-0 opacity-0",
         )}
       >
@@ -131,12 +131,12 @@ export function Nav() {
               onClick={() => setOpen(false)}
               style={{ transitionDelay: open ? `${i * 45}ms` : "0ms" }}
               className={cx(
-                "flex items-center justify-between rounded-xl px-4 py-3.5 text-base text-white/75 transition-all duration-300 hover:bg-white/[0.05] hover:text-white",
+                "flex items-center justify-between rounded-xl px-4 py-3.5 text-base text-[rgba(255,255,255,0.8)] transition-all duration-300 hover:bg-white/10 hover:text-[#ffffff]",
                 open ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0",
               )}
             >
               {item.label}
-              <span className="font-mono text-xs text-white/25">
+              <span className="font-mono text-xs text-[rgba(255,255,255,0.4)]">
                 {String(i + 1).padStart(2, "0")}
               </span>
             </a>
@@ -144,7 +144,7 @@ export function Nav() {
           <a
             href="#contact"
             onClick={() => setOpen(false)}
-            className="mt-2 rounded-xl bg-white px-4 py-3.5 text-center text-base font-semibold text-void"
+            className="mt-2 rounded-xl bg-[#ffffff] px-4 py-3.5 text-center text-base font-semibold text-[#4a0d1d]"
           >
             Start a project
           </a>
@@ -156,7 +156,7 @@ export function Nav() {
 
 function Logo() {
   return (
-    <span className="relative flex h-9 w-9 items-center justify-center rounded-xl border border-white/12 bg-gradient-to-br from-white/[0.12] to-transparent">
+    <span className="relative flex h-9 w-9 items-center justify-center rounded-xl border border-white/25 bg-gradient-to-br from-white/15 to-transparent">
       <svg viewBox="0 0 24 24" className="h-4.5 w-4.5" fill="none" aria-hidden>
         <defs>
           <linearGradient id="logo-grad" x1="0" y1="24" x2="24" y2="0">
