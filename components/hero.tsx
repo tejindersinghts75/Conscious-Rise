@@ -55,7 +55,7 @@ export function Hero() {
       <div className="container-x relative z-10 mt-auto pb-5 sm:pb-7">
         <div className="grid grid-cols-3 overflow-hidden rounded-2xl border border-white/15 bg-[#080a14]/58 px-2 py-4 shadow-2xl backdrop-blur-xl sm:grid-cols-6 sm:px-4">
           {capabilities.map(([icon, label]) => (
-            <div key={label} className="flex min-h-16 flex-col items-center justify-center gap-2 border-white/15 px-2 text-center sm:border-r sm:last:border-r-0">
+            <div key={label} className="hero-capability flex min-h-16 flex-col items-center justify-center gap-2 border-white/15 px-2 text-center sm:border-r sm:last:border-r-0">
               <ServiceIcon name={icon} className="h-6 w-6" />
               <span className="font-mono text-[0.58rem] uppercase tracking-[0.12em] text-[rgba(255,255,255,0.88)] sm:text-[0.64rem]">
                 {label}
@@ -80,7 +80,7 @@ function ServiceItem({
   align?: "left" | "right";
 }) {
   return (
-    <div className={`flex min-h-[6.5rem] w-full flex-col justify-center ${align === "right" ? "items-end" : "items-start"}`}>
+    <div className={`flex min-h-[6.5rem] w-full flex-col justify-center transition-transform duration-300 hover:scale-[1.03] ${align === "right" ? "hero-service-right items-end" : "hero-service-left items-start"}`}>
       <ServiceIcon name={icon} className={align === "right" ? "ml-auto" : "mr-auto"} />
       <h1 className="mt-2 font-mono text-xs font-semibold uppercase tracking-[0.16em] text-[#ffffff]">
         {title}
