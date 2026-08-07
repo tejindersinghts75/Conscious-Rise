@@ -28,12 +28,12 @@ export function Nav() {
         <div className="flex h-24 items-center justify-between gap-4">
             <a href="#top" className="pointer-events-auto block" aria-label={`${site.name} home`}>
               <Image
-                src="/assets/conscious-rise-logo.webp"
+                src="/assets/conscious-rise-logo.png"
                 alt={`${site.name} logo`}
                 width={72}
                 height={72}
                 priority
-                className="h-16 w-16 object-contain drop-shadow-[0_6px_18px_rgba(0,0,0,0.55)] sm:h-[4.5rem] sm:w-[4.5rem]"
+                className="h-16 w-16 rounded-full object-cover drop-shadow-[0_6px_18px_rgba(0,0,0,0.55)] sm:h-[4.5rem] sm:w-[4.5rem]"
               />
             </a>
 

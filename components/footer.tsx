@@ -10,11 +10,11 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1.6fr_1fr_1fr]">
           <div>
             <Image
-              src="/assets/conscious-rise-logo.webp"
+              src="/assets/conscious-rise-logo.png"
               alt={`${site.name} logo`}
               width={88}
               height={88}
-              className="h-20 w-20 object-contain"
+              className="h-20 w-20 rounded-full object-cover"
             />
             <p className="mt-4 max-w-sm text-[0.9375rem] leading-relaxed text-white/45">
               A great website should look great, load fast, and scale as your
