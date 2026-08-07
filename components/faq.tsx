@@ -1,0 +1,48 @@
+import { faqs } from "@/lib/content";
+import { Reveal, SectionHeading } from "@/components/ui/primitives";
+
+/** Native <details> — zero JavaScript, keyboard accessible for free. */
+export function Faq() {
+  return (
+    <section id="faq" className="relative scroll-mt-24 py-24 sm:py-32">
+      <div className="container-x">
+        <SectionHeading
+          eyebrow="Questions"
+          title={
+            <>
+              Answered before you <span className="text-gradient">ask.</span>
+            </>
+          }
+          align="center"
+        />
+
+        <div className="mx-auto mt-14 max-w-3xl divide-y divide-white/[0.07] border-y border-white/[0.07]">
+          {faqs.map((faq, i) => (
+            <Reveal key={faq.q} delay={i * 60}>
+              <details className="group py-1">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-5 text-left [&::-webkit-details-marker]:hidden">
+                  <span className="font-display text-[1.0625rem] font-medium tracking-[-0.01em] text-white/85 transition-colors group-hover:text-white">
+                    {faq.q}
+                  </span>
+                  <span className="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/10 text-white/50 transition-all duration-300 group-hover:border-neon-cyan/40 group-hover:text-neon-cyan group-open:rotate-45">
+                    <svg viewBox="0 0 12 12" fill="none" aria-hidden className="h-3 w-3">
+                      <path
+                        d="M6 2v8M2 6h8"
+                        stroke="currentColor"
+                        strokeWidth="1.6"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  </span>
+                </summary>
+                <p className="max-w-2xl pb-6 pr-14 text-[0.9375rem] leading-relaxed text-white/50">
+                  {faq.a}
+                </p>
+              </details>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
