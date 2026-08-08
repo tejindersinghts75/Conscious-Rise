@@ -40,7 +40,7 @@ export function Footer() {
           <nav aria-label="Footer">
             <p className="eyebrow">Navigate</p>
             <ul className="mt-5 space-y-3">
-              {[...nav, { label: "FAQ", href: "#faq" }].map((item) => (
+              {[...nav, { label: "FAQ", href: "/#faq" }].map((item) => (
                 <li key={item.href}>
                   <a
                     href={item.href}

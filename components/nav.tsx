@@ -26,7 +26,7 @@ export function Nav() {
     <header className="pointer-events-none fixed inset-x-0 top-0 z-50">
       <div className="container-x relative z-20">
         <div className="flex h-24 items-center justify-between gap-4">
-            <a href="#top" className="pointer-events-auto block" aria-label={`${site.name} home`}>
+            <a href="/" className="pointer-events-auto block" aria-label={`${site.name} home`}>
               <Image
                 src="/assets/conscious-rise-logo.png"
                 alt={`${site.name} logo`}

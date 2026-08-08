@@ -8,6 +8,7 @@ export const site = {
 };
 
 export const nav = [
+  { label: "About", href: "/about" },
   { label: "Services", href: "/#services" },
   { label: "Stack", href: "/#stack" },
   { label: "Process", href: "/#process" },
@@ -17,7 +18,7 @@ export const nav = [
 
 export const stats = [
   { value: 5, suffix: "+", label: "Years of experience", detail: "Shipping production web since 2019" },
-  { value: 38, suffix: "", label: "Projects delivered", detail: "Startups, agencies and businesses" },
+  { value: 70, suffix: "+", label: "Projects delivered", detail: "Startups, agencies and businesses" },
   { value: 2800, suffix: "+", label: "Hours worked", detail: "Tracked, billed and accounted for" },
   { value: 100, suffix: "%", label: "On-time delivery", detail: "Scoped honestly, shipped when promised" },
 ];
