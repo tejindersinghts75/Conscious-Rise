@@ -2,21 +2,22 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Backdrop } from "@/components/ui/backdrop";
 import { Footer } from "@/components/footer";
-import { Interactions } from "@/components/interactions";
 import { Nav } from "@/components/nav";
 import { Card, Eyebrow, Reveal } from "@/components/ui/primitives";
+import { stats } from "@/data/stats";
 
 export const metadata: Metadata = {
   title: "About Tejinder Singh",
   description:
     "Meet Tejinder Singh, the web developer behind Conscious Rise—building thoughtful, fast and maintainable websites since 2019.",
+  alternates: { canonical: "/about" },
+  openGraph: { url: "/about", images: ["/og-image.jpg"] },
 };
 
-const facts = [
-  ["5+", "Years building for the web"],
-  ["70+", "Projects delivered"],
-  ["2,800+", "Tracked project hours"],
-];
+const facts = stats.slice(0, 3).map((stat) => [
+  `${stat.value.toLocaleString("en-US")}${stat.suffix}`,
+  stat.label,
+]);
 
 const principles = [
   {
@@ -50,7 +51,6 @@ export default function AboutPage() {
   return (
     <>
       <Backdrop />
-      <Interactions />
       <Nav />
 
       <main id="main" className="overflow-hidden pt-24">
@@ -110,7 +110,6 @@ export default function AboutPage() {
                         src="/assets/tejinder-singh.jpg"
                         alt="Tejinder Singh, web developer and founder of Conscious Rise"
                         fill
-                        priority
                         sizes="(max-width: 1024px) 90vw, 42vw"
                         className="object-cover object-top"
                       />

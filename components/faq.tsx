@@ -1,5 +1,6 @@
 import { faqs } from "@/lib/content";
 import { Reveal, SectionHeading } from "@/components/ui/primitives";
+import { hasBookingUrl, siteConfig } from "@/config/site";
 
 /** Native <details> — zero JavaScript, keyboard accessible for free. */
 export function Faq() {
@@ -42,6 +43,9 @@ export function Faq() {
             </Reveal>
           ))}
         </div>
+        {hasBookingUrl ? <Reveal className="mt-10 text-center">
+          <a href={siteConfig.bookingUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center rounded-full border border-neon-cyan/20 bg-[#ffffff] px-6 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-neon-cyan/40">Book a 20 minute call</a>
+        </Reveal> : null}
       </div>
     </section>
   );

@@ -1,31 +1,21 @@
 import type { MetadataRoute } from "next";
-import { site } from "@/lib/content";
+import { absoluteUrl } from "@/config/site";
+import { projects } from "@/lib/content";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const pages = ["/", "/about", "/work", "/contact", "/privacy", "/terms"];
   return [
-    {
-      url: `https://${site.domain}`,
+    ...pages.map((path, index) => ({
+      url: absoluteUrl(path),
       lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 1,
-    },
-    {
-      url: `https://${site.domain}/about`,
+      changeFrequency: "monthly" as const,
+      priority: index === 0 ? 1 : index < 3 ? 0.9 : 0.7,
+    })),
+    ...projects.map((project) => ({
+      url: absoluteUrl(`/work/${project.slug}`),
       lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `https://${site.domain}/work`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `https://${site.domain}/contact`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: "monthly" as const,
       priority: 0.8,
-    },
+    })),
   ];
 }

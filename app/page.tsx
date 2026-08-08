@@ -8,8 +8,14 @@ import { Stack } from "@/components/stack";
 import { Process } from "@/components/process";
 import { Work } from "@/components/work";
 import { Expectations } from "@/components/expectations";
+import { Testimonials } from "@/components/testimonials";
 import { Faq } from "@/components/faq";
 import { Footer } from "@/components/footer";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+  openGraph: { url: "/", images: ["/og-image.jpg"] },
+};
 
 export default function Home() {
   return (
@@ -24,6 +30,7 @@ export default function Home() {
         <Stack />
         <Process />
         <Work />
+        <Testimonials />
         <Expectations />
         <Faq />
       </main>
@@ -31,3 +38,4 @@ export default function Home() {
     </>
   );
 }
+import type { Metadata } from "next";

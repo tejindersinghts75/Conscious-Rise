@@ -33,16 +33,17 @@ export function Nav() {
                 width={72}
                 height={72}
                 priority
+                fetchPriority="high"
                 className="h-16 w-16 rounded-full object-cover drop-shadow-[0_6px_18px_rgba(0,0,0,0.55)] sm:h-[4.5rem] sm:w-[4.5rem]"
               />
             </a>
 
             <div className="pointer-events-auto flex items-center gap-2 sm:gap-3">
               <a
-                href="https://www.upwork.com"
+                href={site.upworkUrl}
                 target="_blank"
-                rel="noreferrer"
-                aria-label="Visit Upwork"
+                rel="noopener noreferrer"
+                aria-label="View Upwork profile, 38 projects and 2,170+ hours"
                 className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-[#ffffff] shadow-lg transition-transform hover:scale-105 sm:h-12 sm:w-12"
               >
                 <Image

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { stats } from "@/lib/content";
+import { stats } from "@/data/stats";
 import { Card } from "@/components/ui/primitives";
 
 export function Stats() {
@@ -46,7 +46,7 @@ function CountUp({
   delay: number;
 }) {
   const ref = useRef<HTMLParagraphElement>(null);
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(target);
   const started = useRef(false);
 
   useEffect(() => {
@@ -60,8 +60,10 @@ function CountUp({
 
     let raf = 0;
     let timer: ReturnType<typeof setTimeout>;
+    const fallback = window.setTimeout(() => setValue(target), 2000);
 
     const run = () => {
+      setValue(0);
       const duration = 1500;
       const start = performance.now();
       const tick = (now: number) => {
@@ -91,6 +93,7 @@ function CountUp({
       io.disconnect();
       cancelAnimationFrame(raf);
       clearTimeout(timer);
+      clearTimeout(fallback);
     };
   }, [target, delay]);
 

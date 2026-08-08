@@ -35,12 +35,13 @@ export function Footer() {
                 />
               </svg>
             </a>
+            <p className="mt-5 max-w-md text-[0.8125rem] leading-6 text-white/40">{site.locationLine}</p>
           </div>
 
           <nav aria-label="Footer">
             <p className="eyebrow">Navigate</p>
             <ul className="mt-5 space-y-3">
-              {[...nav, { label: "FAQ", href: "/#faq" }].map((item) => (
+              {[...nav, { label: "FAQ", href: "/#faq" }, { label: "Privacy", href: "/privacy" }, { label: "Terms", href: "/terms" }].map((item) => (
                 <li key={item.href}>
                   <a
                     href={item.href}

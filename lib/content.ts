@@ -1,11 +1,4 @@
-export const site = {
-  name: "Conscious Rise",
-  tagline: "Web engineering studio",
-  domain: "consciousrise.com",
-  email: "hello@consciousrise.com",
-  description:
-    "A great website should look great, load fast, and scale as your business grows. Conscious Rise builds modern websites and scalable digital products with Next.js, React, Webflow, Framer and WordPress.",
-};
+export { siteConfig as site } from "@/config/site";
 
 export const nav = [
   { label: "About", href: "/about" },
@@ -16,12 +9,6 @@ export const nav = [
   { label: "Contact", href: "/contact" },
 ];
 
-export const stats = [
-  { value: 5, suffix: "+", label: "Years of experience", detail: "Shipping production web since 2019" },
-  { value: 70, suffix: "+", label: "Projects delivered", detail: "Startups, agencies and businesses" },
-  { value: 2800, suffix: "+", label: "Hours worked", detail: "Tracked, billed and accounted for" },
-  { value: 100, suffix: "%", label: "On-time delivery", detail: "Scoped honestly, shipped when promised" },
-];
 
 export type Service = {
   id: string;
@@ -167,12 +154,10 @@ export type Project = {
   slug: string;
   title: string;
   url: string;
-  snapshotUrl?: string;
   image: string;
   platform: "Framer" | "Next.js" | "Webflow";
   description: string;
   featured?: boolean;
-  status?: string;
 };
 
 export const projects: Project[] = [
@@ -180,7 +165,6 @@ export const projects: Project[] = [
     slug: "eleusis-mind",
     title: "Eleusis Mind",
     url: "https://eleusismind.com/",
-    snapshotUrl: "https://www.consciousrise.in/work/eleusis-mind",
     image: "/assets/work/eleusis-mind.jpg",
     platform: "Framer",
     description: "A refined, immersive digital experience for a pioneering consciousness research and psychedelic immersion centre.",
@@ -190,7 +174,6 @@ export const projects: Project[] = [
     slug: "kris-kelly",
     title: "Kris Kelly",
     url: "https://www.kriskelly.co/",
-    snapshotUrl: "https://www.consciousrise.in/work/kris-kelly",
     image: "/assets/work/kris-kelly.jpg",
     platform: "Framer",
     description: "A cinematic personal platform bringing breathwork, music and somatic practice together in one expressive experience.",
@@ -200,7 +183,6 @@ export const projects: Project[] = [
     slug: "meagan-perkins",
     title: "Meagan Perkins",
     url: "https://meaganperkins.co/",
-    snapshotUrl: "https://www.consciousrise.in/work/meagan-perkins",
     image: "/assets/work/meagan-perkins.jpg",
     platform: "Framer",
     description: "A warm editorial website for Rooted Regeneration, pairing a grounded visual system with clear programme pathways.",
@@ -209,7 +191,6 @@ export const projects: Project[] = [
     slug: "insight-funders",
     title: "Insight Funders",
     url: "https://insightfunders.com/",
-    snapshotUrl: "https://www.consciousrise.in/work/insight-funders",
     image: "/assets/work/insight-funders.jpg",
     platform: "Framer",
     description: "A sharp, product-led site for an AI-powered lending marketplace connecting businesses with private credit.",
@@ -219,7 +200,6 @@ export const projects: Project[] = [
     slug: "leafy-plate",
     title: "Leafy Plate",
     url: "https://www.leafyplate.co/",
-    snapshotUrl: "https://www.consciousrise.in/work/leafy-plate",
     image: "/assets/work/leafy-plate.jpg",
     platform: "Next.js",
     description: "A fresh meal-delivery experience with plan discovery, subscriptions and a clean, conversion-focused ordering journey.",
@@ -229,7 +209,6 @@ export const projects: Project[] = [
     slug: "elite-b-car",
     title: "Elite B Car",
     url: "https://www.elitebcar.com/",
-    snapshotUrl: "https://www.consciousrise.in/work/elite-b-car",
     image: "/assets/work/elite-b-car.jpg",
     platform: "Next.js",
     description: "A premium chauffeur-service website for New York travel, corporate transport and special-event bookings.",
@@ -238,7 +217,6 @@ export const projects: Project[] = [
     slug: "elysium-experiential-real-estate",
     title: "Elysium Experiential Real Estate",
     url: "https://live.elysiumcommunities.com/experiential-real-estate",
-    snapshotUrl: "https://www.consciousrise.in/work/elysium-experiential-real-estate",
     image: "/assets/work/elysium-experiential.jpg",
     platform: "Next.js",
     description: "An immersive launch experience introducing Elysium’s vision for community-led experiential real estate.",
@@ -247,7 +225,6 @@ export const projects: Project[] = [
     slug: "elysium-communities",
     title: "Elysium Communities",
     url: "https://www.elysiumcommunities.com/",
-    snapshotUrl: "https://www.consciousrise.in/work/elysium-communities",
     image: "/assets/work/elysium-communities.jpg",
     platform: "Webflow",
     description: "A narrative-led brand website for a new model of experiential microcities built around wellness and belonging.",
@@ -259,7 +236,6 @@ export const projects: Project[] = [
     image: "/assets/work/savage-and-saint.jpg",
     platform: "Framer",
     description: "A bold, character-rich platform for a global men’s mentoring collective focused on vitality, excellence and freedom.",
-    status: "Snapshot coming soon",
   },
 ];
 

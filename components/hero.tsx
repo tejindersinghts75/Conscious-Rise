@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { hasBookingUrl, siteConfig } from "@/config/site";
 
 const leftServices = [
   ["develop", "Develop", "Scalable web solutions built for performance and growth."],
@@ -22,8 +23,8 @@ export function Hero() {
         alt="A futuristic landscape with a glowing cherry portal and the Conscious Rise identity"
         fill
         priority
-        unoptimized
         sizes="100vw"
+        quality={82}
         className="object-cover object-center [image-rendering:auto]"
       />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(4,6,14,0.5),transparent_28%,transparent_72%,rgba(4,6,14,0.5)),linear-gradient(180deg,rgba(4,6,14,0.18),transparent_55%,rgba(4,6,14,0.66))]" />
@@ -40,6 +41,22 @@ export function Hero() {
           {rightServices.map(([icon, title, description]) => (
             <ServiceItem key={title} icon={icon} title={title} description={description} align="right" />
           ))}
+        </div>
+      </div>
+
+      <div className="container-x pointer-events-none absolute inset-0 z-20 flex items-center justify-center pt-24">
+        <div className="pointer-events-auto mx-auto max-w-3xl text-center">
+          <p className="font-mono text-[0.65rem] uppercase tracking-[0.22em] text-[#ffb0c0]">Conscious Rise · Web development studio</p>
+          <h1 className="mt-5 font-display text-[clamp(2.5rem,5.3vw,5rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-[#ffffff] [text-shadow:0_2px_24px_rgba(0,0,0,0.55)]">
+            Figma files turned into fast, maintainable websites.
+          </h1>
+          <p className="mx-auto mt-5 max-w-2xl text-[clamp(0.95rem,1.5vw,1.12rem)] leading-relaxed text-[rgba(255,255,255,0.76)]">
+            Next.js, Webflow, Framer and WordPress builds for startups and agencies in the UK and US. Nine live projects, fixed scope, shipped on time.
+          </p>
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <a href="/contact" className="inline-flex min-h-12 items-center rounded-full bg-[#991b3b] px-6 py-3 text-sm font-semibold text-[#ffffff] shadow-xl transition-all hover:-translate-y-0.5 hover:bg-[#bc244a]">Start a project</a>
+            {hasBookingUrl ? <a href={siteConfig.bookingUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center rounded-full border border-[#ffffff]/30 bg-[#070912]/35 px-6 py-3 text-sm font-semibold text-[#ffffff] backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-[#ffffff]/60">Book a 20 minute call</a> : null}
+          </div>
         </div>
       </div>
 
@@ -61,9 +78,9 @@ function ServiceItem({
   return (
     <div className={`flex min-h-[6.5rem] w-full flex-col justify-center transition-transform duration-300 hover:scale-[1.03] ${align === "right" ? "hero-service-right items-end" : "hero-service-left items-start"}`}>
       <ServiceIcon name={icon} className={align === "right" ? "ml-auto" : "mr-auto"} />
-      <h1 className="mt-2 font-mono text-xs font-semibold uppercase tracking-[0.16em] text-[#ffffff]">
+      <p className="mt-2 font-mono text-xs font-semibold uppercase tracking-[0.16em] text-[#ffffff]">
         {title}
-      </h1>
+      </p>
       <p className="mt-1.5 text-[0.68rem] leading-relaxed text-[rgba(255,255,255,0.72)]">
         {description}
       </p>

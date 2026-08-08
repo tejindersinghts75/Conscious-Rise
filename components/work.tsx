@@ -2,8 +2,11 @@ import Image from "next/image";
 import { projects, type Project } from "@/lib/content";
 import { Reveal, SectionHeading } from "@/components/ui/primitives";
 
+const projectCountWords: Record<number, string> = { 9: "nine" };
+
 export function Work() {
-  const featured = projects.filter((project) => project.featured).slice(0, 4);
+  const featuredSlugs = ["insight-funders", "elysium-communities", "leafy-plate", "eleusis-mind"];
+  const featured = featuredSlugs.map((slug) => projects.find((project) => project.slug === slug)).filter((project): project is Project => Boolean(project));
 
   return (
     <section id="work" className="relative scroll-mt-24 pt-24 sm:pt-28">
@@ -16,7 +19,7 @@ export function Work() {
           />
           <Reveal delay={160}>
             <a href="/work" className="group inline-flex shrink-0 items-center gap-3 rounded-full border border-neon-cyan/20 bg-[#ffffff] px-5 py-3 text-sm font-semibold text-white shadow-[0_12px_35px_-24px_rgba(119,12,38,0.5)] transition-all hover:-translate-y-0.5 hover:border-neon-cyan/40">
-              View all projects
+              See all {projectCountWords[projects.length] ?? projects.length} projects
               <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">→</span>
             </a>
           </Reveal>
@@ -37,7 +40,7 @@ export function Work() {
 export function ProjectCard({ project, priority = false }: { project: Project; priority?: boolean }) {
   return (
     <article className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-neon-cyan/15 bg-[#ffffff] shadow-[0_18px_55px_-36px_rgba(119,12,38,0.42)] transition-all duration-500 hover:-translate-y-1.5 hover:border-neon-cyan/30 hover:shadow-[0_28px_75px_-38px_rgba(119,12,38,0.48)]">
-      <a href={project.url} target="_blank" rel="noreferrer" aria-label={`View ${project.title} live website`} className="relative block aspect-[16/10] overflow-hidden bg-[#f7f2f3]">
+      <a href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`View ${project.title} live website`} className="relative block aspect-[16/10] overflow-hidden bg-[#f7f2f3]">
         <Image
           src={project.image}
           alt={`${project.title} website homepage preview`}
@@ -59,20 +62,16 @@ export function ProjectCard({ project, priority = false }: { project: Project; p
             <p className="font-mono text-[0.62rem] uppercase tracking-[0.18em] text-neon-cyan/70">Live project</p>
             <h3 className="mt-2 font-display text-[1.55rem] font-semibold tracking-[-0.03em] text-white">{project.title}</h3>
           </div>
-          <span className="font-mono text-[0.62rem] text-white/30">{project.status ?? "Live"}</span>
+          <span className="font-mono text-[0.62rem] text-white/30">Live</span>
         </div>
         <p className="mt-4 flex-1 text-[0.93rem] leading-7 text-white/50">{project.description}</p>
 
         <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-neon-cyan/10 pt-5">
-          <a href={project.url} target="_blank" rel="noreferrer" className="group/link inline-flex items-center gap-2 text-sm font-semibold text-white transition-colors hover:text-neon-cyan">
+          <a href={project.url} target="_blank" rel="noopener noreferrer" className="group/link inline-flex items-center gap-2 text-sm font-semibold text-white transition-colors hover:text-neon-cyan">
             View live site
             <span aria-hidden className="transition-transform duration-300 group-hover/link:translate-x-1 group-hover/link:-translate-y-1">↗</span>
           </a>
-          {project.snapshotUrl ? (
-            <a href={project.snapshotUrl} target="_blank" rel="noreferrer" className="text-xs font-medium text-white/40 underline decoration-neon-cyan/25 underline-offset-4 transition-colors hover:text-white">
-              View project snapshot
-            </a>
-          ) : null}
+          <a href={`/work/${project.slug}`} className="text-xs font-medium text-white/40 underline decoration-neon-cyan/25 underline-offset-4 transition-colors hover:text-white">View case study</a>
         </div>
       </div>
     </article>

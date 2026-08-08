@@ -17,26 +17,6 @@ export function Expectations() {
               lead="The technical work is the easy part. These are the things that decide whether a project is a pleasure or a problem."
             />
 
-            <Reveal delay={200}>
-              <div className="mt-10 rounded-2xl glass p-6">
-                <p className="text-[0.9375rem] leading-relaxed text-white/60">
-                  &ldquo;If you&apos;re looking for a developer who can turn designs
-                  into fast, scalable websites or modern web applications — reach
-                  out. I&apos;d be happy to discuss your project.&rdquo;
-                </p>
-                <div className="mt-5 flex items-center gap-3 border-t border-white/[0.07] pt-5">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-neon-cyan to-neon-violet font-display text-sm font-bold text-void">
-                    CR
-                  </span>
-                  <div>
-                    <p className="text-[0.8125rem] font-medium text-white">Conscious Rise</p>
-                    <p className="font-mono text-[0.6875rem] text-white/35">
-                      Web engineering studio
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
           </div>
 
           <ul className="space-y-4">

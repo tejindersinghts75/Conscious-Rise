@@ -8,6 +8,8 @@ import { Footer } from "@/components/footer";
 export const metadata: Metadata = {
   title: "Contact",
   description: "Tell Conscious Rise about your website or digital product project.",
+  alternates: { canonical: "/contact" },
+  openGraph: { url: "/contact", images: ["/og-image.jpg"] },
 };
 
 export default function ContactPage() {

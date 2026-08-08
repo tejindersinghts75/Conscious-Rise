@@ -2,6 +2,7 @@ import { services } from "@/lib/content";
 import { Card, Reveal, SectionHeading } from "@/components/ui/primitives";
 
 export function Services() {
+  const count = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"][services.length] ?? String(services.length);
   return (
     <section id="services" className="relative scroll-mt-24 pt-24 sm:pt-28">
       <div className="container-x">
@@ -9,7 +10,7 @@ export function Services() {
           eyebrow="What I can help you with"
           title={
             <>
-              Seven ways to get your
+              {count} ways to get your
               <br className="hidden sm:block" /> project{" "}
               <span className="text-gradient">shipped.</span>
             </>

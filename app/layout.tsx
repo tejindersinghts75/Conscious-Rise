@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from "next";
-import { site } from "@/lib/content";
+import { hasRealSiteUrl, siteConfig as site } from "@/config/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(`https://${site.domain}`),
+  metadataBase: new URL(hasRealSiteUrl ? site.url : "https://consciousrise2.vercel.app"),
   title: {
     default: `${site.name} — Next.js, React, Webflow, Framer & WordPress Studio`,
     template: `%s — ${site.name}`,
@@ -22,8 +22,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${site.name} — Web engineering studio`,
     description: site.description,
-    url: `https://${site.domain}`,
+    url: site.url,
     siteName: site.name,
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: `${site.name} — ${site.tagline}` }],
     type: "website",
     locale: "en_US",
   },
@@ -31,6 +32,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${site.name} — Web engineering studio`,
     description: site.description,
+    images: ["/og-image.jpg"],
   },
   robots: {
     index: true,
@@ -49,7 +51,7 @@ const jsonLd = {
   "@type": "ProfessionalService",
   name: site.name,
   description: site.description,
-  url: `https://${site.domain}`,
+  url: site.url,
   email: site.email,
   areaServed: "Worldwide",
   knowsAbout: [

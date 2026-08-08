@@ -85,11 +85,20 @@
 }
 
 .about-photo-float {
-  animation: about-photo-float 6s ease-in-out infinite;
+  animation: none;
 }
 
 .about-orbit {
-  animation: about-orbit 18s linear infinite;
+  animation: none;
+}
+
+@media (width >= 64rem) {
+  .about-photo-float {
+    animation: about-photo-float 6s ease-in-out infinite;
+  }
+  .about-orbit {
+    animation: about-orbit 18s linear infinite;
+  }
 }
 
 @keyframes hero-card-left {
@@ -222,7 +231,7 @@
   font-size: 0.6875rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(74, 13, 29, 0.5);
+  color: rgba(74, 13, 29, 0.72);
 }
 
 /* ── Surfaces ────────────────────────────────────────────────── */
@@ -313,13 +322,9 @@
 /* ── Scroll reveal ───────────────────────────────────────────── */
 
 .reveal {
-  opacity: 0;
-  transform: translate3d(0, 26px, 0);
-  transition:
-    opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
-  transition-delay: var(--reveal-delay, 0ms);
-  will-change: opacity, transform;
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: none;
 }
 
 .reveal.is-revealed {
@@ -342,4 +347,18 @@
     opacity: 1 !important;
     transform: none !important;
   }
+}
+
+/* The light palette maps Tailwind's white token to burgundy. Keep muted copy
+   readable against white cards instead of using low-opacity text that fails AA. */
+.text-white\/25,
+.text-white\/30,
+.text-white\/35,
+.text-white\/40,
+.text-white\/45,
+.text-white\/50,
+.text-white\/55,
+.text-white\/58,
+.text-white\/60 {
+  color: rgba(74, 13, 29, 0.72);
 }

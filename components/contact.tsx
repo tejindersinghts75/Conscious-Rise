@@ -3,8 +3,10 @@
 import { useState } from "react";
 import { services, site } from "@/lib/content";
 import { Reveal, cx } from "@/components/ui/primitives";
+import { hasBookingUrl } from "@/config/site";
 
 const budgets = ["< $2k", "$2k – $5k", "$5k – $10k", "$10k+"];
+const timelines = ["As soon as possible", "Within 1 month", "1–3 months", "Flexible"];
 
 /**
  * No backend is wired up, so submitting opens the visitor's mail client with
@@ -14,11 +16,19 @@ const budgets = ["< $2k", "$2k – $5k", "$5k – $10k", "$10k+"];
 export function Contact() {
   const [service, setService] = useState(services[0].id);
   const [budget, setBudget] = useState(budgets[1]);
+  const [timeline, setTimeline] = useState(timelines[2]);
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setError("");
     const data = new FormData(event.currentTarget);
+    if (data.get("website")) {
+      setSent(true);
+      return;
+    }
     const serviceLabel = services.find((s) => s.id === service)?.title ?? service;
 
     const body = [
@@ -27,14 +37,42 @@ export function Contact() {
       `Company: ${data.get("company") || "—"}`,
       `Service: ${serviceLabel}`,
       `Budget: ${budget}`,
+      `Target timeline: ${timeline}`,
       "",
       "Project details:",
       String(data.get("message") ?? ""),
     ].join("\n");
 
-    window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(
-      `New project enquiry — ${serviceLabel}`,
-    )}&body=${encodeURIComponent(body)}`;
+    const endpoint = site.contactFormEndpoint;
+    if (!endpoint.startsWith("{{")) {
+      try {
+        setSubmitting(true);
+        const response = await fetch(endpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: data.get("name"), email: data.get("email"),
+            company: data.get("company"), service: serviceLabel,
+            budget, timeline, message: data.get("message"),
+          }),
+        });
+        if (!response.ok) throw new Error("Request failed");
+        setSent(true);
+        event.currentTarget.reset();
+      } catch {
+        setError("The form could not be sent. Please email me directly and I’ll reply within one business day.");
+      } finally {
+        setSubmitting(false);
+      }
+      return;
+    }
+
+    if (site.email.startsWith("{{")) {
+      setError("The contact email still needs to be configured before this form can send enquiries.");
+      return;
+    }
+
+    window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(`New project enquiry — ${serviceLabel}`)}&body=${encodeURIComponent(body)}`;
 
     setSent(true);
   }
@@ -50,11 +88,11 @@ export function Contact() {
                 <span className="eyebrow">Let&apos;s build something</span>
               </Reveal>
               <Reveal delay={80}>
-                <h2 className="mt-5 font-display text-[clamp(2rem,4.4vw,3.1rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-white">
+                <h1 className="mt-5 font-display text-[clamp(2rem,4.4vw,3.1rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-white">
                   Tell me about
                   <br />
                   your <span className="text-gradient">project.</span>
-                </h2>
+                </h1>
               </Reveal>
               <Reveal delay={140}>
                 <p className="mt-5 max-w-md text-[1.0625rem] leading-relaxed text-white/55">
@@ -75,10 +113,16 @@ export function Contact() {
                       <span className="font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-white/35">
                         {label}
                       </span>
-                      <span className="text-right text-[0.875rem] text-white/75">{value}</span>
+                      {label === "Email" && !site.email.startsWith("{{") ? (
+                        <a href={`mailto:${site.email}`} className="text-right text-[0.875rem] text-white/75 underline-offset-4 hover:underline">{value}</a>
+                      ) : <span className="text-right text-[0.875rem] text-white/75">{value}</span>}
                     </li>
                   ))}
                 </ul>
+                {hasBookingUrl ? <a href={site.bookingUrl} target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex min-h-12 items-center rounded-full border border-neon-cyan/20 bg-[#ffffff] px-5 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-neon-cyan/40">
+                  Book a 20 minute call
+                </a> : null}
+                <p className="mt-5 text-sm leading-6 text-white/45">{site.locationLine}</p>
               </Reveal>
             </div>
 
@@ -101,8 +145,8 @@ export function Contact() {
                     Your email is ready to send
                   </h3>
                   <p className="mt-3 max-w-sm text-[0.9375rem] leading-relaxed text-white/55">
-                    Your mail app should have opened with the brief pre-filled.
-                    If it didn&apos;t, write to{" "}
+                    Your enquiry is ready. If your mail app opened, please press
+                    send. Otherwise, write to{" "}
                     <a
                       href={`mailto:${site.email}`}
                       className="font-medium text-neon-cyan underline underline-offset-4"
@@ -121,6 +165,10 @@ export function Contact() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
+                  <div className="absolute -left-[9999px]" aria-hidden="true">
+                    <label htmlFor="website">Website</label>
+                    <input id="website" name="website" tabIndex={-1} autoComplete="off" />
+                  </div>
                   <div className="grid gap-5 sm:grid-cols-2">
                     <Field label="Name" name="name" placeholder="Jane Cooper" required />
                     <Field
@@ -157,6 +205,15 @@ export function Contact() {
                       ))}
                     </div>
                   </fieldset>
+
+                  <div>
+                    <label htmlFor="timeline" className="mb-2.5 block font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-white/40">
+                      Target timeline
+                    </label>
+                    <select id="timeline" name="timeline" value={timeline} onChange={(event) => setTimeline(event.target.value)} className="w-full rounded-xl border border-white/10 bg-[#ffffff] px-4 py-3.5 text-[0.9375rem] text-white transition-colors focus:border-neon-cyan/50 focus:outline-none">
+                      {timelines.map((item) => <option key={item} value={item}>{item}</option>)}
+                    </select>
+                  </div>
 
                   <fieldset>
                     <legend className="mb-2.5 block font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-white/40">
@@ -201,14 +258,17 @@ export function Contact() {
 
                   <button
                     type="submit"
+                    disabled={submitting}
                     className="group relative w-full overflow-hidden rounded-full bg-white px-7 py-4 text-[0.9375rem] font-semibold text-void transition-transform duration-300 hover:scale-[1.01]"
                   >
                     <span
                       aria-hidden
                       className="absolute inset-0 -translate-x-full bg-gradient-to-r from-neon-cyan to-neon-violet transition-transform duration-500 ease-out group-hover:translate-x-0"
                     />
-                    <span className="relative z-10">Send project brief</span>
+                    <span className="relative z-10">{submitting ? "Sending…" : "Send project brief"}</span>
                   </button>
+
+                  {error ? <p role="alert" className="rounded-xl border border-red-300/30 bg-red-100/50 px-4 py-3 text-center text-sm text-red-900">{error}</p> : null}
 
                   <p className="text-center font-mono text-[0.6875rem] leading-relaxed text-white/30">
                     Opens your mail app with the brief pre-filled — nothing is
