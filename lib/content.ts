@@ -12,7 +12,7 @@ export const nav = [
   { label: "Services", href: "/#services" },
   { label: "Stack", href: "/#stack" },
   { label: "Process", href: "/#process" },
-  { label: "Work", href: "/#work" },
+  { label: "Work", href: "/work" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -163,34 +163,103 @@ export const process = [
   },
 ];
 
-export const work = [
+export type Project = {
+  slug: string;
+  title: string;
+  url: string;
+  snapshotUrl?: string;
+  image: string;
+  platform: "Framer" | "Next.js" | "Webflow";
+  description: string;
+  featured?: boolean;
+  status?: string;
+};
+
+export const projects: Project[] = [
   {
-    title: "Fintech SaaS Dashboard",
-    category: "Next.js · React · Firebase",
-    result: "1.2s LCP",
-    body: "A real-time analytics dashboard with role-based access, Stripe billing and 40+ charted metrics rendered on the server.",
-    accent: "cyan",
+    slug: "eleusis-mind",
+    title: "Eleusis Mind",
+    url: "https://eleusismind.com/",
+    snapshotUrl: "https://www.consciousrise.in/work/eleusis-mind",
+    image: "/assets/work/eleusis-mind.jpg",
+    platform: "Framer",
+    description: "A refined, immersive digital experience for a pioneering consciousness research and psychedelic immersion centre.",
+    featured: true,
   },
   {
-    title: "Design Studio Marketing Site",
-    category: "Framer · Figma",
-    result: "9 days to launch",
-    body: "Motion-led studio site with scroll-driven storytelling, CMS-driven case studies and a fully editable page system.",
-    accent: "violet",
+    slug: "kris-kelly",
+    title: "Kris Kelly",
+    url: "https://www.kriskelly.co/",
+    snapshotUrl: "https://www.consciousrise.in/work/kris-kelly",
+    image: "/assets/work/kris-kelly.jpg",
+    platform: "Framer",
+    description: "A cinematic personal platform bringing breathwork, music and somatic practice together in one expressive experience.",
+    featured: true,
   },
   {
-    title: "B2B Agency Platform",
-    category: "Webflow · Finsweet · Jetboost",
-    result: "3× organic traffic",
-    body: "Client-first Webflow build with filterable resource library, multi-language CMS and a programmatic SEO landing engine.",
-    accent: "sky",
+    slug: "meagan-perkins",
+    title: "Meagan Perkins",
+    url: "https://meaganperkins.co/",
+    snapshotUrl: "https://www.consciousrise.in/work/meagan-perkins",
+    image: "/assets/work/meagan-perkins.jpg",
+    platform: "Framer",
+    description: "A warm editorial website for Rooted Regeneration, pairing a grounded visual system with clear programme pathways.",
   },
   {
-    title: "Commerce Replatform",
-    category: "WordPress · WooCommerce",
-    result: "+62% conversion",
-    body: "Migrated a page-builder store to a custom theme — 900KB lighter, 4× faster checkout and an editor experience the team enjoys.",
-    accent: "fuchsia",
+    slug: "insight-funders",
+    title: "Insight Funders",
+    url: "https://insightfunders.com/",
+    snapshotUrl: "https://www.consciousrise.in/work/insight-funders",
+    image: "/assets/work/insight-funders.jpg",
+    platform: "Framer",
+    description: "A sharp, product-led site for an AI-powered lending marketplace connecting businesses with private credit.",
+    featured: true,
+  },
+  {
+    slug: "leafy-plate",
+    title: "Leafy Plate",
+    url: "https://www.leafyplate.co/",
+    snapshotUrl: "https://www.consciousrise.in/work/leafy-plate",
+    image: "/assets/work/leafy-plate.jpg",
+    platform: "Next.js",
+    description: "A fresh meal-delivery experience with plan discovery, subscriptions and a clean, conversion-focused ordering journey.",
+    featured: true,
+  },
+  {
+    slug: "elite-b-car",
+    title: "Elite B Car",
+    url: "https://www.elitebcar.com/",
+    snapshotUrl: "https://www.consciousrise.in/work/elite-b-car",
+    image: "/assets/work/elite-b-car.jpg",
+    platform: "Next.js",
+    description: "A premium chauffeur-service website for New York travel, corporate transport and special-event bookings.",
+  },
+  {
+    slug: "elysium-experiential-real-estate",
+    title: "Elysium Experiential Real Estate",
+    url: "https://live.elysiumcommunities.com/experiential-real-estate",
+    snapshotUrl: "https://www.consciousrise.in/work/elysium-experiential-real-estate",
+    image: "/assets/work/elysium-experiential.jpg",
+    platform: "Next.js",
+    description: "An immersive launch experience introducing Elysium’s vision for community-led experiential real estate.",
+  },
+  {
+    slug: "elysium-communities",
+    title: "Elysium Communities",
+    url: "https://www.elysiumcommunities.com/",
+    snapshotUrl: "https://www.consciousrise.in/work/elysium-communities",
+    image: "/assets/work/elysium-communities.jpg",
+    platform: "Webflow",
+    description: "A narrative-led brand website for a new model of experiential microcities built around wellness and belonging.",
+  },
+  {
+    slug: "savage-and-saint",
+    title: "Savage & Saint",
+    url: "https://savageandsaint.com/",
+    image: "/assets/work/savage-and-saint.jpg",
+    platform: "Framer",
+    description: "A bold, character-rich platform for a global men’s mentoring collective focused on vitality, excellence and freedom.",
+    status: "Snapshot coming soon",
   },
 ];
 

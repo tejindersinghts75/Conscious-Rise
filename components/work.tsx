@@ -1,69 +1,80 @@
-import { work } from "@/lib/content";
-import { Card, Reveal, SectionHeading } from "@/components/ui/primitives";
-
-// NOTE: These are placeholder case studies. Swap the entries in `lib/content.ts`
-// for real projects (and real numbers) before this site goes live.
+import Image from "next/image";
+import { projects, type Project } from "@/lib/content";
+import { Reveal, SectionHeading } from "@/components/ui/primitives";
 
 export function Work() {
+  const featured = projects.filter((project) => project.featured).slice(0, 4);
+
   return (
     <section id="work" className="relative scroll-mt-24 pt-24 sm:pt-28">
       <div className="container-x">
-        <SectionHeading
-          eyebrow="Selected work"
-          title={
-            <>
-              Built, launched, <span className="text-gradient">measured.</span>
-            </>
-          }
-          lead="A sample of recent projects across the stack — and what actually changed for the business afterwards."
-        />
+        <div className="flex flex-col items-start justify-between gap-7 lg:flex-row lg:items-end">
+          <SectionHeading
+            eyebrow="Selected work"
+            title={<>Real websites, built for <span className="text-gradient">real businesses.</span></>}
+            lead="A selection of live projects across Framer, Next.js and Webflow—each shaped around a different audience, business model and visual language."
+          />
+          <Reveal delay={160}>
+            <a href="/work" className="group inline-flex shrink-0 items-center gap-3 rounded-full border border-neon-cyan/20 bg-[#ffffff] px-5 py-3 text-sm font-semibold text-white shadow-[0_12px_35px_-24px_rgba(119,12,38,0.5)] transition-all hover:-translate-y-0.5 hover:border-neon-cyan/40">
+              View all projects
+              <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+            </a>
+          </Reveal>
+        </div>
 
-        <div className="mt-16 grid gap-4 md:grid-cols-2">
-          {work.map((item, i) => (
-            <Reveal key={item.title} delay={(i % 2) * 100}>
-              <Card className="h-full p-0">
-                {/* preview plate */}
-                <div className="relative h-44 overflow-hidden border-b border-white/[0.06]">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="font-display text-[4.5rem] font-bold leading-none tracking-tight text-white/[0.06] transition-transform duration-700 group-hover:scale-110">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                  </div>
-                  <div className="absolute bottom-4 left-6 right-6 flex items-end justify-between gap-4">
-                    <span className="font-mono text-[0.6875rem] tracking-wide text-white/45">
-                      {item.category}
-                    </span>
-                    <span className="rounded-full border border-neon-cyan/30 bg-neon-cyan/10 px-3 py-1 font-mono text-[0.6875rem] font-medium text-neon-cyan">
-                      {item.result}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="relative z-10 p-7">
-                  <h3 className="font-display text-xl font-semibold tracking-[-0.01em] text-white">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-[0.9375rem] leading-relaxed text-white/50">
-                    {item.body}
-                  </p>
-                </div>
-              </Card>
+        <div className="mt-14 grid gap-5 md:grid-cols-2">
+          {featured.map((project, index) => (
+            <Reveal key={project.slug} delay={(index % 2) * 100} className="h-full">
+              <ProjectCard project={project} priority={index < 2} />
             </Reveal>
           ))}
         </div>
-
-        <Reveal delay={120}>
-          <p className="mt-10 text-center text-sm text-white/40">
-            Want the full case studies, with metrics and references?{" "}
-            <a
-              href="/contact"
-              className="font-medium text-white underline decoration-neon-cyan/40 underline-offset-4 transition-colors hover:text-neon-cyan"
-            >
-              Ask and I&apos;ll send them over.
-            </a>
-          </p>
-        </Reveal>
       </div>
     </section>
+  );
+}
+
+export function ProjectCard({ project, priority = false }: { project: Project; priority?: boolean }) {
+  return (
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-neon-cyan/15 bg-[#ffffff] shadow-[0_18px_55px_-36px_rgba(119,12,38,0.42)] transition-all duration-500 hover:-translate-y-1.5 hover:border-neon-cyan/30 hover:shadow-[0_28px_75px_-38px_rgba(119,12,38,0.48)]">
+      <a href={project.url} target="_blank" rel="noreferrer" aria-label={`View ${project.title} live website`} className="relative block aspect-[16/10] overflow-hidden bg-[#f7f2f3]">
+        <Image
+          src={project.image}
+          alt={`${project.title} website homepage preview`}
+          fill
+          priority={priority}
+          sizes="(max-width: 768px) 100vw, (max-width: 1400px) 50vw, 640px"
+          className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.035]"
+        />
+        <span aria-hidden className="absolute inset-0 bg-gradient-to-t from-[#4a0d1d]/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+        <span className="absolute right-4 top-4 inline-flex items-center gap-2 rounded-full border border-[#ffffff]/40 bg-[#ffffff]/90 px-3 py-2 font-mono text-[0.62rem] uppercase tracking-[0.13em] text-[#4a0d1d] shadow-lg backdrop-blur-md">
+          {project.platform}
+        </span>
+        <span className="absolute bottom-4 right-4 grid h-11 w-11 translate-y-2 place-items-center rounded-full bg-[#991b3b] text-lg text-[#ffffff] opacity-0 shadow-lg transition-all duration-400 group-hover:translate-y-0 group-hover:opacity-100">↗</span>
+      </a>
+
+      <div className="flex flex-1 flex-col p-6 sm:p-7">
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <p className="font-mono text-[0.62rem] uppercase tracking-[0.18em] text-neon-cyan/70">Live project</p>
+            <h3 className="mt-2 font-display text-[1.55rem] font-semibold tracking-[-0.03em] text-white">{project.title}</h3>
+          </div>
+          <span className="font-mono text-[0.62rem] text-white/30">{project.status ?? "Live"}</span>
+        </div>
+        <p className="mt-4 flex-1 text-[0.93rem] leading-7 text-white/50">{project.description}</p>
+
+        <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-neon-cyan/10 pt-5">
+          <a href={project.url} target="_blank" rel="noreferrer" className="group/link inline-flex items-center gap-2 text-sm font-semibold text-white transition-colors hover:text-neon-cyan">
+            View live site
+            <span aria-hidden className="transition-transform duration-300 group-hover/link:translate-x-1 group-hover/link:-translate-y-1">↗</span>
+          </a>
+          {project.snapshotUrl ? (
+            <a href={project.snapshotUrl} target="_blank" rel="noreferrer" className="text-xs font-medium text-white/40 underline decoration-neon-cyan/25 underline-offset-4 transition-colors hover:text-white">
+              View project snapshot
+            </a>
+          ) : null}
+        </div>
+      </div>
+    </article>
   );
 }

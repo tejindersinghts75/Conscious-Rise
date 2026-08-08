@@ -89,7 +89,7 @@ export default function AboutPage() {
                     <a href="/contact" className="rounded-full bg-[#991b3b] px-6 py-3.5 text-sm font-semibold text-[#ffffff] shadow-lg transition-all hover:-translate-y-0.5 hover:bg-[#bc244a]">
                       Work with me
                     </a>
-                    <a href="/#work" className="group inline-flex items-center gap-2 rounded-full border border-neon-cyan/20 bg-[#ffffff] px-6 py-3.5 text-sm font-semibold text-[#4a0d1d] shadow-[0_10px_30px_-20px_rgba(119,12,38,0.5)] transition-all hover:-translate-y-0.5 hover:border-neon-cyan/40">
+                    <a href="/work" className="group inline-flex items-center gap-2 rounded-full border border-neon-cyan/20 bg-[#ffffff] px-6 py-3.5 text-sm font-semibold text-[#4a0d1d] shadow-[0_10px_30px_-20px_rgba(119,12,38,0.5)] transition-all hover:-translate-y-0.5 hover:border-neon-cyan/40">
                       See my work
                       <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">→</span>
                     </a>
