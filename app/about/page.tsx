@@ -4,7 +4,7 @@ import { Backdrop } from "@/components/ui/backdrop";
 import { Footer } from "@/components/footer";
 import { Interactions } from "@/components/interactions";
 import { Nav } from "@/components/nav";
-import { Eyebrow, Reveal } from "@/components/ui/primitives";
+import { Card, Eyebrow, Reveal } from "@/components/ui/primitives";
 
 export const metadata: Metadata = {
   title: "About Tejinder Singh",
@@ -89,17 +89,22 @@ export default function AboutPage() {
                     <a href="/contact" className="rounded-full bg-[#991b3b] px-6 py-3.5 text-sm font-semibold text-[#ffffff] shadow-lg transition-all hover:-translate-y-0.5 hover:bg-[#bc244a]">
                       Work with me
                     </a>
-                    <a href="/#work" className="rounded-full border border-neon-cyan/20 bg-white px-6 py-3.5 text-sm font-semibold text-[#4a0d1d] transition-all hover:-translate-y-0.5 hover:border-neon-cyan/40">
+                    <a href="/#work" className="group inline-flex items-center gap-2 rounded-full border border-neon-cyan/20 bg-[#ffffff] px-6 py-3.5 text-sm font-semibold text-[#4a0d1d] shadow-[0_10px_30px_-20px_rgba(119,12,38,0.5)] transition-all hover:-translate-y-0.5 hover:border-neon-cyan/40">
                       See my work
+                      <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">→</span>
                     </a>
                   </div>
                 </Reveal>
               </div>
 
               <Reveal delay={120} className="mx-auto w-full max-w-[34rem]">
-                <div className="relative">
+                <div className="about-photo-float relative">
                   <div aria-hidden className="absolute -inset-4 -rotate-3 rounded-[2.2rem] border border-neon-cyan/10 bg-[#fff6f7]" />
-                  <div className="relative overflow-hidden rounded-[2rem] border border-neon-cyan/20 bg-white p-2 shadow-[0_30px_90px_-40px_rgba(119,12,38,0.45)]">
+                  <div aria-hidden className="about-orbit absolute -right-8 -top-8 h-20 w-20 rounded-full border border-dashed border-neon-cyan/30" />
+                  <div aria-hidden className="absolute -bottom-7 -left-7 grid h-16 w-16 place-items-center rounded-full border border-neon-cyan/15 bg-[#ffffff] shadow-lg">
+                    <span className="font-mono text-[0.58rem] uppercase tracking-[0.14em] text-white/50">Since<br />2019</span>
+                  </div>
+                  <div className="relative overflow-hidden rounded-[2rem] border border-neon-cyan/20 bg-[#ffffff] p-2 shadow-[0_30px_90px_-40px_rgba(119,12,38,0.45)]">
                     <div className="relative aspect-[5/6.4] overflow-hidden rounded-[1.55rem] bg-[#f5efeb]">
                       <Image
                         src="/assets/tejinder-singh.jpg"
@@ -110,10 +115,10 @@ export default function AboutPage() {
                         className="object-cover object-top"
                       />
                       <div aria-hidden className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#3f0c19]/45 to-transparent" />
-                      <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4 rounded-2xl border border-white/30 bg-white/85 p-4 backdrop-blur-md">
+                      <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4 rounded-2xl border border-[#ffffff]/20 bg-[#4a0d1d]/90 p-4 shadow-xl backdrop-blur-md">
                         <div>
-                          <p className="font-display text-lg font-semibold text-white">Tejinder Singh</p>
-                          <p className="mt-0.5 text-xs text-white/55">Web developer · Conscious Rise</p>
+                          <p className="font-display text-lg font-semibold text-[#ffffff]">Tejinder Singh</p>
+                          <p className="mt-0.5 text-xs text-[#ffffff]/60">Web developer · Conscious Rise</p>
                         </div>
                         <span className="flex shrink-0 items-center gap-2 rounded-full bg-[#fff5f6] px-3 py-2 font-mono text-[0.62rem] uppercase tracking-wider text-white/65">
                           <span className="h-1.5 w-1.5 rounded-full bg-[#28c840]" /> Available
@@ -125,11 +130,12 @@ export default function AboutPage() {
               </Reveal>
             </div>
 
-            <div className="mt-20 grid overflow-hidden rounded-3xl border border-neon-cyan/15 bg-white shadow-[0_18px_50px_-34px_rgba(119,12,38,0.32)] sm:grid-cols-3">
+            <div className="mt-20 grid overflow-hidden rounded-3xl border border-neon-cyan/15 bg-[#ffffff] shadow-[0_18px_50px_-34px_rgba(119,12,38,0.32)] sm:grid-cols-3">
               {facts.map(([value, label], index) => (
-                <Reveal key={label} delay={index * 70} className="border-b border-neon-cyan/10 p-7 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0 sm:p-9">
-                  <p className="font-display text-4xl font-semibold tracking-[-0.04em] text-white">{value}</p>
-                  <p className="mt-2 text-sm leading-relaxed text-white/50">{label}</p>
+                <Reveal key={label} delay={index * 70} className="group relative overflow-hidden border-b border-neon-cyan/10 p-7 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0 sm:p-9">
+                  <span aria-hidden className="absolute -right-2 -top-7 font-display text-[7rem] font-bold leading-none text-[#4a0d1d]/[0.025] transition-transform duration-500 group-hover:-translate-x-2">0{index + 1}</span>
+                  <p className="relative font-display text-4xl font-semibold tracking-[-0.04em] text-white">{value}</p>
+                  <p className="relative mt-2 text-sm leading-relaxed text-white/50">{label}</p>
                 </Reveal>
               ))}
             </div>
@@ -172,9 +178,9 @@ export default function AboutPage() {
                 </p>
               </Reveal>
               <Reveal delay={200}>
-                <blockquote className="rounded-2xl border-l-4 border-neon-cyan bg-[#fff7f8] px-7 py-6 font-display text-[1.35rem] font-medium leading-relaxed text-white">
-                  “I want clients to understand what is being built, why it is being
-                  built that way, and what they will own when the work is done.”
+                <blockquote className="relative overflow-hidden rounded-2xl border border-neon-cyan/15 bg-[#fff7f8] px-7 py-7 font-display text-[1.35rem] font-medium leading-relaxed text-white shadow-[0_18px_50px_-38px_rgba(119,12,38,0.45)] sm:px-9">
+                  <span aria-hidden className="absolute -right-1 -top-8 font-serif text-[9rem] leading-none text-neon-cyan/[0.07]">“</span>
+                  <span className="relative">“I want clients to understand what is being built, why it is being built that way, and what they will own when the work is done.”</span>
                 </blockquote>
               </Reveal>
             </div>
@@ -191,12 +197,17 @@ export default function AboutPage() {
             </Reveal>
             <div className="mt-12 grid gap-5 lg:grid-cols-3">
               {principles.map((item, index) => (
-                <Reveal key={item.number} delay={index * 80}>
-                  <article className="h-full rounded-3xl border border-neon-cyan/15 bg-white p-7 shadow-[0_18px_50px_-34px_rgba(119,12,38,0.32)] transition-transform duration-300 hover:-translate-y-1 sm:p-9">
-                    <span className="font-mono text-xs tracking-[0.2em] text-neon-cyan">{item.number}</span>
-                    <h3 className="mt-8 font-display text-2xl font-semibold tracking-[-0.025em] text-white">{item.title}</h3>
-                    <p className="mt-4 text-[0.95rem] leading-7 text-white/52">{item.body}</p>
-                  </article>
+                <Reveal key={item.number} delay={index * 80} className="h-full">
+                  <Card className="h-full p-7 sm:p-9">
+                    <div className="relative z-10">
+                      <div className="flex items-center justify-between">
+                        <span className="font-mono text-xs tracking-[0.2em] text-neon-cyan">{item.number}</span>
+                        <span className="grid h-9 w-9 place-items-center rounded-full border border-neon-cyan/10 text-neon-cyan/50 transition-all duration-500 group-hover:rotate-45 group-hover:border-neon-cyan/30 group-hover:text-neon-cyan">↗</span>
+                      </div>
+                      <h3 className="mt-8 font-display text-2xl font-semibold tracking-[-0.025em] text-white">{item.title}</h3>
+                      <p className="mt-4 text-[0.95rem] leading-7 text-white/52">{item.body}</p>
+                    </div>
+                  </Card>
                 </Reveal>
               ))}
             </div>
@@ -221,8 +232,8 @@ export default function AboutPage() {
                 <Reveal delay={100}>
                   <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
                     {capabilities.map((item) => (
-                      <li key={item} className="flex items-center gap-3 rounded-xl border border-[#ffffff]/10 bg-[#ffffff]/[0.045] px-4 py-3 text-sm text-[#ffffff]/75">
-                        <span className="text-[#ff8ca5]">↗</span>{item}
+                      <li key={item} className="group flex items-center gap-3 rounded-xl border border-[#ffffff]/10 bg-[#ffffff]/[0.045] px-4 py-3 text-sm text-[#ffffff]/75 transition-all duration-300 hover:translate-x-1 hover:border-[#ff8ca5]/35 hover:bg-[#ffffff]/[0.08]">
+                        <span className="text-[#ff8ca5] transition-transform duration-300 group-hover:rotate-45">↗</span>{item}
                       </li>
                     ))}
                   </ul>
