@@ -13,9 +13,9 @@ export function Testimonials() {
           title={<>What clients say after we <span className="text-gradient">ship.</span></>}
           lead="Verified feedback from clients who hired me through Upwork."
         />
-        <div className="mt-14 grid gap-4 md:grid-cols-2">
+        <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((item, index) => (
-            <Reveal key={item.name} delay={index * 80} className={`h-full ${index === testimonials.length - 1 && testimonials.length % 2 === 1 ? "md:col-span-2" : ""}`}>
+            <Reveal key={item.name} delay={index * 80} className={`h-full ${index === testimonials.length - 1 ? "md:col-span-2 lg:col-span-3" : ""}`}>
               <article className="flex h-full flex-col rounded-2xl border border-neon-cyan/15 bg-[#ffffff] p-7 shadow-[0_18px_50px_-34px_rgba(119,12,38,0.32)]">
                 <span aria-hidden className="font-serif text-5xl leading-none text-neon-cyan/20">“</span>
                 <blockquote className="mt-3 flex-1 text-[1rem] leading-7 text-white/60">{item.quote}</blockquote>
