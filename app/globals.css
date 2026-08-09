@@ -148,6 +148,7 @@
 
 .hero-title-line-top { animation-name: hero-title-from-top; animation-delay: 0.12s; }
 .hero-title-line-bottom { animation-name: hero-title-from-bottom; animation-delay: 0.28s; }
+.hero-title-text-bottom { transform: scaleX(0.985); }
 
 .hero-service-left,
 .hero-service-right {

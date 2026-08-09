@@ -47,10 +47,10 @@ export function Hero() {
         <div className="mx-auto w-full max-w-[55rem] text-center">
           <h1 className="grid w-full gap-2 font-display text-[clamp(1.35rem,5.1vw,4.5rem)] font-semibold uppercase leading-[0.98] tracking-[-0.045em] text-[#ffffff] [text-shadow:0_2px_24px_rgba(0,0,0,0.58)] sm:gap-3">
             <span className="hero-title-line-top block whitespace-nowrap">
-              Built in the right stack.
+              <span className="hero-title-text-top inline-block">Built in the right stack.</span>
             </span>
-            <span className="hero-title-line-bottom block whitespace-nowrap text-[1.12em] tracking-[-0.055em]">
-              Shipped when promised.
+            <span className="hero-title-line-bottom block whitespace-nowrap">
+              <span className="hero-title-text-bottom inline-block">Shipped when promised.</span>
             </span>
           </h1>
         </div>
