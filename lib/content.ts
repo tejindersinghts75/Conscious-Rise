@@ -1,4 +1,5 @@
 export { siteConfig as site } from "@/config/site";
+export { projects, type Project } from "@/data/projects";
 
 export const nav = [
   { label: "About", href: "/about" },
@@ -147,95 +148,6 @@ export const process = [
     title: "Launch & support",
     body: "Performance pass, SEO checks, analytics, cross-browser QA and deployment. Then a handover walkthrough and 30 days of post-launch support.",
     duration: "Launch week",
-  },
-];
-
-export type Project = {
-  slug: string;
-  title: string;
-  url: string;
-  image: string;
-  platform: "Framer" | "Next.js" | "Webflow";
-  description: string;
-  featured?: boolean;
-};
-
-export const projects: Project[] = [
-  {
-    slug: "eleusis-mind",
-    title: "Eleusis Mind",
-    url: "https://eleusismind.com/",
-    image: "/assets/work/eleusis-mind.jpg",
-    platform: "Framer",
-    description: "A refined, immersive digital experience for a pioneering consciousness research and psychedelic immersion centre.",
-    featured: true,
-  },
-  {
-    slug: "kris-kelly",
-    title: "Kris Kelly",
-    url: "https://www.kriskelly.co/",
-    image: "/assets/work/kris-kelly.jpg",
-    platform: "Framer",
-    description: "A cinematic personal platform bringing breathwork, music and somatic practice together in one expressive experience.",
-    featured: true,
-  },
-  {
-    slug: "meagan-perkins",
-    title: "Meagan Perkins",
-    url: "https://meaganperkins.co/",
-    image: "/assets/work/meagan-perkins.jpg",
-    platform: "Framer",
-    description: "A warm editorial website for Rooted Regeneration, pairing a grounded visual system with clear programme pathways.",
-  },
-  {
-    slug: "insight-funders",
-    title: "Insight Funders",
-    url: "https://insightfunders.com/",
-    image: "/assets/work/insight-funders.jpg",
-    platform: "Framer",
-    description: "A sharp, product-led site for an AI-powered lending marketplace connecting businesses with private credit.",
-    featured: true,
-  },
-  {
-    slug: "leafy-plate",
-    title: "Leafy Plate",
-    url: "https://www.leafyplate.co/",
-    image: "/assets/work/leafy-plate.jpg",
-    platform: "Next.js",
-    description: "A fresh meal-delivery experience with plan discovery, subscriptions and a clean, conversion-focused ordering journey.",
-    featured: true,
-  },
-  {
-    slug: "elite-b-car",
-    title: "Elite B Car",
-    url: "https://www.elitebcar.com/",
-    image: "/assets/work/elite-b-car.jpg",
-    platform: "Next.js",
-    description: "A premium chauffeur-service website for New York travel, corporate transport and special-event bookings.",
-  },
-  {
-    slug: "elysium-experiential-real-estate",
-    title: "Elysium Experiential Real Estate",
-    url: "https://live.elysiumcommunities.com/experiential-real-estate",
-    image: "/assets/work/elysium-experiential.jpg",
-    platform: "Next.js",
-    description: "An immersive launch experience introducing Elysium’s vision for community-led experiential real estate.",
-  },
-  {
-    slug: "elysium-communities",
-    title: "Elysium Communities",
-    url: "https://www.elysiumcommunities.com/",
-    image: "/assets/work/elysium-communities.jpg",
-    platform: "Webflow",
-    description: "A narrative-led brand website for a new model of experiential microcities built around wellness and belonging.",
-  },
-  {
-    slug: "savage-and-saint",
-    title: "Savage & Saint",
-    url: "https://savageandsaint.com/",
-    image: "/assets/work/savage-and-saint.jpg",
-    platform: "Framer",
-    description: "A bold, character-rich platform for a global men’s mentoring collective focused on vitality, excellence and freedom.",
   },
 ];
 

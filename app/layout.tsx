@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from "next";
-import { hasRealSiteUrl, siteConfig as site } from "@/config/site";
+import { siteConfig as site } from "@/config/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(hasRealSiteUrl ? site.url : "https://consciousrise2.vercel.app"),
+  metadataBase: new URL(site.url),
   title: {
     default: `${site.name} — Next.js, React, Webflow, Framer & WordPress Studio`,
     template: `%s — ${site.name}`,
@@ -53,6 +53,8 @@ const jsonLd = {
   description: site.description,
   url: site.url,
   email: site.email,
+  founder: { "@type": "Person", name: site.ownerName },
+  sameAs: [site.upworkUrl, ...Object.values(site.social)].filter(Boolean),
   areaServed: "Worldwide",
   knowsAbout: [
     "Next.js",

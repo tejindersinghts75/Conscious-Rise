@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer";
 import { Nav } from "@/components/nav";
 import { Card, Eyebrow, Reveal } from "@/components/ui/primitives";
 import { stats } from "@/data/stats";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "About Tejinder Singh",
@@ -66,7 +67,7 @@ export default function AboutPage() {
                 </Reveal>
                 <Reveal delay={70}>
                   <h1 className="mt-6 max-w-3xl font-display text-[clamp(3.25rem,7vw,6.6rem)] font-semibold leading-[0.94] tracking-[-0.055em] text-white">
-                    Hi, I&apos;m <span className="text-gradient">Tejinder.</span>
+                    Hi, I&apos;m <span className="text-gradient">{siteConfig.ownerName}.</span>
                   </h1>
                 </Reveal>
                 <Reveal delay={130}>
@@ -107,8 +108,8 @@ export default function AboutPage() {
                   <div className="relative overflow-hidden rounded-[2rem] border border-neon-cyan/20 bg-[#ffffff] p-2 shadow-[0_30px_90px_-40px_rgba(119,12,38,0.45)]">
                     <div className="relative aspect-[5/6.4] overflow-hidden rounded-[1.55rem] bg-[#f5efeb]">
                       <Image
-                        src="/assets/tejinder-singh.jpg"
-                        alt="Tejinder Singh, web developer and founder of Conscious Rise"
+                        src={siteConfig.ownerPhoto}
+                        alt={`${siteConfig.ownerName}, web developer and owner of Conscious Rise`}
                         fill
                         sizes="(max-width: 1024px) 90vw, 42vw"
                         className="object-cover object-top"
@@ -116,7 +117,7 @@ export default function AboutPage() {
                       <div aria-hidden className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#3f0c19]/45 to-transparent" />
                       <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-4 rounded-2xl border border-[#ffffff]/20 bg-[#4a0d1d]/90 p-4 shadow-xl backdrop-blur-md">
                         <div>
-                          <p className="font-display text-lg font-semibold text-[#ffffff]">Tejinder Singh</p>
+                          <p className="font-display text-lg font-semibold text-[#ffffff]">{siteConfig.ownerName}</p>
                           <p className="mt-0.5 text-xs text-[#ffffff]/60">Web developer · Conscious Rise</p>
                         </div>
                         <span className="flex shrink-0 items-center gap-2 rounded-full bg-[#fff5f6] px-3 py-2 font-mono text-[0.62rem] uppercase tracking-wider text-white/65">

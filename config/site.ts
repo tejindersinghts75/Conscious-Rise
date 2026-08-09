@@ -1,9 +1,11 @@
-const canonicalPlaceholder = "https://{{CANONICAL_DOMAIN}}";
+const defaultCanonicalUrl = "https://consciousrise2.vercel.app";
 
 export const siteConfig = {
   name: "Conscious Rise",
+  ownerName: "Tejinder Singh",
+  ownerPhoto: "/assets/tejinder-singh.jpg",
   tagline: "Web engineering studio",
-  url: process.env.NEXT_PUBLIC_SITE_URL || canonicalPlaceholder,
+  url: process.env.NEXT_PUBLIC_SITE_URL || defaultCanonicalUrl,
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "info@consciousrise.in",
   upworkUrl:
     process.env.NEXT_PUBLIC_UPWORK_PROFILE_URL ||
@@ -11,11 +13,14 @@ export const siteConfig = {
   bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL || "{{BOOKING_URL}}",
   contactFormEndpoint:
     process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT || "{{CONTACT_FORM_ENDPOINT}}",
+  social: {
+    linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL || "",
+    instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL || "",
+  },
   description: "Conscious Rise builds fast, maintainable Next.js, Webflow, Framer and WordPress websites for startups and agencies in the UK and US.",
-  locationLine: "Based in India, working overlapping hours with UK and US Eastern time. I reply to every enquiry within one business day.",
+  locationLine: "Based in India, working overlapping hours with UK and US Eastern time. Every enquiry gets a reply within one business day.",
 } as const;
 
-export const hasRealSiteUrl = !siteConfig.url.includes("{{");
 export const hasBookingUrl = !siteConfig.bookingUrl.includes("{{");
 
 export function absoluteUrl(path = "/") {

@@ -8,11 +8,6 @@ import { hasBookingUrl } from "@/config/site";
 const budgets = ["< $2k", "$2k – $5k", "$5k – $10k", "$10k+"];
 const timelines = ["As soon as possible", "Within 1 month", "1–3 months", "Flexible"];
 
-/**
- * No backend is wired up, so submitting opens the visitor's mail client with
- * everything pre-filled. To use a real endpoint instead, replace the body of
- * `handleSubmit` with a fetch to your form service or a Next.js route handler.
- */
 export function Contact() {
   const [service, setService] = useState(services[0].id);
   const [budget, setBudget] = useState(budgets[1]);
@@ -20,11 +15,22 @@ export function Contact() {
   const [sent, setSent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setError("");
     const data = new FormData(event.currentTarget);
+    const name = String(data.get("name") ?? "").trim();
+    const email = String(data.get("email") ?? "").trim();
+    const message = String(data.get("message") ?? "").trim();
+    const nextErrors: Record<string, string> = {};
+    if (!name) nextErrors.name = "Please enter your name.";
+    if (!email) nextErrors.email = "Please enter your email address.";
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) nextErrors.email = "Please enter a valid email address.";
+    if (!message) nextErrors.message = "Please tell me a little about your project.";
+    setFieldErrors(nextErrors);
+    if (Object.keys(nextErrors).length) return;
     if (data.get("website")) {
       setSent(true);
       return;
@@ -164,19 +170,21 @@ export function Contact() {
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form onSubmit={handleSubmit} noValidate className="space-y-5">
                   <div className="absolute -left-[9999px]" aria-hidden="true">
                     <label htmlFor="website">Website</label>
                     <input id="website" name="website" tabIndex={-1} autoComplete="off" />
                   </div>
                   <div className="grid gap-5 sm:grid-cols-2">
-                    <Field label="Name" name="name" placeholder="Jane Cooper" required />
+                    <Field label="Name" name="name" placeholder="Jane Cooper" required error={fieldErrors.name} onInput={() => setFieldErrors((current) => ({ ...current, name: "" }))} />
                     <Field
                       label="Email"
                       name="email"
                       type="email"
                       placeholder="jane@company.com"
                       required
+                      error={fieldErrors.email}
+                      onInput={() => setFieldErrors((current) => ({ ...current, email: "" }))}
                     />
                   </div>
 
@@ -196,7 +204,7 @@ export function Contact() {
                           className={cx(
                             "rounded-full border px-3.5 py-2 text-[0.8125rem] transition-all duration-300",
                             service === s.id
-                              ? "border-neon-cyan/50 bg-neon-cyan/12 text-neon-cyan"
+                              ? "border-neon-cyan/50 bg-neon-cyan/12 text-[#760c26]"
                               : "border-white/10 bg-[#ffffff] text-white/55 hover:border-white/25 hover:text-white",
                           )}
                         >
@@ -251,9 +259,13 @@ export function Contact() {
                       name="message"
                       rows={4}
                       required
+                      aria-invalid={Boolean(fieldErrors.message)}
+                      aria-describedby={fieldErrors.message ? "message-error" : undefined}
+                      onInput={() => setFieldErrors((current) => ({ ...current, message: "" }))}
                       placeholder="What are you building, and what does success look like?"
                       className="w-full resize-none rounded-xl border border-white/10 bg-[#ffffff] px-4 py-3.5 text-[0.9375rem] text-white placeholder:text-white/25 transition-colors duration-300 focus:border-neon-cyan/50 focus:outline-none"
                     />
+                    {fieldErrors.message ? <p id="message-error" role="alert" className="mt-2 text-sm font-medium text-red-800">{fieldErrors.message}</p> : null}
                   </div>
 
                   <button
@@ -290,12 +302,16 @@ function Field({
   type = "text",
   placeholder,
   required,
+  error,
+  onInput,
 }: {
   label: string;
   name: string;
   type?: string;
   placeholder?: string;
   required?: boolean;
+  error?: string;
+  onInput?: () => void;
 }) {
   return (
     <div>
@@ -311,9 +327,13 @@ function Field({
         name={name}
         type={type}
         required={required}
+        aria-invalid={Boolean(error)}
+        aria-describedby={error ? `${name}-error` : undefined}
+        onInput={onInput}
         placeholder={placeholder}
         className="w-full rounded-xl border border-white/10 bg-[#ffffff] px-4 py-3.5 text-[0.9375rem] text-white placeholder:text-white/25 transition-colors duration-300 focus:border-neon-cyan/50 focus:outline-none"
       />
+      {error ? <p id={`${name}-error`} role="alert" className="mt-2 text-sm font-medium text-red-800">{error}</p> : null}
     </div>
   );
 }

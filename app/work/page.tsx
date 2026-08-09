@@ -51,7 +51,7 @@ export default function WorkPage() {
             <div className="grid gap-5 md:grid-cols-2">
               {projects.map((project, index) => (
                 <Reveal key={project.slug} delay={(index % 2) * 90} className="h-full">
-                  <ProjectCard project={project} priority={index < 2} />
+                  <ProjectCard project={project} priority={index < 2} headingLevel={2} />
                 </Reveal>
               ))}
             </div>

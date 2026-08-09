@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { hasBookingUrl, siteConfig } from "@/config/site";
 
 const leftServices = [
   ["develop", "Develop", "Scalable web solutions built for performance and growth."],
@@ -45,18 +44,15 @@ export function Hero() {
       </div>
 
       <div className="container-x pointer-events-none absolute inset-0 z-20 flex items-center justify-center pt-24">
-        <div className="pointer-events-auto mx-auto max-w-3xl text-center">
-          <p className="font-mono text-[0.65rem] uppercase tracking-[0.22em] text-[#ffb0c0]">Conscious Rise · Web development studio</p>
-          <h1 className="mt-5 font-display text-[clamp(2.5rem,5.3vw,5rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-[#ffffff] [text-shadow:0_2px_24px_rgba(0,0,0,0.55)]">
-            Figma files turned into fast, maintainable websites.
+        <div className="mx-auto w-full max-w-[55rem] text-center">
+          <h1 className="grid w-full gap-2 font-display text-[clamp(1.35rem,5.1vw,4.5rem)] font-semibold uppercase leading-[0.98] tracking-[-0.045em] text-[#ffffff] [text-shadow:0_2px_24px_rgba(0,0,0,0.58)] sm:gap-3">
+            <span className="hero-title-line-top block whitespace-nowrap">
+              Built in the right stack.
+            </span>
+            <span className="hero-title-line-bottom block whitespace-nowrap text-[1.12em] tracking-[-0.055em]">
+              Shipped when promised.
+            </span>
           </h1>
-          <p className="mx-auto mt-5 max-w-2xl text-[clamp(0.95rem,1.5vw,1.12rem)] leading-relaxed text-[rgba(255,255,255,0.76)]">
-            Next.js, Webflow, Framer and WordPress builds for startups and agencies in the UK and US. Nine live projects, fixed scope, shipped on time.
-          </p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <a href="/contact" className="inline-flex min-h-12 items-center rounded-full bg-[#991b3b] px-6 py-3 text-sm font-semibold text-[#ffffff] shadow-xl transition-all hover:-translate-y-0.5 hover:bg-[#bc244a]">Start a project</a>
-            {hasBookingUrl ? <a href={siteConfig.bookingUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center rounded-full border border-[#ffffff]/30 bg-[#070912]/35 px-6 py-3 text-sm font-semibold text-[#ffffff] backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-[#ffffff]/60">Book a 20 minute call</a> : null}
-          </div>
         </div>
       </div>
 

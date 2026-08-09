@@ -24,7 +24,7 @@ export function Services() {
               <Card className="flex h-full flex-col p-7">
                 <div className="relative z-10 flex h-full flex-col">
                   <div className="flex items-start justify-between gap-4">
-                    <span className="font-mono text-[0.6875rem] tracking-[0.2em] text-neon-cyan/70">
+                    <span className="font-mono text-[0.6875rem] tracking-[0.2em] text-[#8f1731]">
                       {service.glyph}
                     </span>
                     <span className="flex h-8 w-8 items-center justify-center rounded-full border border-white/[0.08] text-white/25 transition-all duration-500 group-hover:border-neon-cyan/40 group-hover:text-neon-cyan">

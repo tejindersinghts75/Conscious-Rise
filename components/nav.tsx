@@ -43,8 +43,8 @@ export function Nav() {
                 href={site.upworkUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="View Upwork profile, 38 projects and 2,170+ hours"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-[#ffffff] shadow-lg transition-transform hover:scale-105 sm:h-12 sm:w-12"
+                aria-label="View Upwork profile"
+                className="flex h-11 items-center justify-center gap-2 rounded-full border border-white/20 bg-[#ffffff] px-3 shadow-lg transition-transform hover:scale-105 sm:h-12"
               >
                 <Image
                   src="/assets/upwork-logo.svg"
@@ -53,6 +53,7 @@ export function Nav() {
                   height={25}
                   className="h-6 w-6 object-contain"
                 />
+                <span className="hidden text-xs font-semibold text-[#4a0d1d] lg:inline">Upwork profile</span>
               </a>
               <a
                 href="/contact"

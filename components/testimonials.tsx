@@ -5,6 +5,11 @@ import { Reveal, SectionHeading } from "@/components/ui/primitives";
 const isPlaceholder = (value?: string) => !value || value.startsWith("{{");
 
 export function Testimonials() {
+  const visibleTestimonials = testimonials.filter(
+    (item) => ![item.quote, item.name, item.role].some(isPlaceholder),
+  );
+  if (!visibleTestimonials.length) return null;
+
   return (
     <section className="relative pt-24 sm:pt-28">
       <div className="container-x">
@@ -14,8 +19,8 @@ export function Testimonials() {
           lead="Verified feedback from clients who hired me through Upwork."
         />
         <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map((item, index) => (
-            <Reveal key={item.name} delay={index * 80} className={`h-full ${index === testimonials.length - 1 ? "md:col-span-2 lg:col-span-3" : ""}`}>
+          {visibleTestimonials.map((item, index) => (
+            <Reveal key={item.name} delay={index * 80} className={`h-full ${index === visibleTestimonials.length - 1 && visibleTestimonials.length > 3 ? "md:col-span-2 lg:col-span-3" : ""}`}>
               <article className="flex h-full flex-col rounded-2xl border border-neon-cyan/15 bg-[#ffffff] p-7 shadow-[0_18px_50px_-34px_rgba(119,12,38,0.32)]">
                 <span aria-hidden className="font-serif text-5xl leading-none text-neon-cyan/20">“</span>
                 <blockquote className="mt-3 flex-1 text-[1rem] leading-7 text-white/60">{item.quote}</blockquote>
@@ -23,11 +28,12 @@ export function Testimonials() {
                   {!isPlaceholder(item.photo) ? (
                     <Image src={item.photo!} alt="" width={44} height={44} className="h-11 w-11 rounded-full object-cover" />
                   ) : (
-                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[#fff1f4] font-display text-sm font-semibold text-white">T{index + 1}</span>
+                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[#fff1f4] font-display text-sm font-semibold text-white">{item.name.split(/\s+/).map((part) => part[0]).join("").slice(0, 2).toUpperCase()}</span>
                   )}
                   <div className="min-w-0">
                     <p className="truncate text-sm font-semibold text-white">{item.name}</p>
                     <p className="mt-0.5 text-xs text-white/40">{item.role}{item.company ? ` · ${item.company}` : ""}</p>
+                    {item.projectHref ? <a href={item.projectHref} className="mt-1 inline-flex text-xs font-medium text-neon-cyan underline-offset-4 hover:underline">Related project</a> : null}
                   </div>
                 </div>
               </article>

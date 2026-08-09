@@ -20,9 +20,13 @@ export function Footer() {
               A great website should look great, load fast, and scale as your
               business grows. That&apos;s the whole job.
             </p>
+            <div className="mt-6 flex items-center gap-3">
+              <Image src={site.ownerPhoto} alt={`${site.ownerName}, owner of ${site.name}`} width={44} height={44} className="h-11 w-11 rounded-full object-cover object-top" />
+              <p className="text-sm text-white/60">Run by <span className="font-semibold text-white">{site.ownerName}</span></p>
+            </div>
             <a
               href={`mailto:${site.email}`}
-              className="mt-6 inline-flex items-center gap-2.5 text-[0.9375rem] font-medium text-white transition-colors hover:text-neon-cyan"
+              className="mt-5 inline-flex items-center gap-2.5 text-[0.9375rem] font-medium text-white transition-colors hover:text-neon-cyan"
             >
               {site.email}
               <svg viewBox="0 0 16 16" fill="none" aria-hidden className="h-3.5 w-3.5">

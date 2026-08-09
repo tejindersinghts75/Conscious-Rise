@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { LegalPage } from "@/components/legal-page";
-export const metadata: Metadata = { title: "Terms of Use", description: "Terms for using the Conscious Rise website.", alternates: { canonical: "/terms" } };
+export const metadata: Metadata = { title: "Terms of Use", description: "Terms for using the Conscious Rise website.", alternates: { canonical: "/terms" }, openGraph: { url: "/terms", title: "Terms of Use — Conscious Rise", description: "Terms for using the Conscious Rise website.", images: ["/og-image.jpg"] } };
 export default function TermsPage() { return <LegalPage title="Terms of use" updated="8 August 2026" sections={[
   ["Please review these terms", "These standard website terms are a practical starting point, not legal advice. Have them reviewed by a qualified legal professional before relying on them."],
   ["Website use", "You may browse this website and contact Conscious Rise for legitimate business purposes. You must not misuse the website, attempt unauthorised access or interfere with its operation."],

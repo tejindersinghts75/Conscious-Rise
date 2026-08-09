@@ -127,6 +127,28 @@
   }
 }
 
+@keyframes hero-title-from-top {
+  from { opacity: 0; transform: translate3d(0, -34px, 0); filter: blur(7px); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); filter: blur(0); }
+}
+
+@keyframes hero-title-from-bottom {
+  from { opacity: 0; transform: translate3d(0, 34px, 0); filter: blur(7px); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); filter: blur(0); }
+}
+
+.hero-title-line-top,
+.hero-title-line-bottom {
+  opacity: 0;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity, filter;
+}
+
+.hero-title-line-top { animation-name: hero-title-from-top; animation-delay: 0.12s; }
+.hero-title-line-bottom { animation-name: hero-title-from-bottom; animation-delay: 0.28s; }
+
 .hero-service-left,
 .hero-service-right {
   opacity: 0;
@@ -347,6 +369,12 @@
     opacity: 1 !important;
     transform: none !important;
   }
+  .hero-title-line-top,
+  .hero-title-line-bottom {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
 }
 
 /* The light palette maps Tailwind's white token to burgundy. Keep muted copy
@@ -357,6 +385,7 @@
 .text-white\/40,
 .text-white\/45,
 .text-white\/50,
+.text-white\/52,
 .text-white\/55,
 .text-white\/58,
 .text-white\/60 {
