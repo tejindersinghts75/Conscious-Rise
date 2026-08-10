@@ -6,13 +6,15 @@ import { Nav } from "@/components/nav";
 import { Card, Eyebrow, Reveal } from "@/components/ui/primitives";
 import { stats } from "@/data/stats";
 import { siteConfig } from "@/config/site";
+import { StructuredData } from "@/components/structured-data";
 
 export const metadata: Metadata = {
   title: "About Tejinder Singh",
   description:
     "Meet Tejinder Singh, the web developer behind Conscious Rise—building thoughtful, fast and maintainable websites since 2019.",
   alternates: { canonical: "/about" },
-  openGraph: { url: "/about", images: ["/og-image.jpg"] },
+  openGraph: { title: "About Tejinder Singh — Conscious Rise", description: "Meet Tejinder Singh, the developer behind Conscious Rise, building fast and maintainable websites since 2019.", url: "/about", images: ["/og-image.jpg"] },
+  twitter: { title: "About Tejinder Singh — Conscious Rise", description: "Meet Tejinder Singh, the developer behind Conscious Rise.", images: ["/og-image.jpg"] },
 };
 
 const facts = stats.slice(0, 3).map((stat) => [
@@ -52,6 +54,19 @@ export default function AboutPage() {
   return (
     <>
       <Backdrop />
+      <StructuredData data={{
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        url: `${siteConfig.url}/about`,
+        mainEntity: { "@id": `${siteConfig.url}/#founder` },
+        breadcrumb: {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.url },
+            { "@type": "ListItem", position: 2, name: "About", item: `${siteConfig.url}/about` },
+          ],
+        },
+      }} />
       <Nav />
 
       <main id="main" className="overflow-hidden pt-24">

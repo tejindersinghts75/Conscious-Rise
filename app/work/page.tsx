@@ -6,18 +6,36 @@ import { Nav } from "@/components/nav";
 import { ProjectCard } from "@/components/work";
 import { Eyebrow, Reveal } from "@/components/ui/primitives";
 import { projects } from "@/lib/content";
+import { siteConfig } from "@/config/site";
+import { StructuredData } from "@/components/structured-data";
 
 export const metadata: Metadata = {
   title: "Work",
   description: "Explore live websites built by Conscious Rise across Framer, Next.js and Webflow.",
   alternates: { canonical: "/work" },
-  openGraph: { url: "/work", images: ["/og-image.jpg"] },
+  openGraph: { title: "Web Development Portfolio — Conscious Rise", description: "Explore nine live Framer, Next.js and Webflow projects built by Conscious Rise.", url: "/work", images: ["/og-image.jpg"] },
+  twitter: { title: "Web Development Portfolio — Conscious Rise", description: "Explore nine live Framer, Next.js and Webflow projects.", images: ["/og-image.jpg"] },
 };
 
 export default function WorkPage() {
   return (
     <>
       <Backdrop />
+      <StructuredData data={{
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: "Conscious Rise work",
+        url: `${siteConfig.url}/work`,
+        mainEntity: {
+          "@type": "ItemList",
+          itemListElement: projects.map((project, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: project.name,
+            url: `${siteConfig.url}/work/${project.slug}`,
+          })),
+        },
+      }} />
       <Interactions />
       <Nav />
       <main id="main" className="overflow-hidden pt-24">

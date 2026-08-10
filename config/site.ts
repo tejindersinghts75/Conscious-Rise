@@ -1,4 +1,4 @@
-const defaultCanonicalUrl = "https://consciousrise2.vercel.app";
+const defaultCanonicalUrl = "https://www.consciousrise.in";
 
 export const siteConfig = {
   name: "Conscious Rise",
@@ -13,6 +13,8 @@ export const siteConfig = {
   bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL || "{{BOOKING_URL}}",
   contactFormEndpoint:
     process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT || "{{CONTACT_FORM_ENDPOINT}}",
+  googleAnalyticsId: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "",
+  googleSiteVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
   social: {
     linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL || "",
     instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL || "",
