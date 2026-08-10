@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   verification: site.googleSiteVerification
     ? { google: site.googleSiteVerification }
     : undefined,
-  icons: { icon: "/icon.png", apple: "/apple-icon.png" },
+  icons: { icon: "/assets/conscious-rise-logo-black.svg", apple: "/assets/conscious-rise-logo-black.svg" },
   manifest: "/manifest.webmanifest",
 };
 
@@ -76,7 +76,7 @@ const jsonLd = {
       name: site.name,
       description: site.description,
       url: site.url,
-      logo: `${site.url}/assets/conscious-rise-logo.png`,
+      logo: `${site.url}/assets/conscious-rise-logo-black.svg`,
       image: `${site.url}/og-image.jpg`,
       email: site.email,
       founder: { "@id": `${site.url}/#founder` },

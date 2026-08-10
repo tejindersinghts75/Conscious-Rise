@@ -1,12 +1,28 @@
 "use client";
 
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { nav, site } from "@/lib/content";
 import { cx } from "@/components/ui/primitives";
 
 export function Nav() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [overDarkBackground, setOverDarkBackground] = useState(pathname === "/");
+
+  useEffect(() => {
+    const updateLogoContrast = () => {
+      setOverDarkBackground(pathname === "/" && window.scrollY < window.innerHeight - 112);
+    };
+    updateLogoContrast();
+    window.addEventListener("scroll", updateLogoContrast, { passive: true });
+    window.addEventListener("resize", updateLogoContrast);
+    return () => {
+      window.removeEventListener("scroll", updateLogoContrast);
+      window.removeEventListener("resize", updateLogoContrast);
+    };
+  }, [pathname]);
 
   // Lock body scroll while the mobile sheet is open.
   useEffect(() => {
@@ -28,13 +44,13 @@ export function Nav() {
         <div className="flex h-24 items-center justify-between gap-4">
             <a href="/" className="pointer-events-auto block" aria-label={`${site.name} home`}>
               <Image
-                src="/assets/conscious-rise-logo.png"
+                src={open || overDarkBackground ? "/assets/conscious-rise-logo-white.svg" : "/assets/conscious-rise-logo-black.svg"}
                 alt={`${site.name} logo`}
                 width={72}
                 height={72}
                 priority
                 fetchPriority="high"
-                className="h-16 w-16 rounded-full object-cover drop-shadow-[0_6px_18px_rgba(0,0,0,0.55)] sm:h-[4.5rem] sm:w-[4.5rem]"
+                className="h-16 w-16 object-contain drop-shadow-[0_6px_18px_rgba(0,0,0,0.4)] transition-opacity duration-300 sm:h-[4.5rem] sm:w-[4.5rem]"
               />
             </a>
 

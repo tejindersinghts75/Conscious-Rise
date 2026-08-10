@@ -10,8 +10,8 @@ export default function manifest(): MetadataRoute.Manifest {
     background_color: "#ffffff",
     theme_color: "#4a0d1d",
     icons: [
-      { src: "/icon.png", sizes: "512x512", type: "image/png" },
-      { src: "/apple-icon.png", sizes: "512x512", type: "image/png" },
+      { src: "/assets/conscious-rise-logo-black.svg", sizes: "any", type: "image/svg+xml", purpose: "any" },
+      { src: "/assets/conscious-rise-logo-black.svg", sizes: "any", type: "image/svg+xml", purpose: "maskable" },
     ],
   };
 }

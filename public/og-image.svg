@@ -9,7 +9,7 @@
   <rect width="1200" height="630" fill="url(#bg)"/>
   <circle cx="1120" cy="40" r="260" fill="none" stroke="#d2042d" stroke-opacity=".13" stroke-width="2"/>
   <circle cx="1120" cy="40" r="198" fill="none" stroke="#d2042d" stroke-opacity=".1"/>
-  <image href="assets/conscious-rise-logo.png" x="82" y="62" width="68" height="68"/>
+  <image href="assets/conscious-rise-logo-black.svg" x="82" y="62" width="68" height="68"/>
   <text x="170" y="93" fill="#4a0d1d" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Conscious Rise</text>
   <text x="170" y="119" fill="#9a6673" font-family="Arial, Helvetica, sans-serif" font-size="14" letter-spacing="2">WEB ENGINEERING STUDIO</text>
   <text x="82" y="288" fill="#4a0d1d" font-family="Arial, Helvetica, sans-serif" font-size="66" font-weight="700" letter-spacing="-3">Figma files turned into fast,</text>
