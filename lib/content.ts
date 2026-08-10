@@ -21,59 +21,59 @@ export type Service = {
 
 export const services: Service[] = [
   {
-    id: "next-react",
-    title: "Next.js & React Web Applications",
+    id: "website-development",
+    title: "Website Design & Development",
     blurb:
-      "Server-rendered, type-safe applications built on the App Router — dashboards, portals and products that stay fast as they grow.",
-    points: ["App Router & RSC", "Auth & dashboards", "Firebase / REST backends"],
+      "Modern, responsive websites designed around your audience, business goals and a clear path from first visit to enquiry.",
+    points: ["Marketing & business websites", "Responsive design", "Conversion-focused journeys"],
     glyph: "01",
   },
   {
-    id: "webflow",
-    title: "Webflow Website Development",
+    id: "no-code",
+    title: "No-Code & Low-Code Solutions",
     blurb:
-      "Pixel-accurate Webflow builds with clean class systems and a CMS your marketing team can actually run without a developer.",
-    points: ["Client-first classes", "CMS collections", "Interactions & GSAP"],
+      "Flexible websites and internal tools that your team can update without depending on a developer for every small change.",
+    points: ["Editable content systems", "Rapid launches", "Team-friendly handover"],
     glyph: "02",
   },
   {
-    id: "framer",
-    title: "Framer Design & Development",
+    id: "web-applications",
+    title: "Custom Web Applications",
     blurb:
-      "Motion-led Framer sites that feel alive on every scroll — designed and built in one place, launched in days rather than months.",
-    points: ["Scroll & hover motion", "Custom code components", "CMS + localisation"],
+      "Purpose-built portals, dashboards and booking experiences shaped around the way your customers and team actually work.",
+    points: ["Dashboards & portals", "Booking systems", "Custom business tools"],
     glyph: "03",
   },
   {
-    id: "wordpress",
-    title: "WordPress & WooCommerce",
+    id: "ai-automation",
+    title: "AI Automation",
     blurb:
-      "Custom themes and stores built for editors — no page-builder bloat, no plugin sprawl, no mystery slowdowns six months later.",
-    points: ["Custom themes / ACF", "WooCommerce stores", "Headless WP + Next.js"],
+      "Practical AI workflows that handle repetitive work, organise information and help your team respond and operate faster.",
+    points: ["AI-assisted workflows", "Lead & content automation", "Human-reviewed outputs"],
     glyph: "04",
   },
   {
-    id: "figma-to-code",
-    title: "Figma to Production",
+    id: "integrations",
+    title: "API & System Integrations",
     blurb:
-      "Hand off the file, get back the live site. Figma translated to Next.js, React, Webflow, Framer or WordPress — down to the last 4px.",
-    points: ["Design system parity", "Responsive at every breakpoint", "Component libraries"],
+      "Your payments, CRM, booking tools, forms and internal systems connected so information moves without manual copying.",
+    points: ["CRM & form connections", "Payments & bookings", "Webhooks & data sync"],
     glyph: "05",
   },
   {
-    id: "api",
-    title: "API Integrations",
+    id: "ecommerce",
+    title: "E-commerce Development",
     blurb:
-      "Payments, CRMs, bookings, AI endpoints and internal services wired in cleanly, with error states and edge cases handled.",
-    points: ["Stripe & payments", "CRM + webhooks", "Third-party & AI APIs"],
+      "Clear, dependable buying experiences for products, services and subscriptions—from discovery through payment and fulfilment.",
+    points: ["Online stores", "Subscriptions & payments", "Custom purchase journeys"],
     glyph: "06",
   },
   {
-    id: "performance",
-    title: "Performance Optimization",
+    id: "performance-seo",
+    title: "Performance & SEO",
     blurb:
-      "Core Web Vitals taken seriously. Audits, image and font strategy, bundle surgery and caching until the numbers go green.",
-    points: ["Core Web Vitals", "Bundle & image audits", "Caching & edge delivery"],
+      "Technical improvements that make your website faster, easier to discover and more usable across devices and abilities.",
+    points: ["Technical SEO", "Speed & Core Web Vitals", "Analytics & accessibility"],
     glyph: "07",
   },
 ];

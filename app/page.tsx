@@ -16,11 +16,11 @@ import { faqs } from "@/lib/content";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Web Development Studio for Startups & Agencies",
+  title: "Websites, Web Applications & AI Automation",
   description: siteConfig.description,
   alternates: { canonical: "/" },
-  openGraph: { title: "Conscious Rise — Web Development Studio", description: siteConfig.description, url: "/", images: ["/og-image.jpg"] },
-  twitter: { title: "Conscious Rise — Web Development Studio", description: siteConfig.description, images: ["/og-image.jpg"] },
+  openGraph: { title: "Conscious Rise — Websites, Web Apps & AI Automation", description: siteConfig.description, url: "/", images: ["/og-image.jpg"] },
+  twitter: { title: "Conscious Rise — Websites, Web Apps & AI Automation", description: siteConfig.description, images: ["/og-image.jpg"] },
 };
 
 export default function Home() {

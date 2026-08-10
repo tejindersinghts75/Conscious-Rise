@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "Contact",
   description: "Tell Conscious Rise about your website or digital product project.",
   alternates: { canonical: "/contact" },
-  openGraph: { title: "Contact Conscious Rise", description: "Discuss a Next.js, Webflow, Framer or WordPress project with Conscious Rise.", url: "/contact", images: ["/og-image.jpg"] },
+  openGraph: { title: "Contact Conscious Rise", description: "Discuss your website, web application, automation or systems-integration project with Conscious Rise.", url: "/contact", images: ["/og-image.jpg"] },
   twitter: { title: "Contact Conscious Rise", description: "Discuss your website or web application project.", images: ["/og-image.jpg"] },
 };
 

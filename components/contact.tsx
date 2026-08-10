@@ -19,8 +19,9 @@ export function Contact() {
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const form = event.currentTarget;
     setError("");
-    const data = new FormData(event.currentTarget);
+    const data = new FormData(form);
     const name = String(data.get("name") ?? "").trim();
     const email = String(data.get("email") ?? "").trim();
     const message = String(data.get("message") ?? "").trim();
@@ -37,50 +38,30 @@ export function Contact() {
     }
     const serviceLabel = services.find((s) => s.id === service)?.title ?? service;
 
-    const body = [
-      `Name: ${data.get("name")}`,
-      `Email: ${data.get("email")}`,
-      `Company: ${data.get("company") || "—"}`,
-      `Service: ${serviceLabel}`,
-      `Budget: ${budget}`,
-      `Target timeline: ${timeline}`,
-      "",
-      "Project details:",
-      String(data.get("message") ?? ""),
-    ].join("\n");
-
-    const endpoint = site.contactFormEndpoint;
-    if (!endpoint.startsWith("{{")) {
-      try {
-        setSubmitting(true);
-        const response = await fetch(endpoint, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            name: data.get("name"), email: data.get("email"),
-            company: data.get("company"), service: serviceLabel,
-            budget, timeline, message: data.get("message"),
-          }),
-        });
-        if (!response.ok) throw new Error("Request failed");
-        setSent(true);
-        event.currentTarget.reset();
-      } catch {
-        setError("The form could not be sent. Please email me directly and I’ll reply within one business day.");
-      } finally {
-        setSubmitting(false);
-      }
-      return;
+    try {
+      setSubmitting(true);
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          email,
+          company: String(data.get("company") ?? "").trim(),
+          service: serviceLabel,
+          budget,
+          timeline,
+          message,
+          website: String(data.get("website") ?? ""),
+        }),
+      });
+      if (!response.ok) throw new Error("Request failed");
+      setSent(true);
+      form.reset();
+    } catch {
+      setError("The form could not be sent. Please email me directly at info@consciousrise.in and I’ll reply within one business day.");
+    } finally {
+      setSubmitting(false);
     }
-
-    if (site.email.startsWith("{{")) {
-      setError("The contact email still needs to be configured before this form can send enquiries.");
-      return;
-    }
-
-    window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(`New project enquiry — ${serviceLabel}`)}&body=${encodeURIComponent(body)}`;
-
-    setSent(true);
   }
 
   return (
@@ -148,11 +129,10 @@ export function Contact() {
                     </svg>
                   </span>
                   <h3 className="mt-6 font-display text-2xl font-semibold text-white">
-                    Your email is ready to send
+                    Thank you—your enquiry is in
                   </h3>
                   <p className="mt-3 max-w-sm text-[0.9375rem] leading-relaxed text-white/55">
-                    Your enquiry is ready. If your mail app opened, please press
-                    send. Otherwise, write to{" "}
+                    Your project details have been received. I&apos;ll review them and reply within one business day. You can also write to{" "}
                     <a
                       href={`mailto:${site.email}`}
                       className="font-medium text-neon-cyan underline underline-offset-4"
@@ -166,7 +146,7 @@ export function Contact() {
                     onClick={() => setSent(false)}
                     className="mt-8 text-[0.8125rem] font-medium text-white/45 underline underline-offset-4 transition-colors hover:text-white"
                   >
-                    Edit the brief
+                    Send another enquiry
                   </button>
                 </div>
               ) : (
@@ -208,7 +188,7 @@ export function Contact() {
                               : "border-white/10 bg-[#ffffff] text-white/55 hover:border-white/25 hover:text-white",
                           )}
                         >
-                          {s.title.replace(/ (Web Applications|Website Development|Design & Development|Websites & WooCommerce)$/, "")}
+                          {s.title}
                         </button>
                       ))}
                     </div>
@@ -283,8 +263,7 @@ export function Contact() {
                   {error ? <p role="alert" className="rounded-xl border border-red-300/30 bg-red-100/50 px-4 py-3 text-center text-sm text-red-900">{error}</p> : null}
 
                   <p className="text-center font-mono text-[0.6875rem] leading-relaxed text-white/30">
-                    Opens your mail app with the brief pre-filled — nothing is
-                    sent without your say-so.
+                    Your details are sent securely and used only to respond to your enquiry.
                   </p>
                 </form>
               )}

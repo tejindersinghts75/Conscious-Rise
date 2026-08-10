@@ -15,7 +15,7 @@ export function Services() {
               <span className="text-gradient">shipped.</span>
             </>
           }
-          lead="From a single landing page to a full web application — built in whichever stack genuinely fits the job, not whichever one I feel like using this month."
+          lead="From a focused website to connected systems and AI-assisted workflows—each solution is shaped around the business outcome, then built with the right tools."
         />
 
         <div className="mt-16 grid gap-4 md:grid-cols-2 lg:grid-cols-3">

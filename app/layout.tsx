@@ -6,7 +6,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — Next.js, React, Webflow, Framer & WordPress Studio`,
+    default: `${site.name} — Websites, Web Apps & AI Automation`,
     template: `%s — ${site.name}`,
   },
   description: site.description,
@@ -18,12 +18,13 @@ export const metadata: Metadata = {
   referrer: "origin-when-cross-origin",
   alternates: { canonical: site.url, languages: { "en-GB": site.url, "en-US": site.url } },
   keywords: [
-    "Next.js developer",
-    "React developer",
-    "Webflow developer",
-    "Framer developer",
-    "WordPress developer",
-    "Figma to Next.js",
+    "website design and development",
+    "no-code development",
+    "custom web applications",
+    "AI automation",
+    "API integrations",
+    "e-commerce development",
+    "technical SEO",
     "web agency",
     "performance optimization",
   ],
@@ -90,7 +91,7 @@ const jsonLd = {
       hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: "Web development services",
-        itemListElement: ["Next.js development", "Webflow development", "Framer development", "WordPress development", "Figma to production"].map((name) => ({
+        itemListElement: ["Website design and development", "No-code and low-code solutions", "Custom web applications", "AI automation", "API and system integrations", "E-commerce development", "Performance and technical SEO"].map((name) => ({
           "@type": "Offer",
           itemOffered: { "@type": "Service", name },
         })),
@@ -104,7 +105,7 @@ const jsonLd = {
       url: `${site.url}/about`,
       worksFor: { "@id": `${site.url}/#organization` },
       sameAs: [site.upworkUrl],
-      knowsAbout: ["Next.js", "React", "Webflow", "Framer", "WordPress", "WooCommerce", "Web performance"],
+      knowsAbout: ["Website development", "No-code solutions", "Custom web applications", "AI automation", "System integrations", "E-commerce", "Technical SEO", "Web performance"],
     },
     {
       "@type": "WebSite",

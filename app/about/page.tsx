@@ -41,13 +41,13 @@ const principles = [
 ];
 
 const capabilities = [
-  "Next.js & React applications",
-  "Webflow development",
-  "Framer websites",
-  "WordPress & WooCommerce",
-  "Figma-to-production builds",
-  "API integrations",
-  "Performance optimisation",
+  "Website design & development",
+  "No-code & low-code solutions",
+  "Custom web applications",
+  "AI & workflow automation",
+  "API & system integrations",
+  "E-commerce experiences",
+  "Performance & technical SEO",
 ];
 
 export default function AboutPage() {
@@ -178,10 +178,11 @@ export default function AboutPage() {
               </Reveal>
               <Reveal delay={70}>
                 <p>
-                  Over the past five-plus years, I have worked across custom React and
-                  Next.js products, no-code and low-code platforms, and established
-                  content and commerce systems. That range helps me choose a tool for
-                  the job instead of forcing every project into the same stack.
+                  Over the past five-plus years, I have delivered marketing websites,
+                  custom web applications, no-code builds, commerce experiences and
+                  connected business systems. That range helps me start with the
+                  outcome and choose the right implementation—not force every project
+                  into the same technology.
                 </p>
               </Reveal>
               <Reveal delay={140}>
