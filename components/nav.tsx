@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { nav, services, site } from "@/lib/content";
+import { site } from "@/lib/content";
 import { cx } from "@/components/ui/primitives";
 
 export function Nav() {
@@ -140,7 +140,7 @@ export function Nav() {
           open ? "visible opacity-100" : "invisible opacity-0",
         )}
       >
-        <nav aria-label="Primary" className="grid min-h-full lg:grid-cols-[44%_56%]">
+        <nav aria-label="Primary" className="grid min-h-full lg:grid-cols-2">
           <div className="relative flex min-h-[42svh] items-center justify-center overflow-hidden border-b border-[rgba(255,255,255,0.12)] px-6 py-28 lg:min-h-screen lg:border-b-0 lg:border-r lg:px-12">
             <div aria-hidden className="absolute inset-0 bg-[radial-gradient(circle_at_50%_48%,rgba(210,4,45,0.15),transparent_38%)]" />
             <div className="relative flex flex-col items-center text-center">
@@ -154,7 +154,7 @@ export function Nav() {
                   open ? "translate-y-0 scale-100 opacity-100" : "translate-y-8 scale-90 opacity-0",
                 )}
               />
-              <h2 aria-label="Conscious Rise" className="mt-6 flex flex-wrap justify-center gap-x-[0.28em] overflow-hidden font-display text-[clamp(2.25rem,5vw,5.25rem)] font-semibold uppercase leading-none tracking-[-0.055em]">
+              <h2 aria-label="Conscious Rise" className="mt-5 flex flex-wrap justify-center gap-x-[0.28em] overflow-hidden font-display text-[clamp(2rem,3.5vw,3.65rem)] font-semibold uppercase leading-none tracking-[-0.055em]">
                 {["Conscious", "Rise"].map((word, wordIndex) => (
                   <span key={word} className="whitespace-nowrap">
                     {word.split("").map((letter, letterIndex) => (
@@ -186,71 +186,54 @@ export function Nav() {
           </div>
 
           <div className="flex min-h-[58svh] flex-col pt-24 lg:min-h-screen">
-            <div className="grid flex-1 md:grid-cols-2">
-              <div className="border-b border-[rgba(255,255,255,0.12)] px-7 py-10 sm:px-10 lg:border-r lg:px-12 lg:py-12">
-                <p className="font-mono text-[0.62rem] uppercase tracking-[0.22em] text-[rgba(255,255,255,0.42)]">Menu</p>
-                <div className="mt-4">
-                  {[{ label: "Home", href: "/" }, ...nav].map((item, i) => (
+            <div className="flex flex-[1.05] flex-col justify-center border-b border-[rgba(255,255,255,0.12)] px-7 py-10 sm:px-10 lg:px-[clamp(2.5rem,5vw,5.5rem)] lg:py-8">
+                <p className="font-mono text-[0.6rem] uppercase tracking-[0.18em] text-[rgba(255,255,255,0.45)]">Menu</p>
+                <div className="mt-3 max-w-md">
+                  {[
+                    { label: "Home", href: "/" },
+                    { label: "About", href: "/about" },
+                    { label: "Work", href: "/work" },
+                    { label: "Contact", href: "/contact" },
+                    { label: "Services", href: "/#services" },
+                  ].map((item, i) => (
                     <a
                       key={`${item.href}-${item.label}`}
                       href={item.href}
                       onClick={() => setOpen(false)}
                       style={{ transitionDelay: open ? `${180 + i * 55}ms` : "0ms" }}
                       className={cx(
-                        "group flex items-center justify-between py-1 font-display text-[clamp(1.65rem,3vw,3.25rem)] font-medium leading-[1.04] tracking-[-0.045em] text-[rgba(255,255,255,0.78)] transition-all duration-700 hover:pl-2 hover:text-[#ffffff]",
+                        "group flex items-center justify-between py-0.5 font-display text-[clamp(1.2rem,1.65vw,1.65rem)] font-medium leading-[1.25] tracking-[-0.035em] text-[rgba(255,255,255,0.86)] transition-all duration-700 hover:pl-1.5 hover:text-[#ffffff]",
                         open ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0",
                       )}
                     >
                       <span>{item.label}</span>
-                      <span className="translate-x-2 text-sm text-[#ff8ca5] opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100">↗</span>
+                      <span className="translate-x-2 text-xs text-[#ff8ca5] opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100">{item.label === "Services" ? "⌄" : "↗"}</span>
                     </a>
                   ))}
                 </div>
-              </div>
+            </div>
 
-              <div className="border-b border-[rgba(255,255,255,0.12)] px-7 py-10 sm:px-10 lg:px-12 lg:py-12">
-                <p className="font-mono text-[0.62rem] uppercase tracking-[0.22em] text-[rgba(255,255,255,0.42)]">What we do</p>
-                <div className="mt-5 space-y-3">
-                  {services.slice(0, 5).map((service, i) => (
-                    <a
-                      key={service.id}
-                      href="/#services"
-                      onClick={() => setOpen(false)}
-                      style={{ transitionDelay: open ? `${360 + i * 60}ms` : "0ms" }}
-                      className={cx(
-                        "flex items-center gap-3 border-b border-[rgba(255,255,255,0.12)] pb-3 text-sm text-[rgba(255,255,255,0.68)] transition-all duration-700 hover:border-[#ff8ca5]/50 hover:text-[#ffffff]",
-                        open ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0",
-                      )}
-                    >
-                      <span className="font-mono text-[0.6rem] text-[#ff8ca5]">{service.glyph}</span>
-                      {service.title}
-                    </a>
-                  ))}
-                </div>
-              </div>
-
-              <div className="px-7 py-10 sm:px-10 lg:border-r lg:border-[rgba(255,255,255,0.12)] lg:px-12 lg:py-12">
-                <p className="font-mono text-[0.62rem] uppercase tracking-[0.22em] text-[rgba(255,255,255,0.42)]">Let&apos;s talk</p>
-                <a href={`mailto:${site.email}`} className="mt-4 flex items-end justify-between gap-4 border-b border-[rgba(255,255,255,0.28)] pb-3 font-display text-[clamp(1.15rem,2vw,1.75rem)] font-medium tracking-[-0.03em] text-[#ffffff] transition-colors hover:border-[#ff8ca5] hover:text-[#ffb0c1]">
+            <div className="flex flex-1 flex-col justify-center border-b border-[rgba(255,255,255,0.12)] px-7 py-10 sm:px-10 lg:px-[clamp(2.5rem,5vw,5.5rem)] lg:py-8">
+                <p className="font-mono text-[0.6rem] uppercase tracking-[0.18em] text-[rgba(255,255,255,0.45)]">Let&apos;s talk</p>
+                <a href={`mailto:${site.email}`} className="mt-3 flex max-w-xl items-end justify-between gap-4 border-b border-[rgba(255,255,255,0.38)] pb-2 font-display text-[clamp(1.05rem,1.6vw,1.45rem)] font-medium tracking-[-0.025em] text-[#ffffff] transition-colors hover:border-[#ff8ca5] hover:text-[#ffb0c1]">
                   <span className="break-all">{site.email}</span><span aria-hidden>+</span>
                 </a>
-                <p className="mt-6 max-w-md text-sm leading-6 text-[rgba(255,255,255,0.48)]">{site.locationLine}</p>
-              </div>
-
-              <div className="flex flex-col justify-between px-7 py-10 sm:px-10 lg:px-12 lg:py-12">
-                <div>
-                  <p className="font-mono text-[0.62rem] uppercase tracking-[0.22em] text-[rgba(255,255,255,0.42)]">Connect</p>
-                  <a href={site.upworkUrl} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-3 text-sm text-[rgba(255,255,255,0.72)] transition-colors hover:text-[#ffffff]">
+                <p className="mt-5 max-w-lg text-xs leading-5 text-[rgba(255,255,255,0.48)]">Based in India · Working with UK and US clients</p>
+                <div className="mt-8">
+                  <p className="font-mono text-[0.6rem] uppercase tracking-[0.18em] text-[rgba(255,255,255,0.45)]">Socials</p>
+                  <a href={site.upworkUrl} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex items-center gap-3 text-xs text-[rgba(255,255,255,0.72)] transition-colors hover:text-[#ffffff]">
                     <Image src="/assets/upwork-logo.svg" alt="" width={24} height={24} className="h-6 w-6 rounded-full bg-[#ffffff] p-0.5" />
                     Upwork profile <span aria-hidden>↗</span>
                   </a>
                 </div>
-                <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 border-t border-[rgba(255,255,255,0.12)] pt-6 text-xs text-[rgba(255,255,255,0.42)]">
+            </div>
+
+            <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 px-7 py-6 text-[0.68rem] text-[rgba(255,255,255,0.48)] sm:px-10 lg:px-[clamp(2.5rem,5vw,5.5rem)]">
+                <div className="flex flex-wrap gap-x-6 gap-y-3">
                   <a href="/privacy" onClick={() => setOpen(false)} className="hover:text-[#ffffff]">Privacy Policy ↗</a>
                   <a href="/terms" onClick={() => setOpen(false)} className="hover:text-[#ffffff]">Terms of Use ↗</a>
-                  <span>© {new Date().getFullYear()} Conscious Rise</span>
                 </div>
-              </div>
+                <span>© {new Date().getFullYear()} Conscious Rise. All rights reserved.</span>
             </div>
           </div>
         </nav>
