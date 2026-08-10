@@ -26,6 +26,20 @@ export function Hero() {
         quality={82}
         className="object-cover object-center [image-rendering:auto]"
       />
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        disablePictureInPicture
+        preload="metadata"
+        poster="/assets/conscious-rise-hero.png"
+        aria-hidden="true"
+        tabIndex={-1}
+        className="absolute inset-0 h-full w-full object-cover object-center motion-reduce:hidden"
+      >
+        <source src="/assets/conscious-rise-hero-video.mp4" type="video/mp4" />
+      </video>
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(4,6,14,0.5),transparent_28%,transparent_72%,rgba(4,6,14,0.5)),linear-gradient(180deg,rgba(4,6,14,0.18),transparent_55%,rgba(4,6,14,0.66))]" />
       <div className="absolute inset-y-0 left-0 w-[27%] bg-gradient-to-r from-[#050711]/55 to-transparent backdrop-blur-[3px] [mask-image:linear-gradient(to_right,#000_0%,rgba(0,0,0,0.88)_58%,transparent_100%)]" />
       <div className="absolute inset-y-0 right-0 w-[27%] bg-gradient-to-l from-[#050711]/55 to-transparent backdrop-blur-[3px] [mask-image:linear-gradient(to_left,#000_0%,rgba(0,0,0,0.88)_58%,transparent_100%)]" />
