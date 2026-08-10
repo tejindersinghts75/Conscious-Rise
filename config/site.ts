@@ -3,7 +3,7 @@ const defaultCanonicalUrl = "https://www.consciousrise.in";
 export const siteConfig = {
   name: "Conscious Rise",
   ownerName: "Tejinder Singh",
-  ownerPhoto: "/assets/tejinder-singh.jpg",
+  ownerPhoto: "/assets/tejinder-singh-hq.jpg",
   tagline: "Websites, web applications and automation",
   url: process.env.NEXT_PUBLIC_SITE_URL || defaultCanonicalUrl,
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "info@consciousrise.in",

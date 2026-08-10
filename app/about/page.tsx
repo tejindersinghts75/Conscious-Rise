@@ -127,6 +127,8 @@ export default function AboutPage() {
                         alt={`${siteConfig.ownerName}, web developer and owner of Conscious Rise`}
                         fill
                         sizes="(max-width: 1024px) 90vw, 42vw"
+                        quality={100}
+                        unoptimized
                         className="object-cover object-top"
                       />
                       <div aria-hidden className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#3f0c19]/45 to-transparent" />
