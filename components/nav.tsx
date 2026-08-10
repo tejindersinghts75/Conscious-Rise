@@ -42,7 +42,16 @@ export function Nav() {
     <header className="pointer-events-none fixed inset-x-0 top-0 z-50">
       <div className="container-x relative z-20">
         <div className="flex h-24 items-center justify-between gap-4">
-            <a href="/" className="pointer-events-auto block" aria-label={`${site.name} home`}>
+            <a
+              href="/"
+              className={cx(
+                "pointer-events-auto flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-full transition-all duration-300",
+                open || overDarkBackground
+                  ? "bg-transparent"
+                  : "border border-[rgba(255,255,255,0.82)] bg-[rgba(255,255,255,0.7)] shadow-[0_10px_30px_-16px_rgba(74,13,29,0.45)] backdrop-blur-xl",
+              )}
+              aria-label={`${site.name} home`}
+            >
               <Image
                 src={open || overDarkBackground ? "/assets/conscious-rise-logo-white.svg" : "/assets/conscious-rise-logo-black.svg"}
                 alt={`${site.name} logo`}
@@ -60,7 +69,7 @@ export function Nav() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="View Upwork profile"
-                className="flex h-11 items-center justify-center gap-2 rounded-full border border-white/20 bg-[#ffffff] px-3 shadow-lg transition-transform hover:scale-105 sm:h-12"
+                className="flex h-11 items-center justify-center gap-2 rounded-full border border-[rgba(255,255,255,0.72)] bg-[rgba(255,255,255,0.82)] px-3 shadow-lg backdrop-blur-xl transition-transform hover:scale-105 sm:h-12"
               >
                 <Image
                   src="/assets/upwork-logo.svg"
@@ -73,7 +82,7 @@ export function Nav() {
               </a>
               <a
                 href="/contact"
-                className="inline-flex h-11 items-center rounded-full bg-[#991b3b] px-4 text-[0.72rem] font-semibold text-[#ffffff] shadow-lg transition-all hover:scale-[1.03] hover:bg-[#bc244a] sm:h-12 sm:px-6 sm:text-[0.82rem]"
+                className="inline-flex h-11 items-center rounded-full border border-white/10 bg-[#991b3b]/90 px-4 text-[0.72rem] font-semibold text-[#ffffff] shadow-lg backdrop-blur-xl transition-all hover:scale-[1.03] hover:bg-[#bc244a]/95 sm:h-12 sm:px-6 sm:text-[0.82rem]"
               >
                 Start a project
               </a>
@@ -84,7 +93,7 @@ export function Nav() {
                 aria-expanded={open}
                 aria-controls="mobile-menu"
                 aria-label={open ? "Close menu" : "Open menu"}
-                className="flex h-11 w-11 items-center justify-center rounded-full bg-[#ffffff] text-[#11131c] shadow-lg transition-transform hover:scale-105 sm:h-12 sm:w-12"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-[rgba(255,255,255,0.72)] bg-[rgba(255,255,255,0.82)] text-[#11131c] shadow-lg backdrop-blur-xl transition-transform hover:scale-105 sm:h-12 sm:w-12"
               >
                 <span className="relative block h-4 w-5">
                   <span
