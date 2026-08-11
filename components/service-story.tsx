@@ -55,7 +55,7 @@ export function ServiceStory({
   }, []);
 
   return (
-    <section className="relative overflow-clip bg-[#4a0d1d] text-[#ffffff]">
+    <section className="relative bg-[#4a0d1d] text-[#ffffff]">
       <div aria-hidden className="absolute inset-0 bg-[radial-gradient(circle_at_12%_20%,rgba(255,176,193,0.12),transparent_32%),radial-gradient(circle_at_88%_76%,rgba(255,255,255,0.06),transparent_30%)]" />
       <div className="container-x relative grid gap-12 py-20 lg:grid-cols-[0.88fr_1.12fr] lg:gap-20 lg:py-0">
         <div className="relative lg:h-full">

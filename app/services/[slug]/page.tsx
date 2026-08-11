@@ -89,7 +89,7 @@ export default async function ServicePage({ params }: PageProps) {
       <StructuredData data={structuredData} />
       <Interactions />
       <Nav />
-      <main id="main" className="overflow-hidden pt-24">
+      <main id="main" className="pt-24">
         <section className="relative pb-20 pt-16 sm:pb-28 sm:pt-24">
           <div aria-hidden className="absolute -left-40 top-12 h-96 w-96 rounded-full bg-neon-fuchsia/[0.07] blur-3xl" />
           <div aria-hidden className="absolute -right-40 top-48 h-96 w-96 rounded-full bg-neon-cyan/[0.06] blur-3xl" />
