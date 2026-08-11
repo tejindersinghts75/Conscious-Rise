@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer";
 import { Interactions } from "@/components/interactions";
 import { Nav } from "@/components/nav";
 import { StructuredData } from "@/components/structured-data";
+import { ServiceStory } from "@/components/service-story";
 import { Card, Eyebrow, Reveal } from "@/components/ui/primitives";
 import { servicePageBySlug, servicePages } from "@/data/service-pages";
 import { siteConfig } from "@/config/site";
@@ -102,12 +103,12 @@ export default async function ServicePage({ params }: PageProps) {
             </nav>
             <Reveal><Eyebrow>{service.eyebrow}</Eyebrow></Reveal>
             <Reveal delay={70}>
-              <h1 className="mt-6 max-w-6xl font-display text-[clamp(3.15rem,7vw,6.7rem)] font-semibold leading-[0.94] tracking-[-0.055em] text-white">
+              <h1 className="mt-6 max-w-5xl font-display text-[clamp(2.65rem,5.5vw,5.25rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-white">
                 {service.title}
               </h1>
             </Reveal>
             <Reveal delay={130}>
-              <p className="mt-8 max-w-4xl text-[clamp(1.3rem,2.5vw,2rem)] font-medium leading-[1.35] tracking-[-0.02em] text-white/80">
+              <p className="mt-7 max-w-3xl text-[clamp(1.08rem,1.8vw,1.45rem)] font-medium leading-[1.5] tracking-[-0.015em] text-white/75">
                 {service.hero}
               </p>
             </Reveal>
@@ -127,23 +128,16 @@ export default async function ServicePage({ params }: PageProps) {
           </div>
         </section>
 
-        <section className="py-20 sm:py-28">
-          <div className="container-x grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-24">
-            <Reveal>
-              <div className="lg:sticky lg:top-32">
-                <Eyebrow>What the service solves</Eyebrow>
-                <h2 className="mt-5 font-display text-[clamp(2.2rem,4vw,3.5rem)] font-semibold leading-[1.04] tracking-[-0.04em] text-white">
-                  Built around the outcome, not a template.
-                </h2>
-              </div>
-            </Reveal>
-            <div className="space-y-7 text-[1.06rem] leading-8 text-white/60">
-              {service.overview.map((paragraph, index) => (
-                <Reveal key={paragraph} delay={index * 70}><p>{paragraph}</p></Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceStory
+          image={service.visual}
+          imageAlt={service.visualAlt}
+          chapters={service.overview.map((body, index) => ({
+            body,
+            label: service.storyLabels[index],
+            title: service.storyTitles[index],
+            highlight: service.storyHighlights[index],
+          }))}
+        />
 
         <section className="py-20 sm:py-28">
           <div className="container-x">

@@ -21,6 +21,21 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/services/web-applications",
+        destination: "/services/web-app-development",
+        permanent: true,
+      },
+      {
+        source: "/services/automation-integrations",
+        destination: "/services/ai-automation",
+        permanent: true,
+      },
+      {
+        source: "/services/seo-performance",
+        destination: "/services/technical-seo-performance",
+        permanent: true,
+      },
+      {
         source: "/testimonials",
         destination: "/#testimonials",
         permanent: true,

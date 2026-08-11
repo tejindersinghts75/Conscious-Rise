@@ -7,6 +7,11 @@ export type ServicePage = {
   eyebrow: string;
   hero: string;
   audience: string;
+  visual: string;
+  visualAlt: string;
+  storyTitles: string[];
+  storyLabels: string[];
+  storyHighlights: string[];
   overview: string[];
   outcomes: { title: string; body: string }[];
   deliverables: string[];
@@ -26,6 +31,11 @@ export const servicePages: ServicePage[] = [
     eyebrow: "Website design and development",
     hero: "A clear, fast website designed to turn attention into trust—and trust into enquiries.",
     audience: "For startups, service businesses and agencies that need a polished marketing website without sacrificing speed, accessibility or maintainability.",
+    visual: "/assets/services/website-development.jpg",
+    visualAlt: "Layered responsive website layouts represented as translucent editorial panels",
+    storyLabels: ["Clarity", "The right system", "Search-ready delivery"],
+    storyTitles: ["Your website has seconds to make the offer clear.", "The platform should fit the way your team works.", "A beautiful launch is only the beginning."],
+    storyHighlights: ["Clear positioning beats visual noise.", "Technology follows the business requirement.", "Performance and discoverability are built into the page system."],
     overview: [
       "A business website has to do more than look polished. It needs to explain the offer quickly, guide different visitors to the right information and make the next action feel obvious. Conscious Rise combines content structure, interface design and front-end development so those decisions work together from the beginning.",
       "Every build is shaped around the audience and commercial goal. That may mean a focused lead-generation site, an editorial platform your team can update, or a custom Next.js experience with integrations behind it. The platform follows the job—not the other way around.",
@@ -61,6 +71,11 @@ export const servicePages: ServicePage[] = [
     eyebrow: "Custom web app development",
     hero: "Purpose-built web applications for the workflows your business cannot solve with an ordinary website.",
     audience: "For founders and teams building customer portals, dashboards, booking products, internal tools or workflow-heavy digital services.",
+    visual: "/assets/services/web-app-development.jpg",
+    visualAlt: "A modular web application system connected through precise translucent layers",
+    storyLabels: ["Workflow first", "System design", "Built to continue"],
+    storyTitles: ["The product starts before the first screen.", "Every integration is part of the experience.", "Useful software must survive its first release."],
+    storyHighlights: ["Map decisions, roles and exceptions before writing code.", "A dependable application handles the unhappy path too.", "Maintainability is a product feature."],
     overview: [
       "A web application should make a complex job feel straightforward. The work starts by mapping users, permissions, data and decisions before choosing frameworks or writing interface code. This prevents the product from becoming a collection of screens that look finished but do not support the full workflow.",
       "Conscious Rise builds responsive applications with reusable React components, clear state management and secure server-side boundaries. Where the product depends on payments, authentication, CRM data or third-party services, those integrations are treated as part of the system design—not last-minute plugins.",
@@ -96,6 +111,11 @@ export const servicePages: ServicePage[] = [
     eyebrow: "AI automation for business",
     hero: "Practical AI workflows that reduce repetitive work while keeping people in control of important decisions.",
     audience: "For businesses that have a repeatable, time-consuming process and want to use AI safely without rebuilding their entire operation.",
+    visual: "/assets/services/ai-automation.jpg",
+    visualAlt: "Business information passing through a transparent AI workflow with a human control point",
+    storyLabels: ["Start with the process", "Control the risk", "Support the team"],
+    storyTitles: ["AI is useful when the workflow is already understood.", "Automation needs boundaries, not blind confidence.", "The best result gives people better work to do."],
+    storyHighlights: ["Choose a measurable bottleneck—not an AI trend.", "Human review belongs wherever consequences matter.", "Automate repetition while preserving accountability."],
     overview: [
       "Useful AI automation begins with a process, not a model. The first task is to identify where information enters, what judgement is required, which outputs are safe to automate and where a person must review the result. That distinction is what turns an impressive demo into a dependable business workflow.",
       "Conscious Rise designs AI-assisted systems for tasks such as classifying enquiries, extracting structured information, preparing drafts, routing work and connecting knowledge across existing tools. Each workflow includes clear inputs, observable outputs and fallbacks for cases the automation cannot handle confidently.",
@@ -131,6 +151,11 @@ export const servicePages: ServicePage[] = [
     eyebrow: "No-code and low-code development",
     hero: "Launch quickly with a system your team can understand, edit and operate after handover.",
     audience: "For marketing teams, agencies and early-stage businesses that value speed and editing independence more than unnecessary custom engineering.",
+    visual: "/assets/services/no-code-low-code.jpg",
+    visualAlt: "A refined modular no-code design system assembled from reusable tactile components",
+    storyLabels: ["Structure", "Platform choice", "Responsible flexibility"],
+    storyTitles: ["No-code still needs a system behind it.", "Choose for tomorrow’s editors—not today’s demo.", "Custom code should solve a real limitation."],
+    storyHighlights: ["Reusable patterns make fast launches sustainable.", "Editing independence is part of the product decision.", "Use the platform fully before adding complexity."],
     overview: [
       "No-code does not mean no planning. A strong build still needs information architecture, reusable patterns, responsive behaviour and a content model that matches how the team works. The advantage is that many everyday updates can happen without returning to a developer.",
       "Conscious Rise builds in Webflow, Framer and other suitable platforms when they offer the best balance of launch speed, visual control and long-term ownership. Custom code is added selectively when it solves a real limitation rather than turning a maintainable platform into a fragile hybrid.",
@@ -166,6 +191,11 @@ export const servicePages: ServicePage[] = [
     eyebrow: "API and system integrations",
     hero: "Connect the tools your business already uses so information moves without repeated copying and preventable errors.",
     audience: "For teams whose customer, payment, booking or operational data is split across systems that do not work together cleanly.",
+    visual: "/assets/services/api-integrations.jpg",
+    visualAlt: "Connected business systems exchanging validated information through clear pathways",
+    storyLabels: ["One data journey", "Failure-aware design", "Practical connection"],
+    storyTitles: ["Repeated copying is a systems problem.", "A successful demo is not a dependable integration.", "Connect what works before replacing everything."],
+    storyHighlights: ["Give every important field a clear source of truth.", "Retries, logs and recovery paths are part of the build.", "Integration should reduce operational risk—not move it elsewhere."],
     overview: [
       "Disconnected systems create quiet operational costs: the same details are entered twice, updates arrive late and nobody is certain which record is current. A good integration defines one clear journey for the data and makes failures visible instead of hiding them.",
       "Conscious Rise connects web forms, CRMs, payment services, booking platforms and custom applications through supported APIs and webhooks. The work includes field mapping, authentication, validation, retry behaviour and documentation—not only the successful example shown in a demo.",
@@ -201,6 +231,11 @@ export const servicePages: ServicePage[] = [
     eyebrow: "E-commerce development",
     hero: "A dependable buying experience—from product discovery and decision-making through payment and fulfilment.",
     audience: "For businesses selling products, paid services or subscriptions that need a clearer storefront and a purchase flow connected to real operations.",
+    visual: "/assets/services/ecommerce-development.jpg",
+    visualAlt: "An elegant product journey moving from discovery through secure payment to fulfilment",
+    storyLabels: ["Buyer confidence", "The complete journey", "Operations connected"],
+    storyTitles: ["Customers buy when uncertainty is removed.", "Checkout is one moment in a longer decision.", "The order must work after the payment succeeds."],
+    storyHighlights: ["Useful product information is conversion design.", "Every state should make the next step obvious.", "A storefront is only as strong as its fulfilment handoff."],
     overview: [
       "E-commerce performance depends on the complete buying journey, not only the checkout button. Customers need useful product information, confidence in the business, transparent delivery expectations and a smooth path across mobile and desktop.",
       "Conscious Rise develops commerce experiences around catalogue structure, product discovery, payments and the operational steps that follow an order. The chosen platform reflects the size of the catalogue, editing needs, custom purchase logic and systems that must stay connected.",
@@ -236,6 +271,11 @@ export const servicePages: ServicePage[] = [
     eyebrow: "Technical SEO and performance",
     hero: "Make your website easier to crawl, faster to use and technically ready to compete in search.",
     audience: "For businesses launching, migrating or improving a website that needs reliable indexing, clean technical signals and a better page experience.",
+    visual: "/assets/services/technical-seo.jpg",
+    visualAlt: "Layered web pages under a precision inspection instrument for technical SEO analysis",
+    storyLabels: ["Remove barriers", "Measure real experience", "Prioritise evidence"],
+    storyTitles: ["Search engines need a clean path to the right pages.", "Fast for a test is not always fast for a visitor.", "SEO work should explain what matters and why."],
+    storyHighlights: ["Align redirects, canonicals, links and sitemaps.", "Optimise the templates people actually use.", "Fix measurable constraints before chasing folklore."],
     overview: [
       "Technical SEO helps search engines access and understand a website, but it cannot manufacture authority or guarantee rankings. The work is valuable because indexing mistakes, duplicate URLs, broken migrations and slow templates can prevent otherwise useful content from performing as well as it should.",
       "Conscious Rise audits crawl paths, status codes, canonical signals, metadata, sitemaps, structured data and page templates. Performance work then looks at the assets, rendering and interaction costs that affect real visitors—not only a single synthetic score.",
