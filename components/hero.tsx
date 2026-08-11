@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 
 const leftServices = [
   ["develop", "Develop", "Scalable web solutions built for performance and growth."],
@@ -15,6 +18,8 @@ const rightServices = [
 ] as const;
 
 export function Hero() {
+  const [activeService, setActiveService] = useState<{ icon: string; title: string } | null>(null);
+
   return (
     <section id="top" className="relative flex h-[100svh] flex-col overflow-hidden bg-[#090b16]">
       <Image
@@ -47,20 +52,20 @@ export function Hero() {
       <div className="container-x relative z-10 hidden flex-1 justify-between pt-32 pb-12 lg:flex">
         <div className="grid w-60 grid-rows-4 content-center gap-5">
           {leftServices.map(([icon, title, description]) => (
-            <ServiceItem key={title} icon={icon} title={title} description={description} />
+            <ServiceItem key={title} icon={icon} title={title} description={description} onActivate={setActiveService} />
           ))}
         </div>
         <div className="grid w-60 grid-rows-4 content-center gap-5 text-right">
           {rightServices.map(([icon, title, description]) => (
-            <ServiceItem key={title} icon={icon} title={title} description={description} align="right" />
+            <ServiceItem key={title} icon={icon} title={title} description={description} align="right" onActivate={setActiveService} />
           ))}
         </div>
       </div>
 
       <div className="container-x pointer-events-none absolute inset-0 z-20 flex items-center justify-center pt-24">
-        <div className="relative mx-auto w-[75%] max-w-[46rem] -translate-y-[50px] text-center">
+        <div className="relative mx-auto w-[84%] max-w-[46rem] -translate-y-[50px] text-center sm:w-[75%]">
           <div aria-hidden className="absolute -inset-x-28 -inset-y-20 scale-110 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.58)_0%,rgba(0,0,0,0.4)_34%,rgba(0,0,0,0.18)_58%,rgba(0,0,0,0.06)_72%,transparent_86%)] blur-xl" />
-          <h1 className="relative z-10 grid w-full gap-2 font-display text-[clamp(1.05rem,3.8vw,3.6rem)] font-semibold uppercase leading-[0.98] tracking-[-0.045em] text-[#ffffff] [text-shadow:0_3px_8px_rgba(0,0,0,0.9),0_10px_32px_rgba(0,0,0,0.72)] sm:gap-3">
+          <h1 className={`relative z-10 grid w-full gap-2 font-display text-[clamp(1.45rem,7vw,2.1rem)] font-semibold uppercase leading-[0.98] tracking-[-0.045em] text-[#ffffff] [text-shadow:0_3px_8px_rgba(0,0,0,0.9),0_10px_32px_rgba(0,0,0,0.72)] transition-[opacity,transform,filter] duration-500 ease-out sm:gap-3 lg:text-[clamp(1.05rem,3.8vw,3.6rem)] ${activeService ? "scale-[0.72] opacity-0 blur-md" : "scale-100 opacity-100 blur-0"}`}>
             <span className="hero-title-line-top block whitespace-nowrap">
               <span className="hero-title-text-top inline-block">Built in the right stack</span>
             </span>
@@ -68,6 +73,19 @@ export function Hero() {
               <span className="hero-title-text-bottom inline-block">Shipped when promised</span>
             </span>
           </h1>
+          <div
+            aria-hidden
+            className={`absolute inset-0 z-20 hidden items-center justify-center transition-[opacity,transform,filter] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] lg:flex ${activeService ? "translate-y-0 scale-100 opacity-100 blur-0" : "translate-y-24 scale-75 opacity-0 blur-md"}`}
+          >
+            {activeService ? (
+              <div key={activeService.title} className="hero-icon-float flex flex-col items-center gap-5 drop-shadow-[0_12px_14px_rgba(0,0,0,0.9)]">
+                <ServiceIcon name={activeService.icon} large />
+                <span className="font-mono text-[15px] font-semibold uppercase tracking-[0.2em] text-[#ffffff] [text-shadow:0_3px_7px_rgba(0,0,0,0.95)]">
+                  {activeService.title}
+                </span>
+              </div>
+            ) : null}
+          </div>
         </div>
       </div>
 
@@ -80,14 +98,24 @@ function ServiceItem({
   title,
   description,
   align = "left",
+  onActivate,
 }: {
   icon: string;
   title: string;
   description: string;
   align?: "left" | "right";
+  onActivate: (service: { icon: string; title: string } | null) => void;
 }) {
   return (
-    <div className={`flex min-h-[6.5rem] w-full flex-col justify-center drop-shadow-[0_4px_7px_rgba(0,0,0,0.92)] transition-transform duration-300 hover:scale-[1.03] ${align === "right" ? "hero-service-right items-end" : "hero-service-left items-start"}`}>
+    <button
+      type="button"
+      onMouseEnter={() => onActivate({ icon, title })}
+      onMouseLeave={() => onActivate(null)}
+      onFocus={() => onActivate({ icon, title })}
+      onBlur={() => onActivate(null)}
+      aria-label={`Preview ${title}`}
+      className={`flex min-h-[6.5rem] w-full cursor-pointer flex-col justify-center drop-shadow-[0_4px_7px_rgba(0,0,0,0.92)] transition-[transform,filter] duration-300 hover:scale-[1.04] hover:drop-shadow-[0_7px_10px_rgba(0,0,0,0.98)] focus-visible:rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff8ca5] ${align === "right" ? "hero-service-right items-end text-right" : "hero-service-left items-start text-left"}`}
+    >
       <ServiceIcon name={icon} className={align === "right" ? "ml-auto" : "mr-auto"} />
       <p className="mt-2 font-mono text-[15px] font-semibold uppercase leading-[1.3] tracking-[0.14em] text-[#ffffff] [text-shadow:0_2px_6px_rgba(0,0,0,0.95)]">
         {title}
@@ -95,11 +123,11 @@ function ServiceItem({
       <p className="mt-1.5 text-[15px] leading-[1.3] text-[rgba(255,255,255,0.82)] [text-shadow:0_2px_6px_rgba(0,0,0,0.95)]">
         {description}
       </p>
-    </div>
+    </button>
   );
 }
 
-function ServiceIcon({ name, className = "" }: { name: string; className?: string }) {
+function ServiceIcon({ name, className = "", large = false }: { name: string; className?: string; large?: boolean }) {
   const paths: Record<string, React.ReactNode> = {
     develop: <><circle cx="12" cy="12" r="8" /><path d="M4 12h16M12 4c2.3 2.2 3.5 4.9 3.5 8S14.3 17.8 12 20c-2.3-2.2-3.5-4.9-3.5-8S9.7 6.2 12 4Z" /></>,
     design: <path d="m8 7-5 5 5 5m8-10 5 5-5 5m-5 3 2-16" />,
@@ -113,7 +141,7 @@ function ServiceIcon({ name, className = "" }: { name: string; className?: strin
   };
 
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={`h-7 w-7 text-[#ff8ca5] ${className}`} aria-hidden>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={large ? "1.15" : "1.5"} strokeLinecap="round" strokeLinejoin="round" className={`${large ? "h-36 w-36 text-[#ff9bb0]" : "h-7 w-7 text-[#ff8ca5]"} ${className}`} aria-hidden>
       {paths[name]}
     </svg>
   );
