@@ -60,7 +60,7 @@ export function Hero() {
       <div className="container-x pointer-events-none absolute inset-0 z-20 flex items-center justify-center pt-24">
         <div className="relative mx-auto w-[75%] max-w-[46rem] -translate-y-[50px] text-center">
           <div aria-hidden className="absolute -inset-x-28 -inset-y-20 scale-110 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.58)_0%,rgba(0,0,0,0.4)_34%,rgba(0,0,0,0.18)_58%,rgba(0,0,0,0.06)_72%,transparent_86%)] blur-xl" />
-          <h1 className="relative z-10 grid w-full gap-2 font-display text-[clamp(1.05rem,3.8vw,3.6rem)] font-semibold uppercase leading-[0.98] tracking-[-0.045em] text-[#ffffff] [text-shadow:0_2px_24px_rgba(0,0,0,0.68)] sm:gap-3">
+          <h1 className="relative z-10 grid w-full gap-2 font-display text-[clamp(1.05rem,3.8vw,3.6rem)] font-semibold uppercase leading-[0.98] tracking-[-0.045em] text-[#ffffff] [text-shadow:0_3px_8px_rgba(0,0,0,0.9),0_10px_32px_rgba(0,0,0,0.72)] sm:gap-3">
             <span className="hero-title-line-top block whitespace-nowrap">
               <span className="hero-title-text-top inline-block">Built in the right stack</span>
             </span>
@@ -87,12 +87,12 @@ function ServiceItem({
   align?: "left" | "right";
 }) {
   return (
-    <div className={`flex min-h-[6.5rem] w-full flex-col justify-center transition-transform duration-300 hover:scale-[1.03] ${align === "right" ? "hero-service-right items-end" : "hero-service-left items-start"}`}>
+    <div className={`flex min-h-[6.5rem] w-full flex-col justify-center drop-shadow-[0_4px_7px_rgba(0,0,0,0.92)] transition-transform duration-300 hover:scale-[1.03] ${align === "right" ? "hero-service-right items-end" : "hero-service-left items-start"}`}>
       <ServiceIcon name={icon} className={align === "right" ? "ml-auto" : "mr-auto"} />
-      <p className="mt-2 font-mono text-xs font-semibold uppercase tracking-[0.16em] text-[#ffffff]">
+      <p className="mt-2 font-mono text-[15px] font-semibold uppercase leading-[1.3] tracking-[0.14em] text-[#ffffff] [text-shadow:0_2px_6px_rgba(0,0,0,0.95)]">
         {title}
       </p>
-      <p className="mt-1.5 text-[0.68rem] leading-relaxed text-[rgba(255,255,255,0.72)]">
+      <p className="mt-1.5 text-[15px] leading-[1.3] text-[rgba(255,255,255,0.82)] [text-shadow:0_2px_6px_rgba(0,0,0,0.95)]">
         {description}
       </p>
     </div>

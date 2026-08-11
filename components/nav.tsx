@@ -61,7 +61,12 @@ export function Nav() {
                 height={72}
                 priority
                 fetchPriority="high"
-                className="h-16 w-16 object-contain drop-shadow-[0_6px_18px_rgba(0,0,0,0.4)] transition-opacity duration-300 sm:h-[4.5rem] sm:w-[4.5rem]"
+                className={cx(
+                  "h-16 w-16 object-contain transition-[filter,opacity] duration-300 sm:h-[4.5rem] sm:w-[4.5rem]",
+                  overDarkBackground
+                    ? "drop-shadow-[0_6px_10px_rgba(0,0,0,0.95)]"
+                    : "drop-shadow-[0_6px_18px_rgba(0,0,0,0.4)]",
+                )}
               />
             </a>
 
@@ -72,7 +77,8 @@ export function Nav() {
                 rel="noopener noreferrer"
                 aria-label="View Upwork profile"
                 className={cx(
-                  "flex h-11 items-center justify-center gap-2 rounded-full border border-[rgba(255,255,255,0.72)] bg-[rgba(255,255,255,0.82)] px-3 shadow-lg backdrop-blur-xl transition-all duration-300 hover:scale-105 sm:h-12",
+                  "flex h-11 items-center justify-center gap-2 rounded-full border border-[rgba(255,255,255,0.72)] bg-[rgba(255,255,255,0.82)] px-3 backdrop-blur-xl transition-all duration-300 hover:scale-105 sm:h-12",
+                  overDarkBackground ? "shadow-[0_7px_16px_rgba(0,0,0,0.78)]" : "shadow-lg",
                   open && "pointer-events-none -translate-y-3 opacity-0",
                 )}
               >
@@ -88,7 +94,8 @@ export function Nav() {
               <a
                 href="/contact"
                 className={cx(
-                  "inline-flex h-11 items-center rounded-full border border-white/10 bg-[#991b3b]/90 px-4 text-[0.72rem] font-semibold text-[#ffffff] shadow-lg backdrop-blur-xl transition-all duration-300 hover:scale-[1.03] hover:bg-[#bc244a]/95 sm:h-12 sm:px-6 sm:text-[0.82rem]",
+                  "inline-flex h-11 items-center rounded-full border border-white/10 bg-[#991b3b]/90 px-4 text-[0.72rem] font-semibold text-[#ffffff] backdrop-blur-xl transition-all duration-300 hover:scale-[1.03] hover:bg-[#bc244a]/95 sm:h-12 sm:px-6 sm:text-[0.82rem]",
+                  overDarkBackground ? "shadow-[0_7px_16px_rgba(0,0,0,0.78)]" : "shadow-lg",
                   open && "pointer-events-none -translate-y-3 opacity-0",
                 )}
               >
@@ -102,7 +109,8 @@ export function Nav() {
                 aria-controls="mobile-menu"
                 aria-label={open ? "Close menu" : "Open menu"}
                 className={cx(
-                  "flex h-11 w-11 items-center justify-center rounded-full border shadow-lg backdrop-blur-xl transition-all duration-300 hover:scale-105 sm:h-12 sm:w-12",
+                  "flex h-11 w-11 items-center justify-center rounded-full border backdrop-blur-xl transition-all duration-300 hover:scale-105 sm:h-12 sm:w-12",
+                  overDarkBackground ? "shadow-[0_7px_16px_rgba(0,0,0,0.78)]" : "shadow-lg",
                   open
                     ? "border-[rgba(255,255,255,0.3)] bg-[rgba(255,255,255,0.1)] text-[#ffffff]"
                     : "border-[rgba(255,255,255,0.72)] bg-[rgba(255,255,255,0.82)] text-[#11131c]",
