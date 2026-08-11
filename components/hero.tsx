@@ -62,8 +62,8 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="container-x pointer-events-none absolute inset-0 z-20 flex items-center justify-center pt-24">
-        <div className="relative mx-auto w-[84%] max-w-[46rem] -translate-y-[50px] text-center sm:w-[75%]">
+      <div className="container-x pointer-events-none absolute inset-0 z-20 flex items-end justify-start pb-20 pt-24 lg:items-center lg:justify-center lg:pb-0">
+        <div className="relative w-full max-w-[46rem] text-left lg:mx-auto lg:w-[75%] lg:-translate-y-[50px] lg:text-center">
           <div aria-hidden className="absolute -inset-x-28 -inset-y-20 scale-110 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.58)_0%,rgba(0,0,0,0.4)_34%,rgba(0,0,0,0.18)_58%,rgba(0,0,0,0.06)_72%,transparent_86%)] blur-xl" />
           <h1 className={`relative z-10 grid w-full gap-2 font-display text-[clamp(1.45rem,7vw,2.1rem)] font-semibold uppercase leading-[0.98] tracking-[-0.045em] text-[#ffffff] [text-shadow:0_3px_8px_rgba(0,0,0,0.9),0_10px_32px_rgba(0,0,0,0.72)] transition-[opacity,transform,filter] duration-500 ease-out sm:gap-3 lg:text-[clamp(1.05rem,3.8vw,3.6rem)] ${activeService ? "scale-[0.72] opacity-0 blur-md" : "scale-100 opacity-100 blur-0"}`}>
             <span className="hero-title-line-top block whitespace-nowrap">
