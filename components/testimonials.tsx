@@ -11,7 +11,7 @@ export function Testimonials() {
   if (!visibleTestimonials.length) return null;
 
   return (
-    <section className="relative pt-24 sm:pt-28">
+    <section id="testimonials" className="relative scroll-mt-24 pt-24 sm:pt-28">
       <div className="container-x">
         <SectionHeading
           eyebrow="Client feedback"

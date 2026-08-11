@@ -13,6 +13,7 @@ export const nav = [
 
 export type Service = {
   id: string;
+  href: string;
   title: string;
   blurb: string;
   points: string[];
@@ -22,6 +23,7 @@ export type Service = {
 export const services: Service[] = [
   {
     id: "website-development",
+    href: "/services/website-design-development",
     title: "Website Design & Development",
     blurb:
       "Modern, responsive websites designed around your audience, business goals and a clear path from first visit to enquiry.",
@@ -30,6 +32,7 @@ export const services: Service[] = [
   },
   {
     id: "no-code",
+    href: "/services/no-code-low-code",
     title: "No-Code & Low-Code Solutions",
     blurb:
       "Flexible websites and internal tools that your team can update without depending on a developer for every small change.",
@@ -38,6 +41,7 @@ export const services: Service[] = [
   },
   {
     id: "web-applications",
+    href: "/services/web-app-development",
     title: "Custom Web Applications",
     blurb:
       "Purpose-built portals, dashboards and booking experiences shaped around the way your customers and team actually work.",
@@ -46,6 +50,7 @@ export const services: Service[] = [
   },
   {
     id: "ai-automation",
+    href: "/services/ai-automation",
     title: "AI Automation",
     blurb:
       "Practical AI workflows that handle repetitive work, organise information and help your team respond and operate faster.",
@@ -54,6 +59,7 @@ export const services: Service[] = [
   },
   {
     id: "integrations",
+    href: "/services/api-system-integrations",
     title: "API & System Integrations",
     blurb:
       "Your payments, CRM, booking tools, forms and internal systems connected so information moves without manual copying.",
@@ -62,6 +68,7 @@ export const services: Service[] = [
   },
   {
     id: "ecommerce",
+    href: "/services/ecommerce-development",
     title: "E-commerce Development",
     blurb:
       "Clear, dependable buying experiences for products, services and subscriptions—from discovery through payment and fulfilment.",
@@ -70,6 +77,7 @@ export const services: Service[] = [
   },
   {
     id: "performance-seo",
+    href: "/services/technical-seo-performance",
     title: "Performance & SEO",
     blurb:
       "Technical improvements that make your website faster, easier to discover and more usable across devices and abilities.",

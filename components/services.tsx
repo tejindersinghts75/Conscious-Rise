@@ -21,6 +21,7 @@ export function Services() {
         <div className="mt-16 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => (
             <Reveal key={service.id} delay={(i % 3) * 90}>
+              <a href={service.href} className="block h-full" aria-label={`Learn about ${service.title}`}>
               <Card className="flex h-full flex-col p-7">
                 <div className="relative z-10 flex h-full flex-col">
                   <div className="flex items-start justify-between gap-4">
@@ -74,6 +75,7 @@ export function Services() {
                   </ul>
                 </div>
               </Card>
+              </a>
             </Reveal>
           ))}
 
