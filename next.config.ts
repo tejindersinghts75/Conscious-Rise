@@ -11,6 +11,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/services/:path*",
+        destination: "/#services",
+        permanent: true,
+      },
+      {
         source: "/:path*",
         has: [{ type: "host", value: "consciousrise2.vercel.app" }],
         destination: "https://www.consciousrise.in/:path*",
