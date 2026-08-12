@@ -18,7 +18,7 @@ export const siteConfig = {
     instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL || "",
   },
   description: "Conscious Rise creates high-performing websites, custom web applications, no-code solutions, AI automation and connected digital systems for startups and agencies.",
-  locationLine: "Based in India, working overlapping hours with UK and US Eastern time. Every enquiry gets a reply within one business day.",
+  locationLine: "Welcoming projects worldwide, with a particular focus on UK and US clients. Every enquiry gets a reply within one business day.",
 } as const;
 
 export const hasBookingUrl = !siteConfig.bookingUrl.includes("{{");

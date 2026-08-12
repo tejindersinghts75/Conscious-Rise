@@ -226,7 +226,7 @@ export function Nav() {
                 <a href={`mailto:${site.email}`} className="mt-3 flex max-w-xl items-end justify-between gap-4 border-b border-[rgba(255,255,255,0.38)] pb-2 font-display text-[clamp(1.05rem,1.6vw,1.45rem)] font-medium tracking-[-0.025em] text-[#ffffff] transition-colors hover:border-[#ff8ca5] hover:text-[#ffb0c1]">
                   <span className="break-all">{site.email}</span><span aria-hidden>+</span>
                 </a>
-                <p className="mt-5 max-w-lg text-xs leading-5 text-[rgba(255,255,255,0.48)]">Based in India · Working with UK and US clients</p>
+                <p className="mt-5 max-w-lg text-xs leading-5 text-[rgba(255,255,255,0.48)]">Welcoming clients worldwide · UK and US projects are a priority</p>
                 <div className="mt-8">
                   <p className="font-mono text-[0.6rem] uppercase tracking-[0.18em] text-[rgba(255,255,255,0.45)]">Socials</p>
                   <a href={site.upworkUrl} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex items-center gap-3 text-xs text-[rgba(255,255,255,0.72)] transition-colors hover:text-[#ffffff]">
