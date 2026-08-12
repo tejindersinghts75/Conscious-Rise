@@ -37,7 +37,7 @@ export function Hero() {
         loop
         playsInline
         disablePictureInPicture
-        preload="metadata"
+        preload="auto"
         poster="/assets/conscious-rise-hero.png"
         aria-hidden="true"
         tabIndex={-1}
