@@ -244,6 +244,22 @@
   }
 }
 
+/* Shared typography and vertical rhythm for internal pages. */
+.internal-page {
+  font-size: 1.125rem;
+  line-height: 2rem;
+}
+
+.internal-page > section {
+  padding-block: 6rem;
+}
+
+@media (width >= 40rem) {
+  .internal-page > section {
+    padding-block: 7rem;
+  }
+}
+
 /* ── Text treatments ─────────────────────────────────────────── */
 
 @utility text-gradient {

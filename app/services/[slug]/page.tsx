@@ -89,7 +89,7 @@ export default async function ServicePage({ params }: PageProps) {
       <StructuredData data={structuredData} />
       <Interactions />
       <Nav />
-      <main id="main" className="pt-24">
+      <main id="main" className="internal-page pt-24">
         <section className="relative pb-20 pt-16 sm:pb-28 sm:pt-24">
           <div aria-hidden className="absolute -left-40 top-12 h-96 w-96 rounded-full bg-neon-fuchsia/[0.07] blur-3xl" />
           <div aria-hidden className="absolute -right-40 top-48 h-96 w-96 rounded-full bg-neon-cyan/[0.06] blur-3xl" />
@@ -108,7 +108,7 @@ export default async function ServicePage({ params }: PageProps) {
               </h1>
             </Reveal>
             <Reveal delay={130}>
-              <p className="mt-7 max-w-3xl text-[clamp(1.08rem,1.8vw,1.45rem)] font-medium leading-[1.5] tracking-[-0.015em] text-white/75">
+              <p className="mt-7 max-w-3xl text-lg font-medium leading-8 tracking-[-0.015em] text-white/75">
                 {service.hero}
               </p>
             </Reveal>
@@ -171,7 +171,7 @@ export default async function ServicePage({ params }: PageProps) {
                 </h2>
                 <ul className="mt-9 grid gap-3 sm:grid-cols-2">
                   {service.deliverables.map((item) => (
-                    <li key={item} className="flex gap-3 rounded-xl border border-neon-cyan/10 bg-[#ffffff] p-4 text-sm leading-6 text-white/60 shadow-sm">
+                    <li key={item} className="flex gap-3 rounded-xl border border-neon-cyan/10 bg-[#ffffff] p-4 text-lg leading-8 text-white/60 shadow-sm">
                       <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-neon-cyan" />
                       {item}
                     </li>
@@ -214,7 +214,7 @@ export default async function ServicePage({ params }: PageProps) {
                   <Card className="h-full p-7">
                     <span className="font-mono text-[0.68rem] tracking-[0.18em] text-neon-cyan">0{index + 1}</span>
                     <h3 className="mt-6 font-display text-xl font-semibold text-white">{step.title}</h3>
-                    <p className="mt-3 text-sm leading-7 text-white/55">{step.body}</p>
+                    <p className="mt-3 text-lg leading-8 text-white/55">{step.body}</p>
                   </Card>
                 </Reveal>
               ))}
@@ -266,7 +266,7 @@ export default async function ServicePage({ params }: PageProps) {
                 <div>
                   <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-[#ffb0c0]">Start with a practical conversation</p>
                   <h2 className="mt-4 max-w-3xl font-display text-[clamp(2rem,4vw,3.5rem)] font-semibold leading-[1.04] tracking-[-0.04em]">Share what needs to work better.</h2>
-                  <p className="mt-4 max-w-2xl text-sm leading-7 text-[#ffffff]/65">You will get a clear recommendation on scope, platform and the most useful next step, even when that means starting smaller.</p>
+                  <p className="mt-4 max-w-2xl text-lg leading-8 text-[#ffffff]/65">You will get a clear recommendation on scope, platform and the most useful next step, even when that means starting smaller.</p>
                 </div>
                 <a href="/contact" className="relative mt-8 inline-flex shrink-0 items-center gap-3 rounded-full bg-[#ffffff] px-6 py-3.5 text-sm font-semibold text-[#4a0d1d] transition-transform hover:-translate-y-0.5 lg:mt-0">Start a project <span aria-hidden>→</span></a>
               </div>

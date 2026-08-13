@@ -82,7 +82,7 @@ export function Contact() {
                 </h1>
               </Reveal>
               <Reveal delay={140}>
-                <p className="mt-5 max-w-md text-[1.0625rem] leading-relaxed text-white/55">
+                <p className="mt-5 max-w-md text-lg leading-8 text-white/55">
                   A short brief is enough to start. Expect a reply within one
                   business day with questions, an approach and a realistic timeline.
                 </p>
@@ -108,7 +108,7 @@ export function Contact() {
                 {hasBookingUrl ? <a href={site.bookingUrl} target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex min-h-12 items-center rounded-full border border-neon-cyan/20 bg-[#ffffff] px-5 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:border-neon-cyan/40">
                   Book a 20 minute call
                 </a> : null}
-                <p className="mt-5 text-sm leading-6 text-white/45">{site.locationLine}</p>
+                <p className="mt-5 text-lg leading-8 text-white/45">{site.locationLine}</p>
               </Reveal>
             </div>
 
@@ -130,7 +130,7 @@ export function Contact() {
                   <h3 className="mt-6 font-display text-2xl font-semibold text-white">
                     Thank you, your enquiry is in
                   </h3>
-                  <p className="mt-3 max-w-sm text-[0.9375rem] leading-relaxed text-white/55">
+                  <p className="mt-3 max-w-sm text-lg leading-8 text-white/55">
                     Your project details have been received. Expect a reply within one business day. You can also write to{" "}
                     <a
                       href={`mailto:${site.email}`}

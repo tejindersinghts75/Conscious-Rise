@@ -38,7 +38,7 @@ export default function WorkPage() {
       }} />
       <Interactions />
       <Nav />
-      <main id="main" className="overflow-hidden pt-24">
+      <main id="main" className="internal-page overflow-hidden pt-24">
         <section className="relative pb-14 pt-16 sm:pb-20 sm:pt-24">
           <div aria-hidden className="absolute -left-40 top-12 h-96 w-96 rounded-full bg-neon-fuchsia/[0.07] blur-3xl" />
           <div aria-hidden className="absolute -right-40 top-20 h-96 w-96 rounded-full bg-neon-cyan/[0.06] blur-3xl" />
@@ -51,7 +51,7 @@ export default function WorkPage() {
             </Reveal>
             <Reveal delay={140}>
               <div className="mt-8 grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
-                <p className="max-w-2xl text-[clamp(1.05rem,1.8vw,1.3rem)] leading-relaxed text-white/60">
+                <p className="max-w-2xl text-lg leading-8 text-white/60">
                   {projects.length} live digital experiences across wellness, finance, food, hospitality, mobility and personal brands, designed and developed in the platform that best fit each project.
                 </p>
                 <div className="flex flex-wrap gap-2 lg:justify-end">
@@ -80,7 +80,7 @@ export default function WorkPage() {
                 <div className="relative">
                   <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-[#ffb0c0]">Have something in mind?</p>
                   <h2 className="mt-4 max-w-2xl font-display text-[clamp(2rem,4vw,3.5rem)] font-semibold leading-[1.04] tracking-[-0.04em]">Let&apos;s make the next one yours.</h2>
-                  <p className="mt-4 max-w-xl text-sm leading-7 text-[#ffffff]/60">Share what you are building and receive a practical recommendation on platform, scope and next steps.</p>
+                  <p className="mt-4 max-w-xl text-lg leading-8 text-[#ffffff]/60">Share what you are building and receive a practical recommendation on platform, scope and next steps.</p>
                 </div>
                 <a href="/contact" className="relative mt-8 inline-flex shrink-0 items-center gap-3 rounded-full bg-[#ffffff] px-6 py-3.5 text-sm font-semibold text-[#4a0d1d] transition-transform hover:-translate-y-0.5 lg:mt-0">Start a project <span aria-hidden>→</span></a>
               </div>

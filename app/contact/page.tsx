@@ -28,7 +28,7 @@ export default function ContactPage() {
       }} />
       <Interactions />
       <Nav />
-      <main id="main" className="pt-16">
+      <main id="main" className="internal-page pt-16">
         <Contact />
       </main>
       <Footer />
