@@ -29,7 +29,7 @@ export function Hero() {
   return (
     <section id="top" className="relative flex h-[100svh] flex-col overflow-hidden bg-[#090b16]">
       <Image
-        src="/assets/conscious-rise-background-new.png"
+        src="/assets/conscious-rise-background.png"
         alt="A futuristic cosmic landscape with a glowing rose-coloured galaxy and digital horizon"
         fill
         priority
@@ -42,7 +42,7 @@ export function Hero() {
         <RotatingGlobe />
       </div>
       <Image
-        src="/assets/conscious-rise-foreground-v2.png"
+        src="/assets/conscious-rise-foreground.png"
         alt=""
         aria-hidden="true"
         fill
