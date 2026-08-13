@@ -192,7 +192,7 @@ export default async function ServicePage({ params }: PageProps) {
                 </div>
                 <div className="mt-10 border-t border-neon-cyan/10 pt-8">
                   <p className="font-display text-2xl font-semibold text-white">Direct senior involvement</p>
-                  <p className="mt-3 leading-7 text-white/55">You work directly with Tejinder Singh from discovery through implementation, testing and handover.</p>
+                  <p className="mt-3 leading-7 text-white/55">The same clear project process continues from discovery through implementation, testing and handover.</p>
                   <a href="/about" className="mt-5 inline-flex font-semibold text-neon-cyan hover:underline">About Conscious Rise →</a>
                 </div>
               </Card>
@@ -228,7 +228,7 @@ export default async function ServicePage({ params }: PageProps) {
               <div className="lg:sticky lg:top-32">
                 <Eyebrow>Frequently asked questions</Eyebrow>
                 <h2 className="mt-5 font-display text-[clamp(2.2rem,4vw,3.5rem)] font-semibold leading-[1.04] tracking-[-0.04em] text-white">
-                  Useful answers before we talk.
+                  Useful answers before starting a conversation.
                 </h2>
               </div>
             </Reveal>
@@ -265,7 +265,7 @@ export default async function ServicePage({ params }: PageProps) {
               <div className="relative overflow-hidden rounded-[2rem] bg-[#4a0d1d] px-7 py-12 text-[#ffffff] shadow-[0_28px_90px_-42px_rgba(74,13,29,0.7)] sm:px-12 sm:py-14 lg:flex lg:items-center lg:justify-between lg:gap-12">
                 <div>
                   <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-[#ffb0c0]">Start with a practical conversation</p>
-                  <h2 className="mt-4 max-w-3xl font-display text-[clamp(2rem,4vw,3.5rem)] font-semibold leading-[1.04] tracking-[-0.04em]">Tell me what needs to work better.</h2>
+                  <h2 className="mt-4 max-w-3xl font-display text-[clamp(2rem,4vw,3.5rem)] font-semibold leading-[1.04] tracking-[-0.04em]">Share what needs to work better.</h2>
                   <p className="mt-4 max-w-2xl text-sm leading-7 text-[#ffffff]/65">You will get a clear recommendation on scope, platform and the most useful next step, even when that means starting smaller.</p>
                 </div>
                 <a href="/contact" className="relative mt-8 inline-flex shrink-0 items-center gap-3 rounded-full bg-[#ffffff] px-6 py-3.5 text-sm font-semibold text-[#4a0d1d] transition-transform hover:-translate-y-0.5 lg:mt-0">Start a project <span aria-hidden>→</span></a>

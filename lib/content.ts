@@ -136,13 +136,13 @@ export const process = [
   {
     step: "01",
     title: "Discovery",
-    body: "We talk through goals, audience and constraints. You leave the call with a scope, a timeline and a fixed price, not a vague estimate.",
+    body: "Goals, audience and constraints are clarified first. You leave the conversation with a scope, timeline and fixed price, not a vague estimate.",
     duration: "Day 1–2",
   },
   {
     step: "02",
     title: "Design or handoff",
-    body: "Bring a Figma file and I build to it exactly. No design yet? I'll wireframe and design the pages before a single line of code is written.",
+    body: "Bring a Figma file for faithful implementation. If there is no design yet, wireframes and page designs are completed before development begins.",
     duration: "Week 1",
   },
   {
@@ -166,7 +166,7 @@ export const expectations = [
   },
   {
     title: "Clear communication",
-    body: "Updates you don't have to chase, in plain language. You always know what's done, what's next and what I need from you.",
+    body: "Updates you do not have to chase, written in plain language. You always know what is done, what comes next and what input is needed.",
   },
   {
     title: "Reliable, on-time delivery",
@@ -174,14 +174,14 @@ export const expectations = [
   },
   {
     title: "Long-term collaboration",
-    body: "Most clients stay past launch. I'm still here for the iteration, the new page, the feature and the audit six months later.",
+    body: "Support can continue past launch for iterations, new pages, features and future audits.",
   },
 ];
 
 export const faqs = [
   {
     q: "Which platform is right for my project?",
-    a: "It depends on who maintains it. Marketing sites that a non-technical team updates weekly do best in Webflow or Framer. Content-heavy sites with existing editorial workflows suit WordPress. Anything with authentication, dashboards or real application logic belongs in Next.js. I'll recommend the honest answer on our first call, including when that answer means a smaller invoice.",
+    a: "It depends on who maintains it. Marketing sites that a non-technical team updates weekly do best in Webflow or Framer. Content-heavy sites with existing editorial workflows suit WordPress. Anything with authentication, dashboards or real application logic belongs in Next.js. The first conversation includes an honest recommendation, including when the right answer means a smaller scope.",
   },
   {
     q: "How long does a project take?",
@@ -189,14 +189,14 @@ export const faqs = [
   },
   {
     q: "Do you work from an existing Figma file?",
-    a: "Yes, that's a large part of what I do. Send the file and I'll build it faithfully in Next.js, React, Webflow, Framer or WordPress, flagging any interaction or responsive states the design doesn't yet cover.",
+    a: "Yes. Existing designs can be built faithfully in Next.js, React, Webflow, Framer or WordPress, with missing interaction and responsive states identified before implementation.",
   },
   {
     q: "What happens after launch?",
-    a: "Every project includes a handover walkthrough and 30 days of support for fixes and questions. Beyond that, I offer monthly retainers for ongoing iteration, new pages and performance monitoring.",
+    a: "Every project includes a handover walkthrough and 30 days of support for fixes and questions. Monthly retainers are also available for ongoing iteration, new pages and performance monitoring.",
   },
   {
     q: "How do you handle performance?",
-    a: "It's built in, not bolted on: image and font strategy, minimal JavaScript, server rendering where it helps and caching at the edge. Every site ships with a Lighthouse pass, and I'll show you the before-and-after numbers.",
+    a: "It is built in, not bolted on: image and font strategy, minimal JavaScript, server rendering where it helps and caching at the edge. Every site receives a Lighthouse review with clear before-and-after findings where applicable.",
   },
 ];

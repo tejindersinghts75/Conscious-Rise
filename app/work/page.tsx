@@ -80,7 +80,7 @@ export default function WorkPage() {
                 <div className="relative">
                   <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-[#ffb0c0]">Have something in mind?</p>
                   <h2 className="mt-4 max-w-2xl font-display text-[clamp(2rem,4vw,3.5rem)] font-semibold leading-[1.04] tracking-[-0.04em]">Let&apos;s make the next one yours.</h2>
-                  <p className="mt-4 max-w-xl text-sm leading-7 text-[#ffffff]/60">Tell me what you are building and I&apos;ll recommend a practical platform, scope and next step.</p>
+                  <p className="mt-4 max-w-xl text-sm leading-7 text-[#ffffff]/60">Share what you are building and receive a practical recommendation on platform, scope and next steps.</p>
                 </div>
                 <a href="/contact" className="relative mt-8 inline-flex shrink-0 items-center gap-3 rounded-full bg-[#ffffff] px-6 py-3.5 text-sm font-semibold text-[#4a0d1d] transition-transform hover:-translate-y-0.5 lg:mt-0">Start a project <span aria-hidden>→</span></a>
               </div>

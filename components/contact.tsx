@@ -58,7 +58,7 @@ export function Contact() {
       setSent(true);
       form.reset();
     } catch {
-      setError("The form could not be sent. Please email me directly at info@consciousrise.in and I’ll reply within one business day.");
+      setError("The form could not be sent. Please email Conscious Rise directly for a reply within one business day.");
     } finally {
       setSubmitting(false);
     }
@@ -76,16 +76,15 @@ export function Contact() {
               </Reveal>
               <Reveal delay={80}>
                 <h1 className="mt-5 font-display text-[clamp(2rem,4.4vw,3.1rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-white">
-                  Tell me about
+                  Tell Conscious Rise about
                   <br />
                   your <span className="text-gradient">project.</span>
                 </h1>
               </Reveal>
               <Reveal delay={140}>
                 <p className="mt-5 max-w-md text-[1.0625rem] leading-relaxed text-white/55">
-                  A short brief is enough to start. I&apos;ll reply within one
-                  business day with questions, an approach and a realistic
-                  timeline.
+                  A short brief is enough to start. Expect a reply within one
+                  business day with questions, an approach and a realistic timeline.
                 </p>
               </Reveal>
 
@@ -132,7 +131,7 @@ export function Contact() {
                     Thank you, your enquiry is in
                   </h3>
                   <p className="mt-3 max-w-sm text-[0.9375rem] leading-relaxed text-white/55">
-                    Your project details have been received. I&apos;ll review them and reply within one business day. You can also write to{" "}
+                    Your project details have been received. Expect a reply within one business day. You can also write to{" "}
                     <a
                       href={`mailto:${site.email}`}
                       className="font-medium text-neon-cyan underline underline-offset-4"

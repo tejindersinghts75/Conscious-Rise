@@ -7,7 +7,7 @@ export function Services() {
     <section id="services" className="relative scroll-mt-24 pt-24 sm:pt-28">
       <div className="container-x">
         <SectionHeading
-          eyebrow="What I can help you with"
+          eyebrow="How Conscious Rise can help"
           title={
             <>
               {count} ways to get your
@@ -98,7 +98,7 @@ export function Services() {
                 href="/contact"
                 className="relative z-10 mt-8 inline-flex items-center gap-2 text-[0.9375rem] font-semibold text-white transition-colors hover:text-neon-cyan"
               >
-                Tell me about it
+                Tell us about it
                 <svg viewBox="0 0 16 16" fill="none" className="h-4 w-4">
                   <path
                     d="M3 8h10M9 4l4 4-4 4"

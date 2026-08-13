@@ -15,8 +15,8 @@ export function Testimonials() {
       <div className="container-x">
         <SectionHeading
           eyebrow="Client feedback"
-          title={<>What clients say after we <span className="text-gradient">ship.</span></>}
-          lead="Verified feedback from clients who hired me through Upwork."
+          title={<>What clients say after a project <span className="text-gradient">ships.</span></>}
+          lead="Verified feedback from Conscious Rise clients on Upwork."
         />
         <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {visibleTestimonials.map((item, index) => (
