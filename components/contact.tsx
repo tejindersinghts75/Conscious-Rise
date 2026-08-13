@@ -129,7 +129,7 @@ export function Contact() {
                     </svg>
                   </span>
                   <h3 className="mt-6 font-display text-2xl font-semibold text-white">
-                    Thank you—your enquiry is in
+                    Thank you, your enquiry is in
                   </h3>
                   <p className="mt-3 max-w-sm text-[0.9375rem] leading-relaxed text-white/55">
                     Your project details have been received. I&apos;ll review them and reply within one business day. You can also write to{" "}

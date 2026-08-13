@@ -71,7 +71,7 @@ export const services: Service[] = [
     href: "/services/ecommerce-development",
     title: "E-commerce Development",
     blurb:
-      "Clear, dependable buying experiences for products, services and subscriptions—from discovery through payment and fulfilment.",
+      "Clear, dependable buying experiences for products, services and subscriptions, from discovery through payment and fulfilment.",
     points: ["Online stores", "Subscriptions & payments", "Custom purchase journeys"],
     glyph: "06",
   },
@@ -136,7 +136,7 @@ export const process = [
   {
     step: "01",
     title: "Discovery",
-    body: "We talk through goals, audience and constraints. You leave the call with a scope, a timeline and a fixed price — not a vague estimate.",
+    body: "We talk through goals, audience and constraints. You leave the call with a scope, a timeline and a fixed price, not a vague estimate.",
     duration: "Day 1–2",
   },
   {
@@ -162,7 +162,7 @@ export const process = [
 export const expectations = [
   {
     title: "Clean, maintainable code",
-    body: "Typed, componentised and documented. The next developer who opens the repo — including future you — will understand it in minutes.",
+    body: "Typed, componentised and documented. The next developer who opens the repo, including future you, will understand it in minutes.",
   },
   {
     title: "Clear communication",
@@ -170,7 +170,7 @@ export const expectations = [
   },
   {
     title: "Reliable, on-time delivery",
-    body: "Dates are commitments, not guesses. If something threatens a deadline, you hear about it early — never after the fact.",
+    body: "Dates are commitments, not guesses. If something threatens a deadline, you hear about it early, never after the fact.",
   },
   {
     title: "Long-term collaboration",
@@ -181,7 +181,7 @@ export const expectations = [
 export const faqs = [
   {
     q: "Which platform is right for my project?",
-    a: "It depends on who maintains it. Marketing sites that a non-technical team updates weekly do best in Webflow or Framer. Content-heavy sites with existing editorial workflows suit WordPress. Anything with authentication, dashboards or real application logic belongs in Next.js. I'll recommend the honest answer on our first call — including when that answer means a smaller invoice.",
+    a: "It depends on who maintains it. Marketing sites that a non-technical team updates weekly do best in Webflow or Framer. Content-heavy sites with existing editorial workflows suit WordPress. Anything with authentication, dashboards or real application logic belongs in Next.js. I'll recommend the honest answer on our first call, including when that answer means a smaller invoice.",
   },
   {
     q: "How long does a project take?",
@@ -189,7 +189,7 @@ export const faqs = [
   },
   {
     q: "Do you work from an existing Figma file?",
-    a: "Yes — that's a large part of what I do. Send the file and I'll build it faithfully in Next.js, React, Webflow, Framer or WordPress, flagging any interaction or responsive states the design doesn't yet cover.",
+    a: "Yes, that's a large part of what I do. Send the file and I'll build it faithfully in Next.js, React, Webflow, Framer or WordPress, flagging any interaction or responsive states the design doesn't yet cover.",
   },
   {
     q: "What happens after launch?",

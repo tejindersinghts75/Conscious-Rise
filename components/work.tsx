@@ -40,7 +40,7 @@ export function ProjectCard({ project, priority = false, headingLevel = 3 }: { p
   const Heading = headingLevel === 2 ? "h2" : "h3";
   return (
     <article className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-neon-cyan/15 bg-[#ffffff] shadow-[0_18px_55px_-36px_rgba(119,12,38,0.42)] transition-all duration-500 hover:-translate-y-1.5 hover:border-neon-cyan/30 hover:shadow-[0_28px_75px_-38px_rgba(119,12,38,0.48)]">
-      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" aria-label={`View ${project.name} live website — ${project.platform}`} className="relative block aspect-[16/10] overflow-hidden bg-[#f7f2f3]">
+      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" aria-label={`View ${project.name} live website, ${project.platform}`} className="relative block aspect-[16/10] overflow-hidden bg-[#f7f2f3]">
         <Image
           src={project.image}
           alt={`${project.name} website homepage preview`}

@@ -188,7 +188,7 @@ export function Nav() {
                   open ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0",
                 )}
               >
-                Websites, web applications and automation—built clearly, shipped reliably.
+                Websites, web applications and automation, built clearly and shipped reliably.
               </p>
             </div>
           </div>

@@ -11,10 +11,10 @@ import { StructuredData } from "@/components/structured-data";
 export const metadata: Metadata = {
   title: "About Tejinder Singh",
   description:
-    "Meet Tejinder Singh, the web developer behind Conscious Rise—building thoughtful, fast and maintainable websites since 2019.",
+    "Meet Tejinder Singh, the web developer behind Conscious Rise, building thoughtful, fast and maintainable websites since 2019.",
   alternates: { canonical: "/about" },
-  openGraph: { title: "About Tejinder Singh — Conscious Rise", description: "Meet Tejinder Singh, the developer behind Conscious Rise, building fast and maintainable websites since 2019.", url: "/about", images: ["/og-image.jpg"] },
-  twitter: { title: "About Tejinder Singh — Conscious Rise", description: "Meet Tejinder Singh, the developer behind Conscious Rise.", images: ["/og-image.jpg"] },
+  openGraph: { title: "About Tejinder Singh | Conscious Rise", description: "Meet Tejinder Singh, the developer behind Conscious Rise, building fast and maintainable websites since 2019.", url: "/about", images: ["/og-image.jpg"] },
+  twitter: { title: "About Tejinder Singh | Conscious Rise", description: "Meet Tejinder Singh, the developer behind Conscious Rise.", images: ["/og-image.jpg"] },
 };
 
 const facts = stats.slice(0, 3).map((stat) => [
@@ -26,7 +26,7 @@ const principles = [
   {
     number: "01",
     title: "Clarity before code",
-    body: "I start by understanding the goal, the audience and the constraints. The right solution is not always the most complicated one—and I will say so when a simpler build serves you better.",
+    body: "I start by understanding the goal, the audience and the constraints. The right solution is not always the most complicated one, and I will say so when a simpler build serves you better.",
   },
   {
     number: "02",
@@ -173,7 +173,7 @@ export default function AboutPage() {
               <Reveal>
                 <p>
                   Conscious Rise is the name I work under, but the relationship is
-                  personal. When we start a project, you work directly with me—from
+                  personal. When we start a project, you work directly with me, from
                   the first conversation and technical decisions through development,
                   testing and launch.
                 </p>
@@ -183,7 +183,7 @@ export default function AboutPage() {
                   Over the past five-plus years, I have delivered marketing websites,
                   custom web applications, no-code builds, commerce experiences and
                   connected business systems. That range helps me start with the
-                  outcome and choose the right implementation—not force every project
+                  outcome and choose the right implementation, not force every project
                   into the same technology.
                 </p>
               </Reveal>

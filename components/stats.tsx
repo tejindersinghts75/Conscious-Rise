@@ -68,7 +68,7 @@ function CountUp({
       const start = performance.now();
       const tick = (now: number) => {
         const t = Math.min(1, (now - start) / duration);
-        // easeOutExpo — fast start, gentle settle
+        // easeOutExpo: fast start, gentle settle
         const eased = t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
         setValue(Math.round(target * eased));
         if (t < 1) raf = requestAnimationFrame(tick);

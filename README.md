@@ -21,8 +21,8 @@ npm start        # serve the production build
 
 ## Editing the content
 
-Everything visible on the page — copy, services, stats, tech stack, process,
-case studies, FAQ — lives in [`lib/content.ts`](lib/content.ts). Change the data
+Everything visible on the page, including copy, services, stats, tech stack, process,
+case studies and FAQ, lives in [`lib/content.ts`](lib/content.ts). Change the data
 there and the sections update; you shouldn't need to touch component files for
 routine copy edits.
 
@@ -76,10 +76,10 @@ lib/
   (`components/interactions.tsx`), so every content section stays a server
   component.
 - **No images.** The background aurora, grid, scanline and film grain are CSS
-  and inline SVG — nothing to download, nothing to lay out.
+  and inline SVG, with nothing to download or lay out.
 - **FAQ uses native `<details>`**, so the accordion is keyboard accessible and
   costs zero JavaScript.
-- **Motion respects `prefers-reduced-motion`** — reveals resolve immediately,
+- **Motion respects `prefers-reduced-motion`**: reveals resolve immediately,
   the spotlight and counters are disabled.
 - Fonts are self-hosted at build time via `next/font` (Space Grotesk, Inter,
   JetBrains Mono), so there is no render-blocking request to Google.

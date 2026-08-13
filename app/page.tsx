@@ -19,8 +19,8 @@ export const metadata: Metadata = {
   title: "Websites, Web Applications & AI Automation",
   description: siteConfig.description,
   alternates: { canonical: "/" },
-  openGraph: { title: "Conscious Rise — Websites, Web Apps & AI Automation", description: siteConfig.description, url: "/", images: ["/og-image.jpg"] },
-  twitter: { title: "Conscious Rise — Websites, Web Apps & AI Automation", description: siteConfig.description, images: ["/og-image.jpg"] },
+  openGraph: { title: "Conscious Rise | Websites, Web Apps & AI Automation", description: siteConfig.description, url: "/", images: ["/og-image.jpg"] },
+  twitter: { title: "Conscious Rise | Websites, Web Apps & AI Automation", description: siteConfig.description, images: ["/og-image.jpg"] },
 };
 
 export default function Home() {

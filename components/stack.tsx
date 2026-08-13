@@ -35,7 +35,7 @@ export function Stack() {
               The tools behind the <span className="text-gradient">builds.</span>
             </>
           }
-          lead="Deliberately chosen and genuinely known — not a logo wall. Each of these has shipped real production work."
+          lead="Deliberately chosen and genuinely known, not a logo wall. Each of these has shipped real production work."
         />
 
         <div className="mt-16 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -83,7 +83,7 @@ export function Stack() {
                 <div>
                   <p className="eyebrow">Figma to production</p>
                   <p className="mt-4 font-display text-[1.0625rem] font-semibold leading-snug text-white">
-                    Send the file — get the live site.
+                    Send the file, get the live site.
                   </p>
                 </div>
                 <div className="mt-6 flex flex-wrap items-center gap-2 font-mono text-[0.6875rem] text-white/40">

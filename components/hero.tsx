@@ -1,7 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { useState } from "react";
+
+const RotatingGlobe = dynamic(
+  () => import("@/components/rotating-globe").then((module) => module.RotatingGlobe),
+  { ssr: false },
+);
 
 const leftServices = [
   ["develop", "Develop", "Scalable web solutions built for performance and growth."],
@@ -23,31 +29,31 @@ export function Hero() {
   return (
     <section id="top" className="relative flex h-[100svh] flex-col overflow-hidden bg-[#090b16]">
       <Image
-        src="/assets/conscious-rise-hero.png"
-        alt="A futuristic landscape with a glowing cherry portal and the Conscious Rise identity"
+        src="/assets/conscious-rise-background-new.png"
+        alt="A futuristic cosmic landscape with a glowing rose-coloured galaxy and digital horizon"
         fill
         priority
         sizes="100vw"
         quality={82}
-        className="object-cover object-center [image-rendering:auto]"
+        className="z-[1] object-cover object-center [image-rendering:auto]"
       />
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        disablePictureInPicture
-        preload="auto"
-        poster="/assets/conscious-rise-hero.png"
+      <div aria-hidden className="pointer-events-none absolute left-1/2 top-[72%] z-[2] h-[12%] w-[min(48vw,31rem)] -translate-x-1/2 rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(210,4,45,0.34)_0%,rgba(92,2,25,0.28)_42%,rgba(0,0,0,0.12)_58%,transparent_76%)] blur-xl" />
+      <div className="hero-globe-shell pointer-events-none absolute left-1/2 top-[47%] z-[2] aspect-square w-[min(80vw,33rem)] -translate-x-1/2 -translate-y-1/2 sm:w-[min(59vw,37rem)] lg:w-[min(40vw,39rem)]">
+        <RotatingGlobe />
+      </div>
+      <Image
+        src="/assets/conscious-rise-foreground-v2.png"
+        alt=""
         aria-hidden="true"
-        tabIndex={-1}
-        className="absolute inset-0 h-full w-full object-cover object-center motion-reduce:hidden"
-      >
-        <source src="/assets/conscious-rise-hero-video.mp4" type="video/mp4" />
-      </video>
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(4,6,14,0.5),transparent_28%,transparent_72%,rgba(4,6,14,0.5)),linear-gradient(180deg,rgba(4,6,14,0.18),transparent_55%,rgba(4,6,14,0.66))]" />
-      <div className="absolute inset-y-0 left-0 w-[27%] bg-gradient-to-r from-[#050711]/55 to-transparent backdrop-blur-[3px] [mask-image:linear-gradient(to_right,#000_0%,rgba(0,0,0,0.88)_58%,transparent_100%)]" />
-      <div className="absolute inset-y-0 right-0 w-[27%] bg-gradient-to-l from-[#050711]/55 to-transparent backdrop-blur-[3px] [mask-image:linear-gradient(to_left,#000_0%,rgba(0,0,0,0.88)_58%,transparent_100%)]" />
+        fill
+        priority
+        sizes="100vw"
+        quality={88}
+        className="pointer-events-none z-[3] object-cover object-center"
+      />
+      <div className="absolute inset-0 z-[4] bg-[linear-gradient(90deg,rgba(4,6,14,0.5),transparent_28%,transparent_72%,rgba(4,6,14,0.5)),linear-gradient(180deg,rgba(4,6,14,0.18),transparent_55%,rgba(4,6,14,0.66))]" />
+      <div className="absolute inset-y-0 left-0 z-[4] w-[27%] bg-gradient-to-r from-[#050711]/55 to-transparent backdrop-blur-[3px] [mask-image:linear-gradient(to_right,#000_0%,rgba(0,0,0,0.88)_58%,transparent_100%)]" />
+      <div className="absolute inset-y-0 right-0 z-[4] w-[27%] bg-gradient-to-l from-[#050711]/55 to-transparent backdrop-blur-[3px] [mask-image:linear-gradient(to_left,#000_0%,rgba(0,0,0,0.88)_58%,transparent_100%)]" />
 
       <div className="container-x relative z-10 hidden flex-1 justify-between pt-32 pb-12 lg:flex">
         <div className="grid w-60 grid-rows-4 content-center gap-5">

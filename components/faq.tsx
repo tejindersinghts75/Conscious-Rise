@@ -2,7 +2,7 @@ import { faqs } from "@/lib/content";
 import { Reveal, SectionHeading } from "@/components/ui/primitives";
 import { hasBookingUrl, siteConfig } from "@/config/site";
 
-/** Native <details> — zero JavaScript, keyboard accessible for free. */
+/** Native <details>, zero JavaScript and keyboard accessible for free. */
 export function Faq() {
   return (
     <section id="faq" className="relative scroll-mt-24 pt-24 sm:pt-28">

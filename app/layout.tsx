@@ -6,8 +6,8 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — Websites, Web Apps & AI Automation`,
-    template: `%s — ${site.name}`,
+    default: `${site.name} | Websites, Web Apps & AI Automation`,
+    template: `%s | ${site.name}`,
   },
   description: site.description,
   applicationName: site.name,
@@ -29,17 +29,17 @@ export const metadata: Metadata = {
     "performance optimization",
   ],
   openGraph: {
-    title: `${site.name} — Web engineering studio`,
+    title: `${site.name} | Web engineering studio`,
     description: site.description,
     url: site.url,
     siteName: site.name,
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: `${site.name} — ${site.tagline}` }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: `${site.name}: ${site.tagline}` }],
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — Web engineering studio`,
+    title: `${site.name} | Web engineering studio`,
     description: site.description,
     images: ["/og-image.jpg"],
   },

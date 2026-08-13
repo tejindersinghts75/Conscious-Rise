@@ -27,14 +27,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: service.description,
     alternates: { canonical: url },
     openGraph: {
-      title: `${service.seoTitle} — Conscious Rise`,
+      title: `${service.seoTitle} | Conscious Rise`,
       description: service.description,
       url,
       images: ["/og-image.jpg"],
       type: "website",
     },
     twitter: {
-      title: `${service.seoTitle} — Conscious Rise`,
+      title: `${service.seoTitle} | Conscious Rise`,
       description: service.description,
       images: ["/og-image.jpg"],
     },
@@ -266,7 +266,7 @@ export default async function ServicePage({ params }: PageProps) {
                 <div>
                   <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-[#ffb0c0]">Start with a practical conversation</p>
                   <h2 className="mt-4 max-w-3xl font-display text-[clamp(2rem,4vw,3.5rem)] font-semibold leading-[1.04] tracking-[-0.04em]">Tell me what needs to work better.</h2>
-                  <p className="mt-4 max-w-2xl text-sm leading-7 text-[#ffffff]/65">You will get a clear recommendation on scope, platform and the most useful next step—even when that means starting smaller.</p>
+                  <p className="mt-4 max-w-2xl text-sm leading-7 text-[#ffffff]/65">You will get a clear recommendation on scope, platform and the most useful next step, even when that means starting smaller.</p>
                 </div>
                 <a href="/contact" className="relative mt-8 inline-flex shrink-0 items-center gap-3 rounded-full bg-[#ffffff] px-6 py-3.5 text-sm font-semibold text-[#4a0d1d] transition-transform hover:-translate-y-0.5 lg:mt-0">Start a project <span aria-hidden>→</span></a>
               </div>

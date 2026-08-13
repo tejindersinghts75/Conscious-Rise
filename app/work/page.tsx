@@ -13,8 +13,8 @@ export const metadata: Metadata = {
   title: "Work",
   description: "Explore live websites built by Conscious Rise across Framer, Next.js and Webflow.",
   alternates: { canonical: "/work" },
-  openGraph: { title: "Web Development Portfolio — Conscious Rise", description: "Explore nine live Framer, Next.js and Webflow projects built by Conscious Rise.", url: "/work", images: ["/og-image.jpg"] },
-  twitter: { title: "Web Development Portfolio — Conscious Rise", description: "Explore nine live Framer, Next.js and Webflow projects.", images: ["/og-image.jpg"] },
+  openGraph: { title: "Web Development Portfolio | Conscious Rise", description: "Explore nine live Framer, Next.js and Webflow projects built by Conscious Rise.", url: "/work", images: ["/og-image.jpg"] },
+  twitter: { title: "Web Development Portfolio | Conscious Rise", description: "Explore nine live Framer, Next.js and Webflow projects.", images: ["/og-image.jpg"] },
 };
 
 export default function WorkPage() {
@@ -52,7 +52,7 @@ export default function WorkPage() {
             <Reveal delay={140}>
               <div className="mt-8 grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
                 <p className="max-w-2xl text-[clamp(1.05rem,1.8vw,1.3rem)] leading-relaxed text-white/60">
-                  {projects.length} live digital experiences across wellness, finance, food, hospitality, mobility and personal brands—designed and developed in the platform that best fit each project.
+                  {projects.length} live digital experiences across wellness, finance, food, hospitality, mobility and personal brands, designed and developed in the platform that best fit each project.
                 </p>
                 <div className="flex flex-wrap gap-2 lg:justify-end">
                   {["Framer", "Next.js", "Webflow"].map((platform) => (
