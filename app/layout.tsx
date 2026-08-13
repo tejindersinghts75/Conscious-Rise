@@ -79,6 +79,7 @@ const jsonLd = {
       logo: `${site.url}/assets/conscious-rise-logo-black.svg`,
       image: `${site.url}/og-image.jpg`,
       email: site.email,
+      founder: { "@id": `${site.url}/#founder` },
       sameAs: [site.upworkUrl, ...Object.values(site.social)].filter(Boolean),
       areaServed: ["United Kingdom", "United States", "Worldwide"],
       contactPoint: {
@@ -95,6 +96,14 @@ const jsonLd = {
           itemOffered: { "@type": "Service", name },
         })),
       },
+    },
+    {
+      "@type": "Person",
+      "@id": `${site.url}/#founder`,
+      name: site.founderName,
+      image: `${site.url}${site.founderPhoto}`,
+      jobTitle: "Founder & Technical Lead",
+      worksFor: { "@id": `${site.url}/#organization` },
     },
     {
       "@type": "WebSite",
