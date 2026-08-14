@@ -37,7 +37,7 @@ export function Hero() {
         quality={82}
         className="z-[1] object-cover object-center [image-rendering:auto]"
       />
-      <div aria-hidden className="pointer-events-none absolute left-1/2 top-[72%] z-[2] h-[12%] w-[min(48vw,31rem)] -translate-x-1/2 rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(210,4,45,0.34)_0%,rgba(92,2,25,0.28)_42%,rgba(0,0,0,0.12)_58%,transparent_76%)] blur-xl" />
+      <div aria-hidden className="pointer-events-none absolute left-1/2 top-[72%] z-[2] h-[12%] w-[min(48vw,31rem)] -translate-x-1/2 rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(185,139,255,0.28)_0%,rgba(105,70,175,0.22)_42%,rgba(0,0,0,0.1)_58%,transparent_76%)] blur-xl" />
       <div className="hero-globe-shell pointer-events-none absolute left-1/2 top-[47%] z-[2] aspect-square w-[min(80vw,33rem)] -translate-x-1/2 -translate-y-1/2 sm:w-[min(59vw,37rem)] lg:w-[min(40vw,39rem)]">
         <RotatingGlobe />
       </div>

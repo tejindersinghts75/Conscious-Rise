@@ -48,9 +48,11 @@ export function RotatingGlobe() {
           float redDominance=max(source.r-neutral,0.0);
           float redMask=smoothstep(0.04,0.42,redDominance);
           float luminance=dot(source.rgb,vec3(0.2126,0.7152,0.0722));
-          vec3 cherry=vec3(0.824,0.016,0.176);
-          vec3 cherrySurface=vec3(luminance*0.14)+cherry*(source.r*1.08);
-          vec3 finalColor=mix(source.rgb,cherrySurface,redMask*0.9);
+          vec3 violet=vec3(0.46,0.30,0.82);
+          vec3 lavender=vec3(0.78,0.66,1.0);
+          vec3 violetSurface=mix(violet*0.28,lavender,smoothstep(0.16,0.92,source.r));
+          violetSurface+=vec3(luminance*0.18);
+          vec3 finalColor=mix(source.rgb,violetSurface,redMask*0.96);
           gl_FragColor=vec4(finalColor,source.a);
         }
       `,
@@ -74,7 +76,7 @@ export function RotatingGlobe() {
         side: THREE.BackSide,
         blending: THREE.AdditiveBlending,
         vertexShader: `varying vec3 vNormal; void main(){ vNormal=normalize(normalMatrix*normal); gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }`,
-        fragmentShader: `varying vec3 vNormal; void main(){ float rim=pow(0.72-dot(vNormal,vec3(0.0,0.0,1.0)),3.0); gl_FragColor=vec4(0.824,0.016,0.176,rim*0.78); }`,
+        fragmentShader: `varying vec3 vNormal; void main(){ float rim=pow(0.72-dot(vNormal,vec3(0.0,0.0,1.0)),3.0); gl_FragColor=vec4(0.70,0.52,1.0,rim*0.64); }`,
       }),
     );
     tiltedAxis.add(atmosphere);
