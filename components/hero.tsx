@@ -39,10 +39,7 @@ export function Hero() {
       />
       <div aria-hidden className="pointer-events-none absolute left-1/2 top-[72%] z-[2] h-[12%] w-[min(48vw,31rem)] -translate-x-1/2 rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(185,139,255,0.28)_0%,rgba(105,70,175,0.22)_42%,rgba(0,0,0,0.1)_58%,transparent_76%)] blur-xl" />
       <div className="hero-globe-shell pointer-events-none absolute left-1/2 top-[47%] z-[2] aspect-square w-[min(80vw,33rem)] -translate-x-1/2 -translate-y-1/2 sm:w-[min(59vw,37rem)] lg:w-[min(40vw,39rem)]">
-        <div aria-hidden className="absolute inset-[11%] rounded-full bg-[radial-gradient(circle_at_34%_25%,rgba(198,181,255,0.58)_0%,transparent_24%),radial-gradient(circle_at_72%_48%,rgba(232,111,193,0.32)_0%,transparent_33%),radial-gradient(circle_at_center,rgba(86,58,151,0.7)_0%,rgba(37,27,78,0.48)_58%,transparent_76%)] blur-md" />
-        <div className="relative h-full w-full">
-          <RotatingGlobe />
-        </div>
+        <RotatingGlobe />
       </div>
       <Image
         src="/assets/conscious-rise-foreground.png"

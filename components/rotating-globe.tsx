@@ -38,13 +38,10 @@ export function RotatingGlobe() {
 
     const globeMaterial = new THREE.ShaderMaterial({
       uniforms: { globeMap: { value: texture } },
-      transparent: true,
-      depthWrite: false,
-      vertexShader: `varying vec2 vUv; varying vec3 vViewNormal; void main(){ vUv=uv; vViewNormal=normalize(normalMatrix*normal); gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }`,
+      vertexShader: `varying vec2 vUv; void main(){ vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }`,
       fragmentShader: `
         uniform sampler2D globeMap;
         varying vec2 vUv;
-        varying vec3 vViewNormal;
         void main(){
           vec4 source=texture2D(globeMap,vUv);
           float neutral=max(source.g,source.b);
@@ -53,16 +50,12 @@ export function RotatingGlobe() {
           float luminance=dot(source.rgb,vec3(0.2126,0.7152,0.0722));
           vec3 violet=vec3(0.46,0.30,0.82);
           vec3 lavender=vec3(0.78,0.66,1.0);
-          vec3 shadowViolet=vec3(0.06,0.035,0.13);
-          vec3 tintedBase=max(source.rgb*0.46,shadowViolet*(0.84+luminance*0.16));
+          vec3 shadowViolet=vec3(0.075,0.045,0.16);
+          vec3 tintedBase=max(source.rgb*0.58,shadowViolet*(0.82+luminance*0.18));
           vec3 violetSurface=mix(violet*0.28,lavender,smoothstep(0.16,0.92,source.r));
           violetSurface+=vec3(luminance*0.18);
           vec3 finalColor=mix(tintedBase,violetSurface,redMask*0.96);
-          float facing=clamp(dot(normalize(vViewNormal),vec3(0.0,0.0,1.0)),0.0,1.0);
-          float edgeFade=smoothstep(0.02,0.34,facing);
-          float surfaceAlpha=mix(0.18,0.78,redMask);
-          surfaceAlpha*=mix(0.38,1.0,edgeFade);
-          gl_FragColor=vec4(finalColor,source.a*surfaceAlpha);
+          gl_FragColor=vec4(finalColor,source.a);
         }
       `,
     });
