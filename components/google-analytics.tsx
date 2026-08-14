@@ -1,5 +1,6 @@
 import Script from "next/script";
 import { siteConfig } from "@/config/site";
+import { AnalyticsTracker } from "@/components/analytics-tracker";
 
 export function GoogleAnalytics() {
   const measurementId = siteConfig.googleAnalyticsId;
@@ -12,8 +13,9 @@ export function GoogleAnalytics() {
         strategy="afterInteractive"
       />
       <Script id="google-analytics" strategy="afterInteractive">
-        {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${measurementId}',{anonymize_ip:true});`}
+        {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}window.gtag=gtag;gtag('js',new Date());gtag('config','${measurementId}',{anonymize_ip:true,send_page_view:false});`}
       </Script>
+      <AnalyticsTracker />
     </>
   );
 }
