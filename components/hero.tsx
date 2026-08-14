@@ -42,14 +42,14 @@ export function Hero() {
         <RotatingGlobe />
       </div>
       <Image
-        src="/assets/conscious-rise-foreground.png"
+        src="/assets/conscious-rise-foreground-monochrome.jpg"
         alt=""
         aria-hidden="true"
         fill
         priority
         sizes="100vw"
         quality={88}
-        className="pointer-events-none z-[3] object-cover object-center"
+        className="pointer-events-none z-[3] object-cover object-center mix-blend-screen"
       />
       <div className="absolute inset-0 z-[4] bg-[linear-gradient(90deg,rgba(4,6,14,0.5),transparent_28%,transparent_72%,rgba(4,6,14,0.5)),linear-gradient(180deg,rgba(4,6,14,0.18),transparent_55%,rgba(4,6,14,0.66))]" />
       <div className="absolute inset-y-0 left-0 z-[4] w-[27%] bg-gradient-to-r from-[#050711]/55 to-transparent backdrop-blur-[3px] [mask-image:linear-gradient(to_right,#000_0%,rgba(0,0,0,0.88)_58%,transparent_100%)]" />
