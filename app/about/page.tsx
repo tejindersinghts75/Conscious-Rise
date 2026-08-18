@@ -18,8 +18,8 @@ export const metadata: Metadata = {
 };
 
 const facts = [
-  ["7+", "Years Experience"],
-  ["35+", "Projects"],
+  ["6+", "Years Experience"],
+  ["70+", "Projects"],
   ["Global", "Clients"],
   ["Full-Stack", "Development"],
 ] as const;
