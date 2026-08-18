@@ -4,7 +4,7 @@ import { projects } from "@/lib/content";
 import { servicePages } from "@/data/service-pages";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const pages = ["/", "/about", "/work", "/contact", "/privacy", "/terms"];
+  const pages = ["/", "/about", "/services", "/work", "/contact", "/privacy", "/terms"];
   const lastModified = new Date("2026-08-10T00:00:00.000Z");
   return [
     ...pages.map((path, index) => ({
