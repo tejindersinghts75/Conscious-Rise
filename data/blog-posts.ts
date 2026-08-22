@@ -9,13 +9,15 @@
  *   { type: "heading", text: "..." }
  *   { type: "list", items: ["...", "..."] }
  *   { type: "quote", text: "..." }
+ *   { type: "image", src: "/assets/blog/image.jpg", alt: "...", caption: "..." }
  */
 
 export type BlogBlock =
   | { type: "paragraph"; text: string }
   | { type: "heading"; text: string }
   | { type: "list"; items: string[] }
-  | { type: "quote"; text: string };
+  | { type: "quote"; text: string }
+  | { type: "image"; src: string; alt: string; caption?: string };
 
 export type BlogPost = {
   slug: string;
@@ -45,7 +47,7 @@ export const blogPosts: BlogPost[] = [
     author: "Tejinder Singh",
     featured: true,
     readingTime: "10 min read",
-    heroImage: { src: "/assets/blog/dental-website-essentials.jpg", alt: "Modern dental practice reception with a calm burgundy and neutral interior" },
+    heroImage: { src: "/assets/blog/dental-website-local-search.jpeg", alt: "Dental practice website displayed beside local contact information on a mobile phone" },
     content: [
       { type: "paragraph", text: "A patient searches Google for a dentist in their area. They find your practice, check your reviews, and then click through to your website. What happens next?" },
       { type: "paragraph", text: "Your website may be the first real experience that person has with your dental practice. Before they speak with your receptionist or sit in your chair, they are already forming an impression of your practice based on what they see online." },
@@ -67,6 +69,7 @@ export const blogPosts: BlogPost[] = [
       { type: "paragraph", text: "If someone has decided they want to contact the practice, do not make them search for the next step. A clear Book Appointment, Request Appointment, or Call Now option should be easy to find." },
       { type: "paragraph", text: "This is particularly important on mobile. Someone looking for a dentist from their phone should not need to navigate through several pages just to find a phone number or appointment option." },
       { type: "quote", text: "Book online. Call the practice. Request an appointment. Make the right options clear without covering every page with buttons." },
+      { type: "image", src: "/assets/blog/dental-website-appointment.jpeg", alt: "Dentist reviewing a dental practice website with prominent appointment and call options on a tablet", caption: "Clear appointment options help prospective patients take the next step on any device." },
       { type: "paragraph", text: "The objective is to make the next step obvious when a prospective patient is ready." },
       { type: "heading", text: "4. Real Trust Signals" },
       { type: "paragraph", text: "Dentistry requires trust. The website should help prospective patients understand who will actually be treating them. A strong doctor or team section can include:" },
@@ -87,6 +90,7 @@ export const blogPosts: BlogPost[] = [
       { type: "quote", text: "No legitimate dental website SEO strategy can guarantee a specific Google position." },
       { type: "heading", text: "8. A Fast, Clean Mobile Experience" },
       { type: "paragraph", text: "Many prospective patients will experience a dental website from a phone. The website therefore needs to work properly across screen sizes. Avoid:" },
+      { type: "image", src: "/assets/blog/dental-website-responsive.jpeg", alt: "Dental practice website presented across desktop, laptop, and tablet screens", caption: "A dental practice website should remain clear and usable across screen sizes." },
       { type: "list", items: ["Tiny text", "Difficult navigation", "Overlapping elements", "Huge blocks of text", "Buttons that are difficult to tap", "Unnecessary animations that interfere with navigation", "Layouts that only work properly on desktop"] },
       { type: "paragraph", text: "A premium dentist website does not need to be complicated. Clarity is more important than unnecessary complexity. Design should help visitors understand the practice and move naturally toward the information they need." },
       { type: "heading", text: "9. A Website That Reflects the Quality of the Practice" },
