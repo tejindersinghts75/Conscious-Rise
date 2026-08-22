@@ -47,7 +47,7 @@ export const blogPosts: BlogPost[] = [
     author: "Tejinder Singh",
     featured: true,
     readingTime: "10 min read",
-    heroImage: { src: "/assets/blog/dental-website-local-search.jpeg", alt: "Dental practice website displayed beside local contact information on a mobile phone" },
+    heroImage: { src: "/assets/blog/dental-website-digital-hero.jpg", alt: "Modern dental website displayed across laptop and mobile screens in a digital dental studio" },
     content: [
       { type: "paragraph", text: "A patient searches Google for a dentist in their area. They find your practice, check your reviews, and then click through to your website. What happens next?" },
       { type: "paragraph", text: "Your website may be the first real experience that person has with your dental practice. Before they speak with your receptionist or sit in your chair, they are already forming an impression of your practice based on what they see online." },
