@@ -47,7 +47,7 @@ export const blogPosts: BlogPost[] = [
     author: "Tejinder Singh",
     featured: true,
     readingTime: "10 min read",
-    heroImage: { src: "/assets/blog/dental-website-local-search.jpeg", alt: "Dental practice website displayed beside local contact information on a mobile phone" },
+    heroImage: { src: "/assets/blog/dental-website-appointment.jpeg", alt: "Dentist reviewing a dental practice website with prominent appointment and call options on a tablet" },
     content: [
       { type: "paragraph", text: "A patient searches Google for a dentist in their area. They find your practice, check your reviews, and then click through to your website. What happens next?" },
       { type: "paragraph", text: "Your website may be the first real experience that person has with your dental practice. Before they speak with your receptionist or sit in your chair, they are already forming an impression of your practice based on what they see online." },
@@ -69,7 +69,6 @@ export const blogPosts: BlogPost[] = [
       { type: "paragraph", text: "If someone has decided they want to contact the practice, do not make them search for the next step. A clear Book Appointment, Request Appointment, or Call Now option should be easy to find." },
       { type: "paragraph", text: "This is particularly important on mobile. Someone looking for a dentist from their phone should not need to navigate through several pages just to find a phone number or appointment option." },
       { type: "quote", text: "Book online. Call the practice. Request an appointment. Make the right options clear without covering every page with buttons." },
-      { type: "image", src: "/assets/blog/dental-website-appointment.jpeg", alt: "Dentist reviewing a dental practice website with prominent appointment and call options on a tablet", caption: "Clear appointment options help prospective patients take the next step on any device." },
       { type: "paragraph", text: "The objective is to make the next step obvious when a prospective patient is ready." },
       { type: "heading", text: "4. Real Trust Signals" },
       { type: "paragraph", text: "Dentistry requires trust. The website should help prospective patients understand who will actually be treating them. A strong doctor or team section can include:" },
