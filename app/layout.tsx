@@ -57,7 +57,14 @@ export const metadata: Metadata = {
   verification: site.googleSiteVerification
     ? { google: site.googleSiteVerification }
     : undefined,
-  icons: { icon: "/assets/conscious-rise-logo-black.svg", apple: "/assets/conscious-rise-logo-black.svg" },
+  icons: {
+    icon: [
+      { url: "/favicon-96x96.png", type: "image/png", sizes: "96x96" },
+      { url: "/favicon-192x192.png", type: "image/png", sizes: "192x192" },
+    ],
+    apple: { url: "/apple-touch-icon.png", type: "image/png", sizes: "180x180" },
+    shortcut: "/favicon-96x96.png",
+  },
   manifest: "/manifest.webmanifest",
 };
 
@@ -76,7 +83,12 @@ const jsonLd = {
       name: site.name,
       description: site.description,
       url: site.url,
-      logo: `${site.url}/assets/conscious-rise-logo-black.svg`,
+      logo: {
+        "@type": "ImageObject",
+        url: `${site.url}/assets/conscious-rise-globe.png`,
+        width: 1254,
+        height: 1254,
+      },
       image: `${site.url}/og-image.jpg`,
       email: site.email,
       founder: { "@id": `${site.url}/#founder` },
