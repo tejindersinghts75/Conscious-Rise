@@ -61,7 +61,7 @@ export default async function ServicePage({ params }: PageProps) {
         description: service.description,
         url: pageUrl,
         provider: { "@id": `${siteConfig.url}/#organization` },
-        areaServed: ["India", "United Kingdom", "United States", "Worldwide"],
+        areaServed: "Worldwide",
         serviceType: service.title,
       },
       {

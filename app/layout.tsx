@@ -93,7 +93,7 @@ const jsonLd = {
       email: site.email,
       founder: { "@id": `${site.url}/#founder` },
       sameAs: [site.upworkUrl, ...Object.values(site.social)].filter(Boolean),
-      areaServed: ["United Kingdom", "United States", "Worldwide"],
+      areaServed: "Worldwide",
       contactPoint: {
         "@type": "ContactPoint",
         email: site.email,
