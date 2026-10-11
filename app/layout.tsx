@@ -85,9 +85,9 @@ const jsonLd = {
       url: site.url,
       logo: {
         "@type": "ImageObject",
-        url: `${site.url}/assets/conscious-rise-globe.png`,
-        width: 1254,
-        height: 1254,
+        url: `${site.url}/favicon-512x512.png`,
+        width: 512,
+        height: 512,
       },
       image: `${site.url}/og-image.jpg`,
       email: site.email,
